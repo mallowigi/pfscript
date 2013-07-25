@@ -1,0 +1,111 @@
+note:
+  check out http://www.mircscripts.org/dstudio/changes.txt for the most recent
+  version of this file as well as information on unreleased versions of Dialog
+  Studio.
+  
+12/30/2002 - 1.0 final (mIRC 6+)
+1.  Improved consistency in message box information/warnings/errors.
+2.  Fixed bug when changing ID of a control to one used by a control on a tab.
+    It wouldn't let you, but it wouldn't tell which control was using it either.
+3.  When adding new controls, the next available ID is chosen.
+4.  Fixed properties not being saved if you changed from the Object Browser to
+    another window without pressing Enter first.
+5.  Fixed dialogs and windows not being sized properly under large fonts.
+6.  Fixed text displaying on top of scrollbars in edit boxes.
+7.  Fixed menus not being removed properly in all situations when creating a new
+    project.
+8.  Now using the same status window for loading projects and importing.  Shows
+    a little more info than before, and can be shown at any time by going to
+    Windows > Status Window.  Added option to automatically hide after loading
+    project.
+9.  Added support for undocumented 'flat' style for check boxes and radio
+    buttons.
+10. Fixed hot-tracking repaint bug.
+11. Added a simple help/documentation window.  Requires IE5+ to be installed.
+
+  
+2/17/2002 - 1.0 beta 8a (mIRC 6+)
+1.  Fixed mIRC crash when previewing if Initialization Warning was enabled in
+    mIRC.
+2.  Fixed Menu Editor being excessively large when first running Dialog Studio.
+    If the Menu Editor seems to be acting very strange, go to dstudio.ini, down
+    to the [Windows] section, and delete the line that has "MenuEditor=" on it.
+3.  Fixed preview sometimes not working after importing a dialog table that has
+    menus in it.
+4.  Fixed a lot of bugs that could occur if the Menu Editor was hidden, eg. ID
+    conflicts, menus losing styles, etc.
+5.  Fixed Dialog Studio not detecting duplicate control names on project load.
+6.  Fixed Copy Dialog Code not working in all situations.
+    
+
+2/16/2002 - 1.0 beta 8 (mIRC 6+)
+1.  The position of the design dialog is really saved now.  Honestly.  So is the
+    menu editor.  Also, removed some "flicker" when Dialog Studio is first
+    loaded.
+2.  Renamed Object Palette to Tool Box and Object Browser to Properties Browser.
+    As such, the shortcut for the Tool Box is now ALT+O.
+3.  New toolbar icons!  Yay!  Also, removed toolbar icon for Preferences.  It is
+    now only available from the Edit menu or CTRL+R.
+4.  View Dialog Code and Copy Dialog Code now have their own toolbar icon rather
+    than the drop-down menu.
+5.  Fixed menu items not remembering ID numbers.
+6.  Added user prompts when deleting controls.  This should prevent you from
+    accidentally deleting a large number of controls.  The prompts can be
+    disabled by going to Preferences > Miscellaneous > Deletion Prompts.
+7.  Added the ability to export dialog tables directly to .mrc, or .txt files. 
+    Use File > Export or ALT+E.
+8.  Fixed Access Violation when adding scrollbars with defaults set, and now you
+    can't set invalid combinations, such as "Vertical" and "Bottom".
+9.  Fixed improper handling of scrollbar type/align in Properties Browser with
+    more than one scrollbar selected.
+10. Fixed Move Up/Move Down not updating the Preview in Menu Editor.
+11. Fixed problem with icons not setting the correct X position from the
+    Properties Browser.
+12. Added support for local (dialog -l) dialog tables.
+13. Added support for 'flat' and 'multi' button styles.
+14. Added support for 'nowrap' text control style.
+15. Added support for 'range N N' scroll control style.
+16. Added support for 'limit N' combo box control style.
+17. Added support for 'option notheme' dialog option to disable Windows XP's
+    visual styles.
+18. Fixed wordwrapping and painting bugs with Auto-fit text control.
+19. Fixed menu area on design dialog not painting properly after resize.  Also,
+    Dialog Studio dialog heights now match mIRC 6 dialog heights (they were
+    different because of a change to mIRC 6).
+20. Fixed Access Violation when exiting Dialog Studio minimized via the taskbar
+    right-click "Close."
+21. Added errorlog.txt error logging system.  If you get an error, such as an
+    Access Violation, you can email this file to me, which will help me in
+    debugging the problem.
+22. Added the ability to dock the Tool Box.  The options are available on the
+    right-click menu of the Tool Box.
+23. Improved the logic of the automatic control naming.  Made a few changes:
+
+      * No two controls can have the same name.
+      * Names are limited to 100 characters.
+      * Names can only contain alphanumeric (A-Z, a-z, 0-9) and underscore (_)
+        characters.
+        
+    If you load an older project that violates these, it will automatically be
+    renamed to a suitable name.  You may not use the name 'tabcontrol' because
+    this is reserved for the tab control.
+24. Fixed Clear button in the Import from Clipboard window not positioning
+    properly if you resized the window.
+25. Added 'F' font-toggle keyboard shortcut.  This will toggle the font of the
+    design dialog between Tahoma and MS Sans Serif.  Since Windows 2K/XP use
+    Tahoma and 95/98/ME use MS Sans Serif, this will let you see what your
+    dialog looks like under both.  When you preview, however, it will still use
+    the system default.  This setting is not saved...
+26. Fixed Import from Clipboard and View Dialog Code windows acting like morons
+    under Windows XP when resizing the windows.
+27. Added Copy Table and Close buttons to the View Dialog Code window.
+28. Optimized and organized the internal graphics resources.
+29. You can no longer select two controls on two different tabs.
+30. Alternate font changed to Tahoma, size 8.  Sorry, I got tired of that small
+    Microsoft Sans Serif. =)
+
+--
+
+  For changes on older versions of Dialog Studio, please check
+  
+    http://www.mircscripts.org/dstudio/oldchanges.txt

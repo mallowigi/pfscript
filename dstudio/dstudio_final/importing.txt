@@ -1,0 +1,86 @@
+Dialog Studio - importing mIRC dialog tables
+
+            READ ALL OF THIS BEFORE SENDING BUG REPORTS!!!
+
+When importing, please take note of these considerations:
+
+1. First off, I will start by saying that this process is not and will never be
+   perfect.  There are limitations, mainly because mIRC supports %vars and $ids
+   (somewhat) in dialog tables and without having access to these values, I can
+   never perfectly replicate what a dialog looks like in mIRC.  For most things,
+   that information is not needed.  However, in situations like this:
+  
+   size %x %y %w %h
+  
+   ... I can't know the size and position of this dialog.  If you try to import
+   dialogs like this, Dialog Studio will use default values and you will have to
+   put in your own values after your import.
+   
+   I could somewhat get around this using DDE or memory-mapped files, but this
+   would be quite a hassle for a method that is not 100% reliable (as it would
+   only work if you are importing dialogs WHILE running the mIRC and script that
+   the dialog table belongs to.)  I, personally, haven't had any problems with
+   any dialogs I've tested.  If you use MDX's resizable dialogs and put %vars or
+   $ids in the "size ..." line, you may try moving that to the init section and
+   using default values in the "size ..." part of the table.
+   
+2. IF THE DIALOG DOES NOT WORK IN MIRC, DO NOT EXPECT IT TO WORK IN DIALOG
+   STUDIO EITHER.  I know as soon as I release this, I'm going to get a lot of
+   "bug reports" saying the dialog won't import properly.  If you send me a bug
+   report and I attempt to load the dialog table in mIRC and I get an error
+   there, I will just send the bug report back to you.
+   
+3. THE DIALOG TABLE *MIGHT* WORK IN DIALOG STUDIO BUT NOT IN MIRC.  Like I said
+   earlier, I can't possibly reproduce results exactly like mIRC, as I didn't
+   write mIRC's parser.  So, there may be cases when a dialog table that doesn't
+   work in mIRC, works in Dialog Studio.  If it does, Dialog Studio will produce
+   code that *should* work fine in mIRC, but the results may be unpredictable.
+   
+4. If your code is non-standard, you may tweak it a bit to get it to import
+   properly.  I have tried to support all types of coding that are supported by
+   mIRC, but mIRC supports such ambigious dialog table format (especially icons)
+   that it is impossible for me to perfectly replicate mIRC's support.  For the
+   most part, if you have standard dialogs, you should be fine.
+
+5. If there is an error in the table (such as "abc" for a height parameter),
+   Dialog Studio will notify you of the error and skip the offending control.
+   
+6. When you import a table, controls that are added have the "Use ID" property
+   automatically set to true.  This is to make sure that the current ID values
+   are messed up, since you most likely have code already written for these
+   corresponding IDs.
+      
+   
+
+Limitations/Known bugs/Unknown bugs:
+
+1. Mentioned earlier, when %vars or $ids are used, it won't always work, most
+   notably in the "size" parameter.
+   
+2. Currently you can't import tables that have %vars or $ids as ID numbers. This
+   will be supported in a future version, but it will require a big change to
+   Dialog Studio internally.  I'll get to it soon enough.
+
+3. If the text property of a control has a carriage return in it, Dialog Studio
+   will break that up and treat it as two lines.  The current routine I'm using
+   for loading lines is just a generic one, compatible with Windows and Unix,
+   and Unix has no CRLF, just a CR to separate lines.
+
+
+
+Making your tables Dialog Studio import friendly:
+
+1. DON'T USE %VARS OR $IDS FOR SIZE PARAMETERS!
+
+2. DON'T USE %VARS OR $IDS FOR SIZE PARAMETERS!
+
+3. DON'T USE %VARS OR $IDS FOR SIZE PARAMETERS!
+
+4. DON'T USE %VARS OR $IDS AT ALL IN YOUR DIALOGS!  THEY SUCK!  Well, maybe not
+   for the text parameter, BUT FOR EVERYTHING ELSE!  *roar*
+   
+   
+With all that said, I am accepting bug reports, especially since this is an
+early beta.  If you have a dialog table that loads properly in mIRC but not in
+Dialog Studio, please email me the dialog table and instructions on how to
+reproduce the problem (if needed.)
