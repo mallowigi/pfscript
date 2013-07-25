@@ -1,0 +1,58 @@
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+---------------------------- Pokémon-France Script v4.0b1 - Lisez Moi -----------------------------
+-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------
+
+Pour voir les modifications de la version 4.0... lisez l'aide car il y'en a trop!
+
+Cette version est une version beta, c'est à dire antérieure à la vraie release. Il reste beaucoup de vérifications à faire pour la sortie de la release 4.0, beaucoup de scripts à coder, l'aide à finir, etc...
+Cependant, cette version est assez stable et permet d'ores et déjà une utilisation quotidienne.
+
+Vérifiez fréquemment sur le site à l'adresse http://www.pokemon-france.com/script en cas de sortie d'une nouvelle version.
+
+Historique des versions précédentes :
+
+
+Travail effectué sur la version 3.0 :
+----------------------------------------
+
+- Modification du design, renommage en Pokémon-France Script ;
+- Suppression de meuh.dll pour éviter les détections de virus ;
+- Possibilité de désactiver / activer les sons d'évènement via le "Menu Spécial" ;
+- Désactivation des systèmes de kicks automatiques par défaut ;
+- Highlight configuré sur $me ;
+- Rajout de l'option NSPP dans le sondage ;
+- Plein d'autres trucs trop long à noter et que j'ai oublié !
+
+
+Travail effectué sur la version 2.1 :
+----------------------------------------
+ 
+- Correction des performs (Code à la connexion);
+- Renommage de moo.dll (problème d'antivirus);
+- Correction de diverses fautes d'orthographe;
+- Actualisation de mIRC (6.17);
+
+Travail effectué sur la version 2.0 :
+----------------------------------------
+(liste non exhaustive)
+ 
+- Nouveau Design pour le Script;
+- Amelioration du Lecteur MP3;
+- Amelioration du système d'away;
+- Mini-Jeu Morpion;
+- Gestion de l'auto-identification;
+- Actualisation du script;
+- Actualisation de mIRC (6.16);
+
+Merci à tous ceux qui m'ont permis de réaliser ce script.
+
+--------------------------------------------------------------------------------------
+N'hésitez pas à nous donner des idées sur le forum, le chat ou au créateur du script 
+à l'adresse zhuquarnage@hotmail.com
+Tout bug, suggestion, critique, avis est le bienvenu.
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Nous vous rappelons que toute copie partielle ou complète du Pokélord Script est interdite
+sans l'autorisation de l'auteur. Merci de respecter le travail des créateurs.
