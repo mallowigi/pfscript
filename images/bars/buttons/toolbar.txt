@@ -1,0 +1,23 @@
+﻿;Syntaxe: Nom;Infobulle;Alias/<nom>;icone;Taille;Bouton push;Nom popup
+;Les 4 premiers parametres sont obligatoires. Le nom représente le nom donné au bouton (Dans le cas des boutons par défaut de mirc, reportez vous a l'aide), infobulle représente le texte au passage de la souris, Alias/<nom> représente la commande lancée lors de l'appui sur le bouton (<nom> est soit le nom d'un des boutons par défaut de mirc, soit l'une des commandes spéciales <app>, <infobox>), et enfin icone représente le chemin de l'icone (utilisez de préférence des icones plutot que des images, afin qu'elles soient affichées dans les options), entourée par des quotes.
+; Les trois derniers parametres sont: Taille (0: défaut, 1: petit, 2: grand, 3: coupée (par défaut)), Bouton push (1 : oui, 0: non (par défaut)) et Popup (nom du menu lors du clic droit, qui doit se trouver dans data/popups (0 si pas de popup))
+
+infoboxInfo Box<infobox>"images\bars\buttons\info.ico"100
+sep1-
+connectConnexion<connect>"images\bars\buttons\connect.ico"110
+sep2-
+optionsmIRC options<options>"images\bars\buttons\options.ico"100
+setupOptions du PF Scriptsetup"images\bars\buttons\tools.ico"100
+themesGestion des thèmesthemes"images\bars\buttons\layout.ico"100
+chanlistListe des canaux<chanlist>"images\bars\buttons\list.ico"100
+addrbookListe de pseudos<addrbook>"images\bars\buttons\user.ico"100
+sep3-
+viewlogLogsviewlog"images\bars\buttons\file.ico"100
+rcvdfilesFichiers recus<rcvdfiles>"images\bars\buttons\folder.ico"100
+openstatsStatsopenstats"images\bars\buttons\flowchart.ico"100
+sep4-
+quotesQuotesopenquotes"images\bars\buttons\heart.ico"100
+applauncherApplicationsapplauncher"images\bars\buttons\ie.ico"100
+sep5-
+helpAidehelp"images\bars\buttons\help.ico"100
+aboutA Propospfabout"images\bars\buttons\smiley.ico"100

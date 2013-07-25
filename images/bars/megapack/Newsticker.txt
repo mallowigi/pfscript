@@ -1,0 +1,2 @@
+"images/bars/megapack/hourglass_2.ico"Time: <date>, <time>/alarm196normalTime: $date $+ , $time
+"images/bars/megapack/data file_2.ico"RSS: <rss>/rss.latest.openurl200normalRSS: $rss.latest

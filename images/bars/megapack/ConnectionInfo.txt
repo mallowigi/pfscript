@@ -1,0 +1,4 @@
+"images/bars/megapack/hardware card_2.ico"IP: <ip>&null196normalIP: $ip
+"images/bars/megapack/hub stack_2.ico"Network: <net>&null200normalNetwork: $curconserv
+"images/bars/megapack/afro freak_2.ico"Nick: <nick>&null200normalNick: $me
+"images/bars/megapack/beer_2.ico"Idle: <idle>&null200normalIdle: $sduration($idle).nosec

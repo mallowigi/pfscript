@@ -1,0 +1,4 @@
+"images/bars/nnscript/away.ico"Time: <date>, <time>/alarm196normalTime: $date $+ , $time
+"images/bars/nnscript/dccs.ico"DCC: <down> down, <up> up/dccs200normalDCC: $dccbw(get) down, $dccbw(send) up
+"images/bars/nnscript/logview.ico"Clipboard: <cb> - <cbcontent>/cbedit250normalClipboard: $cbc - $cbcontent
+"images/bars/nnscript/channels_folder.ico"Topic: <topic>/cc500normalTopic: $actopic
