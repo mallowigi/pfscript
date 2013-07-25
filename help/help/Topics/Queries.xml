@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Queries</title>
+  <keywords>
+    <keyword translate="true">Queries</keyword>
+    <keyword translate="true">query</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Queries (Messages Privés)</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ce topic présente les options des messages privés, ou </text><text styleclass="Highlight" translate="true">queries</text><text styleclass="Normal" translate="true"> (catégorie </text><text styleclass="Highlight" translate="true">Queries</text><text styleclass="Normal" translate="true"> dans les options, nom de code &quot;</text><text styleclass="Highlight" translate="true">query</text><text styleclass="Normal" translate="true">&quot; dans la liste des fonctionnalités).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript améliore la fonctionnalité interne des messages privés de mIRC par le biais de quelques fonctionnalités utiles.</text></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="queries.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal" style="text-align:center;"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="qautoclose" styleclass="Subtopic"><keywords><keyword translate="true">Queries<keyword translate="true">Fermeture automatique</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Fermeture automatique des Queries</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette option permet de fermer </text><text styleclass="Highlight" translate="true">automatiquement</text><text styleclass="Normal" translate="true"> les queries inactives au bout d&apos;un certain temps, afin d&apos;éviter le surplus de fenêtres ouvertes. Le temps en question est calculé sur le </text><text styleclass="Highlight" translate="true">temps d&apos;idle</text><text styleclass="Normal" translate="true">, c&apos;est à dire le temps d&apos;inactivité de la fenêtre de query. Si personne n&apos;a parlé dans la fenêtre de query pendant le temps défini, la fenêtre se fermera.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Note: Si la fenêtre de query est la fenêtre </text><text styleclass="Normal" style="font-weight:bold;" translate="true">active</text><text styleclass="Normal" translate="true">, celle-ci ne se fermera pas tant que l&apos;utilisateur n&apos;aura pas switché sur une autre fenêtre.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Note 2: Si la fenêtre de query est &quot;</text><text styleclass="Normal" style="font-weight:bold;" translate="true">highlightée</text><text styleclass="Normal" translate="true">&quot; (c&apos;est à dire contenant un message de highlight), celle-ci ne se fermera pas tant que l&apos;utilisateur n&apos;aura pas ouvert cette fenêtre pour vérifier son contenu.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="qstats" styleclass="Subtopic"><keywords><keyword translate="true">Queries<keyword translate="true">Affichage des stats</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Affichage des stats lors de l&apos;ouverture</text></para>
+    <para styleclass="Subtopic"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette fonctionnalité permet d&apos;afficher les </text><text styleclass="Highlight" translate="true">statistiques</text><text styleclass="Normal" translate="true"> de discussion avec la personne en question, c&apos;est à dire le nombre de queries ouvertes avec cet utilisateur, la date de la dernière discussion, etc...</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><image src="querysub.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="qevents" styleclass="Subtopic"><keywords><keyword translate="true">Queries<keyword translate="true">Affichage des évènements</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Affichage des évènements dans la fenêtre de query</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette option active l&apos;affichage de certains </text><text styleclass="Highlight" translate="true">évènements</text><text styleclass="Normal" translate="true"> survenus chez l&apos;utilisateur en question, tel que sa déconnexion, son changement de pseudo, etc. afin que vous puissiez être au courant du </text><text styleclass="Highlight" translate="true">changement de statut</text><text styleclass="Normal" translate="true"> de l&apos;utilisateur directement dans la fenêtre de query.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Pour illustrer le concept, prenons un exemple: Vous êtes en discussion privée avec un utilisateur, puis soudain celui-ci quitte IRC sans vous prévenir. Lorsque vous souhaitez lui reparler, vous recevez alors un message stipulant que l&apos;utilisateur en question n&apos;est plus disponible, ce qui peut être assez ennuyeux.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">En activant cette option, vous serez alors alerté directement dans la fenêtre de query des évènements suivants:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Joins</text><text styleclass="Normal" translate="true">: L&apos;utilisateur a rejoint un canal sur lequel vous êtes.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Parts</text><text styleclass="Normal" translate="true">: L&apos;utilisateur a quitté un canal sur lequel vous êtes.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Chgts. Nicks</text><text styleclass="Normal" translate="true">: L&apos;utilisateur a changé de pseudo.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Kicks</text><text styleclass="Normal" translate="true">: L&apos;utilisateur a été kické de l&apos;un des canaux sur lequel vous êtes.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Quits</text><text styleclass="Normal" translate="true">: L&apos;utilisateur a quitté IRC.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Modes</text><text styleclass="Normal" translate="true">: L&apos;utilisateur a subi un changement de modes sur l&apos;un des canaux sur lequel vous êtes.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Nick perso</text><text styleclass="Normal" translate="true">: Vous avez changé de pseudonyme.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Notifications</text><text styleclass="Normal" translate="true">: L&apos;utilisateur en question est à présent connecté/déconnecté (il doit au préalable se trouver dans votre liste de notifications).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="queryex.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="Ouvertureautomatiquedesqueries" styleclass="Subtopic"><keywords><keyword translate="true">Queries<keyword translate="true">Ouverture automatique des queries</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Ouverture automatique des queries</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette option permet d&apos;</text><text styleclass="Highlight" translate="true">ouvrir automatiquement</text><text styleclass="Normal" translate="true"> des fenêtres de query avec certains utilisateurs. Cette fonction peut être intéressante lorsque par exemple vous êtes habitués à discuter en privé avec certains utilisateurs et que vous avez envie de discuter avec eux à chaque connexion.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Note: Cette fonctionnalité n&apos;est pas </text><text styleclass="Highlight" translate="true">multiserveur</text><text styleclass="Normal" translate="true">, c&apos;est à dire que les fenêtres de query s&apos;ouvriront automatiquement indépendamment du serveur sur lequel vous êtes. Faites donc bien attention de savoir à qui vous parlez!</text></para>
+  </body>
+</topic>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Fichiers nécessaires</title>
+  <keywords>
+    <keyword translate="true">Fichiers nécessaires au programme</keyword>
+    <keyword translate="true">Pré-Requis<keyword translate="true">Fichiers requis</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Fichiers nécessaires au programme</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cet article présente la liste des </text><text styleclass="Highlight" translate="true">fichiers absolument nécessaires</text><text styleclass="Normal" translate="true"> à l&apos;exécution du programme.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript fonctionne sur une copie du client mIRC, par conséquent tous les fichiers nécessaires au bon fonctionnement de mIRC (mirc.ini, dmu.dll...) sont nécessaires au fonctionnement du programme. Cependant, le PFScript lui-même a besoin de</text><text styleclass="Highlight" translate="true"> certains fichiers</text><text styleclass="Normal" translate="true"> pour le bon fonctionnement de ses scripts, autrement des messages d&apos;erreur comme &quot;</text><text styleclass="Normal" style="font-style:italic;" translate="true">INVALID COMMAND</text><text styleclass="Normal" translate="true">&quot; risquent d&apos;apparaître voire de faire complètement planter le logiciel.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Pour éviter ce genre de désagréments, si vous installez une copie fraîche du script, normalement vous n&apos;aurez pas de problèmes, cependant si vous décidez de &quot;migrer&quot; le script, à savoir uniquement récupérer les </text><text styleclass="Highlight" translate="true">scripts .mrc</text><text styleclass="Normal" translate="true">, voici les fichiers dont vous aurez obligatoirement besoin:</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Nécessaires à mIRC:</text></para>
+    <list id="2" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Normal"><text styleclass="File" translate="true">mIRC.ini</text><text styleclass="Normal" translate="true"> : Fichier contenant la configuration actuelle de mIRC. Si inexistant, mIRC créera un fichier de configuration par défaut.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">mirc.exe</text><text styleclass="Normal" translate="true"> : Le programme mIRC lui-même.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">dmu.dll, ASH.dll, MTI.dll</text><text styleclass="Normal" translate="true"> : DLLs nécessaires au fonctionnement de mIRC.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">servers.ini</text><text styleclass="Normal" translate="true"> : Liste de serveurs IRC connus.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Nécessaires au PFScript:</text></para>
+    <list id="3" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Normal"><text styleclass="File" translate="true">pfscript.ini</text><text styleclass="Normal" translate="true"> : Fichier contenant la </text><text styleclass="Highlight" translate="true">configuration actuelle du PFScript</text><text styleclass="Normal" translate="true">. Si ce fichier est manquant au démarrage, mIRC demandera à l&apos;utilisateur de spécifier l&apos;emplacement du fichier, qui sera ensuite copié à la racine du programme. Si l&apos;utilisateur ne spécifie pas de fichier ou que le fichier est invalide, mIRC en créera un par défaut.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">alias/aliases.als</text><text styleclass="Normal" translate="true">: Contient toutes les fonctions utilisées dans les scripts du programme, telle une </text><text styleclass="Highlight" translate="true">librairie de fonctions</text><text styleclass="Normal" translate="true">. La plupart des scripts ne pourront pas fonctionner sans ce fichier. D&apos;autre part, ce fichier doit être chargé dans la partie &quot;</text><text styleclass="Highlight" translate="true">Alias</text><text styleclass="Normal" translate="true">&quot; de mIRC (Alt+D).</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">script/dlls</text><text styleclass="Normal" translate="true"> : Répertoire contenant les </text><text styleclass="Highlight" translate="true">dlls</text><text styleclass="Normal" translate="true"> utilisées dans la plupart des scripts. Si l&apos;une des dll est manquante, mIRC demandera à l&apos;utilisateur de lui spécifier l&apos;emplacement de la dll en question. Les dlls en question sont :</text></li>
+      <list id="3" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#000000;">
+        <li styleclass="Normal"><text styleclass="File" translate="true">mdx.dll</text><text styleclass="Normal" translate="true"> et les plugins </text><text styleclass="File" translate="true">bars.mdx</text><text styleclass="Normal" translate="true">,</text><text styleclass="File" translate="true"> ctl_gen.mdx</text><text styleclass="Normal" translate="true">,</text><text styleclass="File" translate="true"> views.mdx, dialog.mdx</text></li>
+        <li styleclass="Normal"><text styleclass="File" translate="true">dcx.dll</text><text styleclass="Normal" translate="true"> et les plugins </text><text styleclass="File" translate="true">domxml.dll</text><text styleclass="Normal" translate="true"> et </text><text styleclass="File" translate="true">xml.dll</text></li>
+        <li styleclass="Normal"><text styleclass="File" translate="true">font.dll</text></li>
+      </list>
+    </list>
+    <list id="3" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#000000;">
+      <li styleclass="Normal"><text styleclass="File" translate="true">script/dialogboxes.mrc</text><text styleclass="Normal" translate="true"> : </text><text styleclass="Highlight" translate="true">Boites de dialogues</text><text styleclass="Normal" translate="true"> personnalisées utilisées un peu partout dans les scripts.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">script/setup.mrc</text><text styleclass="Normal" translate="true"> : Script de </text><text styleclass="Highlight" translate="true">configuration</text><text styleclass="Normal" translate="true"> du PFScript.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">script/subsetup.mrc</text><text styleclass="Normal" translate="true"> : Script de </text><text styleclass="Highlight" translate="true">configuration</text><text styleclass="Normal" translate="true"> du PFScript.</text></li>
+      <li styleclass="Normal"><text styleclass="File" translate="true">script/startup.mrc</text><text styleclass="Normal" translate="true"> : Commandes lancées au </text><text styleclass="Highlight" translate="true">démarrage</text><text styleclass="Normal" translate="true"> de mIRC.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si l&apos;un de ces fichiers vous manque, le programme se </text><text styleclass="Highlight" translate="true">fermera automatiquement</text><text styleclass="Normal" translate="true"> tant que vous n&apos;avez pas fourni tous les fichiers en question. Si par mégarde vous n&apos;avez plus ces fichiers, sachez que vous pourrez les retrouver dans le </text><text styleclass="Normal" style="font-weight:bold;" translate="true">package d&apos;installation</text><text styleclass="Normal" translate="true"> du logiciel; il vous suffit alors de reinstaller le script dans un emplacement différent, puis de copier/coller les fichiers en question dans le répertoire de votre script.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Voir aussi: Autres fichiers</text></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" status="Complete" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Raccourcis Fn</title>
+  <keywords>
+    <keyword translate="true">fkeys</keyword>
+    <keyword translate="true">FN</keyword>
+    <keyword translate="true">Raccourcis Fn</keyword>
+    <keyword translate="true">Touches FN</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Raccourcis Fn</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ce topic présente la fonctionnalité d&apos;assignation de commandes aux combinaisons avec les touches &quot;Fn&quot; (catégorie &quot;</text><text styleclass="Highlight" translate="true">Touches FN</text><text styleclass="Normal" translate="true">&quot; dans les Options, nom de code &quot;</text><text styleclass="Highlight" translate="true">fkeys</text><text styleclass="Normal" translate="true">&quot; dans la liste des fonctionnalités).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">mIRC donne la possibilité aux utilisateurs d&apos;utiliser les </text><text styleclass="Highlight" translate="true">touches Fn</text><text styleclass="Normal" translate="true"> (F1 à F12) à leur guise afin de s&apos;en servir comme raccourcis pour leurs commandes quotidiennes. La définition de ces raccourcis se fait dans les </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Alias</text><text styleclass="Normal" translate="true"> ou les </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Remotes</text><text styleclass="Normal" translate="true">, en définissant l&apos;alias &lt;nom de la touche&gt; pour effectuer la commande ou les commandes désirée(s).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript se sert de cette fonctionnalité et définit une </text><text styleclass="Highlight" translate="true">interface simple</text><text styleclass="Normal" translate="true"> pour assigner vos raccourcis Fn à travers les options du script. Celle-ci présente, pour chacun des raccourcis Fn disponibles, la </text><text styleclass="Highlight" translate="true">commande</text><text styleclass="Normal" translate="true"> associée et une courte </text><text styleclass="Highlight" translate="true">description</text><text styleclass="Normal" translate="true"> de cette commande, facultative.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="fn.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Vous pouvez modifier un raccourci soit en sélectionnant le raccourci puis en cliquant sur le bouton </text><text styleclass="Highlight" translate="true">Editer</text><text styleclass="Normal" translate="true"> sur la droite, soit en double cliquant sur un élément de la liste. Un dialogue d&apos;édition apparaitra vous permettant de modifier le raccourci en question.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Vous pouvez aussi </text><text styleclass="Highlight" translate="true">Supprimer</text><text styleclass="Normal" translate="true"> le raccourci en question, ou encore le </text><text styleclass="Highlight" translate="true">Restaurer à sa valeur par défaut</text><text styleclass="Normal" translate="true">. </text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Enfin, vous pouvez aussi décider de </text><text styleclass="Highlight" translate="true">Tout Supprimer</text><text styleclass="Normal" translate="true"> ou de </text><text styleclass="Highlight" translate="true">Tout Rétablir</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Edition</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="raccourci.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><text styleclass="Subtopic" translate="true">Commande</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Contient la commande que vous voulez lui assigner. Vous pouvez utiliser les identifieurs, variables et même appeler plusieurs commandes en utilisant les pipes (|).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><text styleclass="Subtopic" translate="true">Description</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Contient une courte description facultative du raccourci.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Appliquer</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Lorsque vous avez fini d&apos;éditer, n&apos;oubliez pas d&apos;</text><text styleclass="Highlight" translate="true">Appliquer</text><text styleclass="Normal" translate="true"> vos modifications afin de profiter des raccourcis nouvellement créés. Sans cela, vous définitions ne prendront effet </text><text styleclass="Highlight" translate="true">qu&apos;après le redémarrage du PFScript</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Attention cependant: assurez-vous auparavant de ne pas avoir défini ces raccourcis autre part (par exemple dans des scripts extérieurs) afin de ne pas causer de conflits avec vos raccourcis créés. </text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Sauvegarde/Chargement</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Les définitions des raccourcis sont définis dans un fichier, &quot;</text><text styleclass="File" translate="true">fkeys.txt</text><text styleclass="Normal" translate="true">&quot; situé dans le dossier &quot;data&quot;, qui sera mis à jour à la fermeture du programme et chargé à chaque démarrage de mIRC.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si vous ne voyez aucun raccourci de défini, vérifiez donc que vous avez bien le fichier en question, si vous ne l&apos;avez pas tentez de réinstaller le script.</text></para>
+  </body>
+</topic>

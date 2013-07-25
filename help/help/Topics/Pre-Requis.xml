@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Pré-Requis</title>
+  <keywords>
+    <keyword translate="true">Conditions d&apos;utilisation</keyword>
+    <keyword translate="true">Pré-Requis</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Pré-Requis</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript a besoin de répondre à certaines </text><text styleclass="Highlight" translate="true">conditions</text><text styleclass="Normal" translate="true"> pour pouvoir fonctionner, ceci afin de prévenir l&apos;apparition d&apos;erreurs éventuelles lors de l&apos;utilisation du programme. Si l&apos;une des conditions n&apos;est pas remplie, le programme se </text><text styleclass="Normal" style="font-weight:bold;" translate="true">fermera automatiquement</text><text styleclass="Normal" translate="true"> ou le script fonctionnera </text><text styleclass="Normal" style="font-weight:bold;" translate="true">de manière réduite</text><text styleclass="Normal" translate="true">, i.e. sans aucun script, en prévenant au préalable l&apos;utilisateur de la raison du changement.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Les conditions sont les suivantes:</text></para>
+    <para styleclass="Normal"></para>
+    <list id="7" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none; font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">mIRC doit être installé à un emplacement ouvert en écriture.</text></li>
+      <li styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">La version de mIRC doit être supérieure à la version 7.1</text></li>
+      <li styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">Le système d&apos;exploitation doit être au minimum Windows XP.</text></li>
+      <li styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">Les commandes &quot;run&quot;, &quot;dll&quot;, &quot;com&quot; et &quot;decode&quot; doivent être débloquées (Options -&gt; Other -&gt; Lock)</text></li>
+      <li styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">L&apos;espace disque restant doit être supérieur à 20 Mo</text></li>
+      <li styleclass="Normal" style="text-indent:14px; margin-right:0px; margin-left:0px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">Le script doit contenir les </text><link displaytype="text" defaultstyle="true" type="topiclink" href="Fichiers_necessaires" styleclass="Normal" style="font-size:8pt;" translate="true">fichiers nécessaires au programme</link><text styleclass="Normal" style="font-size:8pt;" translate="true">.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <list id="8" type="ul" listtype="bullet" formatstring="&#216;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Subtopic" style="font-family:Wingdings; font-size:10pt; color:#008080;">
+      <li styleclass="Subtopic"><anchor id="installation" styleclass="Subtopic"><keywords><keyword translate="true">Pré-Requis<keyword translate="true">Emplacement d&apos;installation</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true"> mIRC doit être installé à un emplacement ouvert en écriture.</text></li>
+    </list>
+    <para styleclass="Subtopic"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript, et mIRC en général, a souvent besoin d&apos;écrire dans le dossier dans lequel il est installé: fichiers de logs, de configuration, etc... Par conséquent, il est important que mIRC soit installé dans un </text><text styleclass="Highlight" translate="true">dossier ouvert en écriture</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si vous avez installé le script à partir de l&apos;installeur fourni, il ne devrait pas y avoir de problèmes puisque mIRC sera installé dans le </text><text styleclass="Highlight" translate="true">dossier utilisateur (AppData)</text><text styleclass="Normal" translate="true">, par contre si vous choisissez de l&apos;installer par vous-même, assurez-vous d&apos;utiliser un dossier ouvert en écriture (comme par exemple &apos;</text><text styleclass="Normal" style="font-style:italic;" translate="true">Mes Documents</text><text styleclass="Normal" translate="true">&apos;), ou bien assurez-vous d&apos;ouvrir le fichier en écriture (</text><text styleclass="Highlight" translate="true">Propriétés -&gt; Sécurité</text><text styleclass="Normal" translate="true"> sous Windows 7).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="9" type="ul" listtype="bullet" formatstring="&#216;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Subtopic" style="font-family:Wingdings; font-size:10pt; color:#008080;">
+      <li styleclass="Subtopic"><anchor id="mircversion" styleclass="Subtopic"><keywords><keyword translate="true">Pré-Requis<keyword translate="true">Version de mIRC</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true"> La version de mIRC doit être supérieure à la version 7.1.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">mIRC est constamment en développement, et si auparavant les anciennes versions de mIRC ne posaient pas de problèmes de compatibilité, la </text><text styleclass="Highlight" translate="true">version 7.1 </text><text styleclass="Normal" translate="true">apporte un </text><text styleclass="Normal" style="font-weight:bold;" translate="true">changement complet de l&apos;interface</text><text styleclass="Normal" translate="true"> qui créé souvent des problèmes de compatibilité avec les </text><text styleclass="Highlight" translate="true">plugins externes</text><text styleclass="Normal" translate="true">, tels que </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.net/projects.php?go=1112480642" target="_blank" styleclass="Normal" translate="true">MDX</link><text styleclass="Normal" translate="true"> et </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://dcx.scriptsdb.org" target="_blank" styleclass="Normal" translate="true">DCX</link><text styleclass="Normal" translate="true"> pour ne citer qu&apos;eux.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript étant développé sur la base de plugins spécifiques à cette version de mIRC, il est donc recommandé de se munir de la </text><text styleclass="Highlight" translate="true">dernière version de mIRC</text><text styleclass="Normal" translate="true">, qui, à ce jour, est la version </text><var styleclass="Normal" style="font-weight:bold;">&lt;%MIRCVER%&gt;</var><text styleclass="Normal" translate="true"> .</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si une nouvelle version de mIRC venait à voir le jour et que vous décidiez de le mettre à jour (ce qui est conseillé), les plugins externes ne seraient pas forcément mis à jour pour autant, même si de manière générale les développeurs tentent de suivre le mouvement. Par conséquent, il est conseillé de </text><text styleclass="Normal" style="font-weight:bold;" translate="true">garder une version 7.1 de mIRC de secours</text><text styleclass="Normal" translate="true">, au cas où la nouvelle version poserait des problèmes de compatibilité.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="10" type="ul" listtype="bullet" formatstring="&#216;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Subtopic" style="font-family:Wingdings; font-size:10pt; color:#008080;">
+      <li styleclass="Subtopic"><anchor id="OS" styleclass="Subtopic"><keywords><keyword translate="true">OS</keyword><keyword translate="true">Pré-Requis<keyword translate="true">Système d&apos;exploitation</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true"> Le système d&apos;exploitation doit être au minimum Windows XP.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Pour la même raison que la précédente, la version 7.1 de mIRC a été développée pour </text><text styleclass="Highlight" translate="true">Windows XP et supérieurs</text><text styleclass="Normal" translate="true"> (jusqu&apos;à </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Windows 7</text><text styleclass="Normal" translate="true"> à ce jour). Même si le créateur du programme tente de garder une certaine rétrocompatibilité avec les systèmes d&apos;exploitation antérieurs, il est fort probable que le programme affiche des comportements inattendus sous ces systèmes d&apos;exploitation (voir </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.com" styleclass="Normal" translate="true">Forums du site Officiel</link><text styleclass="Normal" translate="true">)</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si vous possédez un système d&apos;exploitation antérieur à Windows XP, afin d&apos;éviter l&apos;apparition d&apos;erreurs, les scripts du PFScript seront tout simplement </text><text styleclass="Highlight" translate="true">désactivés au démarrage</text><text styleclass="Normal" translate="true">. Vous pouvez les réactiver manuellement, mais c&apos;est à vos risques et périls.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="11" type="ul" listtype="bullet" formatstring="&#216;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Wingdings; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><anchor id="lockcommands" styleclass="Subtopic"><keywords><keyword translate="true">Pré-Requis<keyword translate="true">Commandes bloquées</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true"> Les commandes &quot;run&quot;, &quot;dll&quot;, &quot;com&quot; et &quot;decode&quot; doivent être débloquées.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript est souvent amené à utiliser l&apos;une de ces commandes (l&apos;exemple le plus flagrant est l&apos;appel aux </text><text styleclass="Normal" style="font-weight:bold;" translate="true">DLLs</text><text styleclass="Normal" translate="true"> des plugins externes), par conséquent il est nécessaire de </text><text styleclass="Highlight" translate="true">débloquer</text><text styleclass="Normal" translate="true"> l&apos;utilisation de ces commandes (</text><text styleclass="Highlight" translate="true">Options de mIRC -&gt; Other -&gt; Lock</text><text styleclass="Normal" translate="true">). Vous pouvez être sûrs que les scripts du PFScript n&apos;utilisent pas ces commandes à mauvais escient, vous pouvez donc les débloquer en toute sécurité (à priori ^^).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ultérieurement, si vous téléchargez des scripts dont vous n&apos;êtes pas sûrs de leur sécurité, vous pouvez temporairement bloquer ces commandes pour les tester, sachez cependant que le PFScript </text><text styleclass="Highlight" translate="true">désactivera automatiquement</text><text styleclass="Normal" translate="true"> toutes ses fonctionnalités pour prévenir l&apos;apparition d&apos;erreurs liées au blocage de ces commandes.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="12" type="ul" listtype="bullet" formatstring="&#216;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Subtopic" style="font-family:Wingdings; font-size:10pt; color:#008080;">
+      <li styleclass="Subtopic"><anchor id="diskspace" styleclass="Subtopic"><keywords><keyword translate="true">Pré-Requis<keyword translate="true">Espace Disque</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">L&apos;espace disque restant doit être supérieur à 20 Mo</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">De manière générale, il n&apos;est pas bon d&apos;utiliser des disques durs quasiment remplis, Windows vous prévient assez souvent pour que vous </text><text styleclass="Highlight" translate="true">effectuiez des sauvegardes</text><text styleclass="Normal" translate="true"> pour libérer un peu de place sur le disque. Cependant, si vous n&apos;avez absolument pas le choix et que vous décidiez d&apos;ignorer ces avertissements, vous pouvez quand même utiliser le PFScript, mais ne soyez pas étonnés si des erreurs liées au </text><text styleclass="Highlight" translate="true">manque de place libre</text><text styleclass="Normal" translate="true"> apparaissent.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="13" type="ul" listtype="bullet" formatstring="&#216;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Wingdings; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Subtopic" translate="true">Le script doit contenir les </text><link displaytype="text" defaultstyle="true" type="topiclink" href="Fichiers_necessaires" styleclass="Subtopic" translate="true">fichiers nécessaires au programme</link><text styleclass="Subtopic" translate="true">.</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Certains fichiers sont absolument importants dans l&apos;exécution du programme. Voir la </text><link displaytype="text" defaultstyle="true" type="topiclink" href="Fichiers_necessaires" styleclass="Normal" translate="true">section correspondante</link><text styleclass="Normal" translate="true"> pour plus d&apos;informations.</text></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

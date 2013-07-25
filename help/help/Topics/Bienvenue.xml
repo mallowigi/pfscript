@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Bienvenue</title>
+  <keywords>
+    <keyword translate="true">Bienvenue</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><image src="img_1.jpg" scale="100.00%" styleclass="Image Caption"></image><text styleclass="Heading1" translate="true"> Bienvenue sur l&apos;aide du Pokemon-France Script!</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Bienvenue sur l&apos;aide sur la toute dernière version du </text><text styleclass="Highlight" translate="true">Pokemon France Script</text><text styleclass="Normal" translate="true">, ou </text><text styleclass="Highlight" translate="true">PFScript</text><text styleclass="Normal" translate="true"> !</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript est une copie du célèbre client de communication IRC </text><text styleclass="Highlight" translate="true">mIRC</text><text styleclass="Normal" translate="true">, client pour </text><text styleclass="Highlight" translate="true">Windows</text><text styleclass="Normal" translate="true"> permettant de communiquer sur les salons des serveurs IRC partout dans le monde, que vous pourrez trouver à l&apos;adresse suivante: </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.com" target="_blank" styleclass="Normal" translate="true">http://www.mirc.com</link></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">L&apos;intérêt de mIRC est qu&apos;il possède une </text><text styleclass="Highlight" translate="true">interface simple, colorée et entièrement personnalisable</text><text styleclass="Normal" translate="true"> grâce à son </text><text styleclass="Highlight" translate="true">propre langage de scripting</text><text styleclass="Normal" translate="true"> permettant aux utilisateurs de développer leurs propres scripts facilement, pouvant aller de simples messages d&apos;accueil à de véritables interfaces graphiques. </text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript en est un exemple concret, en plus des fonctionnalités offertes par mIRC, il dispose en outre d&apos;une multitude de fonctionnalités toutes plus ou moins utiles, telles que des services d&apos;</text><text styleclass="Highlight" translate="true">identification automatique</text><text styleclass="Normal" translate="true">, des systèmes de </text><text styleclass="Highlight" translate="true">protection contre le flood</text><text styleclass="Normal" translate="true">, un </text><text styleclass="Highlight" translate="true">gestionnaire de thèmes</text><text styleclass="Normal" translate="true"> ou encore des petits gadgets amusants tel qu&apos;un gestionnaire de citations (&quot;quotes&quot;), un lanceur d&apos;applications, etc...</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si vous êtes nouveau sur IRC, n&apos;hésitez pas à consulter </text><link displaytype="text" defaultstyle="true" type="topiclink" href="Bienvenue" styleclass="Normal" translate="true">l&apos;aide de mIRC</link><text styleclass="Normal" translate="true"> pour plus d&apos;informations sur le fonctionnement du protocole IRC: Connexion à un serveur, Joindre un canal, Messages privés, etc... Sinon, jetez un coup d&apos;oeil aux différentes sections du script pour pouvoir profiter pleinement de ses fonctionnalités.</text></para>
+  </body>
+</topic>

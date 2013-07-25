@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<helpproject xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="helpproject.xsd" version="1.5" isskin="false">
+  <config>
+    <namespaces/>
+    <helpwindows>
+      <helpwindow name="Main" left="-1" top="-1" width="-1" height="-1">
+        <caption translate="true">&lt;%TITLE%&gt;</caption>
+        <window-options-hlp autosize="true" maximize="false" posabsolute="false" keepontop="false" buttons="0" headercolor="#F0F0F0" textcolor="#FFFFFF"/>
+        <window-options-chm navigation="true" navigationwidth="200" search="true" favorite="true" saveregistry="true" buttons="12366">
+          <user-button name="jump1">
+            <caption translate="true">jump1</caption>
+          </user-button>
+          <user-button name="jump2">
+            <caption translate="true">jump2</caption>
+          </user-button>
+        </window-options-chm>
+      </helpwindow>
+    </helpwindows>
+    <styleclasses>
+      <styleclass name="Code Example" shortcut="0">
+        <style-set media="screen" type="para">background-color:transparent; white-space:nowrap; page-break-inside:avoid;</style-set>
+        <style-set media="screen" type="text">font-family:'Courier New'; font-size:10pt; background-color:#f4f2f3;</style-set>
+      </styleclass>
+      <styleclass name="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-family:Verdana; font-size:10pt;</style-set>
+      </styleclass>
+      <styleclass name="Comment" parentclass="Normal" shortcut="0"/>
+      <styleclass name="File" parentclass="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-weight:bold; color:#008000;</style-set>
+      </styleclass>
+      <styleclass name="Heading1" parentclass="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-size:16pt; font-weight:bold;</style-set>
+      </styleclass>
+      <styleclass name="Highlight" parentclass="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-weight:bold; color:#000080;</style-set>
+      </styleclass>
+      <styleclass name="Image Caption" parentclass="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-size:8pt; font-weight:bold;</style-set>
+      </styleclass>
+      <styleclass name="Notes" parentclass="Normal" shortcut="0"/>
+      <styleclass name="Subheading" parentclass="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-size:12pt; font-weight:bold;</style-set>
+      </styleclass>
+      <styleclass name="Subtopic" parentclass="Normal" shortcut="0">
+        <style-set media="screen" type="text">font-weight:bold; color:#008080;</style-set>
+      </styleclass>
+      <tablestyleclass name="Default">
+        <style-set media="screen">width:auto; cell-padding:0px; cell-spacing:0px; page-break-inside:auto; border-width:0px; border-spacing:0px; cell-border-width:0px; border-style:none; background-color:none; head-row-background-color:none; alt-row-background-color:none;</style-set>
+      </tablestyleclass>
+    </styleclasses>
+    <config-group name="project">
+      <config-value name="title" translate="true">Pokemon France Script - Aide</config-value>
+      <config-value name="author" translate="true">Klarth</config-value>
+      <config-value name="copyright" translate="true">© 2011 Klarth Corp.</config-value>
+      <config-value name="versionmajor">1</config-value>
+      <config-value name="versionminor">0</config-value>
+      <config-value name="versionbuild">0</config-value>
+      <config-value name="lcid" translate="true">fr-fr</config-value>
+      <config-value name="charset" translate="true">ANSI_CHARSET</config-value>
+      <config-value name="deffont">font-family:'MS Sans Serif'; font-size:9pt; color:#000000;</config-value>
+      <config-value name="autohelpstart">26</config-value>
+      <config-value name="autohelpincrement">1</config-value>
+      <config-value name="autohelpanchor">0</config-value>
+      <config-value name="searchpath">.\</config-value>
+      <config-group name="custombuilds">
+        <config-value name="demo">Demo Build</config-value>
+        <config-value name="user1">User defined 1</config-value>
+        <config-value name="user2">User defined 2</config-value>
+        <config-value name="user3">User defined 3</config-value>
+      </config-group>
+      <config-value name="imageshortcuts_includebaggage">1</config-value>
+      <config-value name="lastedited">-1</config-value>
+      <config-value name="contents">Bienvenue</config-value>
+      <config-value name="bidimode">0</config-value>
+      <config-value name="openchildreadonly">1</config-value>
+      <config-value name="vcsmanuallycheckout">0</config-value>
+      <config-value name="make0include">CHM</config-value>
+      <config-value name="make0status">*</config-value>
+      <config-value name="LISTSTYLES"></config-value>
+      <config-group name="spellcheck">
+        <config-value name="project">0</config-value>
+      </config-group>
+    </config-group>
+    <config-group name="html">
+      <config-value name="topiceditor">1</config-value>
+      <config-value name="topicsimpleheadercolor">#FFFFFF</config-value>
+      <config-value name="topicsimpletextcolor">#FFFFFF</config-value>
+      <config-value name="topicsimplebuttons">1</config-value>
+      <config-group name="TOPICSIMPLEBUTTON1">
+        <config-value name="CAPTION" translate="true">Top</config-value>
+      </config-group>
+      <config-group name="TOPICSIMPLEBUTTON2">
+        <config-value name="CAPTION" translate="true">Previous</config-value>
+      </config-group>
+      <config-group name="TOPICSIMPLEBUTTON3">
+        <config-value name="CAPTION" translate="true">Next</config-value>
+      </config-group>
+      <config-group name="TOPICTEMPLATES">
+        <config-value name="Default" translate="true"><![CDATA[<%DOCTYPE%>
+<html>
+<head>
+   <title><%TOPIC_TITLE%></title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="<%TOPIC_KEYWORDS%>" />
+   <meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>" />
+   <meta http-equiv="Content-Style-Type" content="text/css" />
+   <link type="text/css" href="<%STYLESHEET%>" rel="stylesheet" />
+</head>
+<body style="margin: 0px 0px 0px 0px; background: #FFFFFF;">
+
+<IF_TOPIC_HEADER>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+  <tr valign="middle">
+    <td align="left" style="padding: 5px 0 0 10px">
+      <span style="font-family:Verdana;font-size: 14pt; color: Darkblue;font-weight:bold;">
+      <%TOPIC_HEADER%>
+      </span>
+    </td>
+  </tr>
+</table>
+<hr style="margin:5px;height:1px;color:gray"/>
+</IF_TOPIC_HEADER>
+
+<!-- Placeholder for topic body. -->
+<table width="100%" border="0" cellspacing="0" cellpadding="5"><tr valign="top"><td align="left">
+<%TOPIC_TEXT%>
+</td></tr></table>
+<br/><br/>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tr valign="top"><td align="center" bgcolor="#D0D0D0" style="font-family:Tahoma; font-size:9pt; font-style:italic">
+  <%COPYRIGHT%>
+</td></tr></table>
+</body>
+</html>]]></config-value>
+      </config-group>
+    </config-group>
+    <config-group name="user">
+      <config-group name="helio">
+        <config-group name="project">
+          <config-value name="lastexport">0</config-value>
+        </config-group>
+      </config-group>
+    </config-group>
+    <config-group name="chm">
+      <config-value name="outputfile">pfscript.chm</config-value>
+      <config-value name="deletetemp">1</config-value>
+    </config-group>
+    <variables>
+      <variable id="MIRCVER" type="text" translate="true">7.19</variable>
+      <variable id="VERSION" type="text" translate="true">4.0</variable>
+    </variables>
+    <helpcontext-numbers>
+      <helpcontext-number href="Auteur" value="10"/>
+      <helpcontext-number href="Autocompletion" value="26"/>
+      <helpcontext-number href="Autres_Fichiers" value="15"/>
+      <helpcontext-number href="Bienvenue" value="1"/>
+      <helpcontext-number href="Commandes" value="21"/>
+      <helpcontext-number href="Commandes_CLI" value="22"/>
+      <helpcontext-number href="Copier_Coller" value="24"/>
+      <helpcontext-number href="Correction" value="25"/>
+      <helpcontext-number href="Fichiers_necessaires" value="14"/>
+      <helpcontext-number href="Fonctionnalites" value="17"/>
+      <helpcontext-number href="Fonctionnalites_Generales" value="18"/>
+      <helpcontext-number href="Licence" value="12"/>
+      <helpcontext-number href="Ordre_dexecution" value="16"/>
+      <helpcontext-number href="PremiersPas" value="11"/>
+      <helpcontext-number href="Pre-Requis" value="13"/>
+      <helpcontext-number href="Queries" value="23"/>
+      <helpcontext-number href="Raccourcis_Fn" value="19"/>
+      <helpcontext-number href="Serveurs_Favoris" value="20"/>
+    </helpcontext-numbers>
+  </config>
+  <xi:include parse="xml" href="Maps/table_of_contents.xml"/>
+  <project-files>
+    <file href="Topics/*.xml" build="ALL" filetype="topic"/>
+    <file href="Baggage/*.*" build="ALL" filetype="baggage"/>
+  </project-files>
+</helpproject>

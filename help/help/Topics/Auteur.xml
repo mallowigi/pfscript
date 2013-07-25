@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="helpproject.xsl" ?>
+<topic template="Default" status="Complete" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="helpproject.xsd">
+  <title translate="true">Auteur</title>
+  <keywords>
+    <keyword translate="true">Auteur</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Auteur</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le script a été en grande partie réalisé par </text><link displaytype="text" defaultstyle="true" type="weblink" href="mailto:mariosmilax@free.fr?subject=A propos" styleclass="Normal" translate="true">Klarth</link><text styleclass="Normal" translate="true">, sur la base du fameux script qu&apos;est le </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://nnscript.de" target="_blank" styleclass="Normal" style="font-weight:bold;" translate="true">NoNameScript</link><text styleclass="Normal" translate="true">. Mais même s&apos;il s&apos;en inspire, le PFScript a été cependant développé de A à Z, à l&apos;exception de quelques scripts téléchargés sur </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mircscripts.org" target="_blank" styleclass="Normal" translate="true">mircscripts.org</link><text styleclass="Normal" translate="true">, avec mention des auteurs bien évidemment.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Une mention spéciale donc pour les codeurs du </text><text styleclass="Highlight" translate="true">NNScript</text><text styleclass="Normal" translate="true"> et de </text><text styleclass="Highlight" translate="true">MIRCScripts.org</text><text styleclass="Normal" translate="true"> ;)</text></para>
+  </body>
+</topic>

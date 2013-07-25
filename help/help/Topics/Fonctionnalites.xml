@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Fonctionnalités</title>
+  <keywords>
+    <keyword translate="true">Fonctionnalités</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Fonctionnalités du Script</text></para>
+    </header>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cliquez sur une section pour afficher son contenu : </text></para>
+    <para styleclass="Normal"></para>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><link displaytype="text" defaultstyle="true" type="topiclink" href="Fonctionnalites_Generales" styleclass="Subtopic" translate="true">Fonctionnalités générales</link></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Sauvegarde des clés des canaux</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Vérification des mises à jour au démarrage</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Réinitialisation automatique du temps d&apos;idle</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Splash screen</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Astuces du jour</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Affichage des highlights dans la fenêtre active</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Affichage des highlights dans une fenêtre spéciale</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Affichage des notices dans une fenêtre spéciale</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Affichage des messages des services dans une fenêtre spéciale</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><link displaytype="text" defaultstyle="true" type="topiclink" href="Raccourcis_Fn" styleclass="Subtopic" translate="true">Assignation de raccourcis aux touches Fn</link></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Serveurs Favoris</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Collage (Ctrl+V) différé</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Queries</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Fermeture automatique des queries ouvertes</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Affichage des évènements dans les queries</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Ouverture automatique de queries avec certains users</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Correction automatique</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Mode Away amélioré</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Away Logging: Affichage de certains highlights survenus lorsque vous êtes absent</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Répondeur: Affichage d&apos;un message rappelant que vous êtes absent</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Auto-Away: Mise automatique en mode absent après une certaine durée</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Reconnexion: Garder le statut away après une reconnexion</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Barres</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Barre de titre personnalisée avec icône personnalisable</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Barre d&apos;état (Statusbar)</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Barre d&apos;outils (Toolbar)</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Protections</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Protections différentes selon les canaux</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Protections contre: Pub, Badwords, Majs, Codes, CTCP Flood, Hop Flood, Notice Flood, Répétitions et Flood</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Protections personnelles contre: Bans, CTCP Flood, DCC Flood, Highlight Flood, Invite Flood, Notice Flood, Query Flood et Spam</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Blacklist et Whitelist</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Messages prédéfinis</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Messages de kick</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Messages de quit</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Messages perso (Slaps)</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Services IRC</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Auto-identification de pseudos</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Auto-identification de canaux</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Raccourcis de commandes des services NickServ, ChanServ &amp; BotServ</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Vérificateur de nouveaux mails (experimental)</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Gestionnaire de thèmes</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Gestion des thèmes au format MTS (mIRC Theme Standard)</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Gestion des thèmes au format NNT (NNScript Themes)</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Remplacement de polices</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Coloriage automatique des pseudos</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Commande echo personnalisée</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Complétion des pseudos</text></li>
+      <list id="6" level="1" type="ul" listtype="bullet" formatstring="&#111;" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:&apos;Courier New&apos;; font-size:10pt; color:#008080;">
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Complétion via un déclencheur spécifique</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Delete Tab: Touche Del efface le pseudo entier</text></li>
+        <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">Complétion intelligente: Le dernier pseudo ayant parlé sur le canal apparaitra en premier dans la liste</text></li>
+      </list>
+    </list>
+    <list id="6" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:10pt; color:#008080;">
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Statistiques</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Lanceur d&apos;applications (applauncher)</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" translate="true">Gestionnaire de citations</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

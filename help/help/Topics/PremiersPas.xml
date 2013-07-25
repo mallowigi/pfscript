@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="helpproject.xsl" ?>
+<topic template="Default" status="Complete" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="helpproject.xsd">
+  <title translate="true">Premiers Pas</title>
+  <keywords>
+    <keyword translate="true">Premiers Pas</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Premiers Pas avec le script</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Avant de commencer à utiliser le script, il est nécessaire de le </text><text styleclass="Highlight" translate="true">configurer</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Avant toute chose, veuillez configurer mIRC en ouvrant les </text><text styleclass="Highlight" translate="true">Options</text><text styleclass="Normal" translate="true"> (Alt+O). Bien que le script soit préconfiguré pour un usage quotidien, jetez-y quand même un coup d&apos;oeil et modifiez ce qui vous semble modifiable. Cette aide ne couvre pas les options de mIRC, pour cela réferez-vous à </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.com" target="_blank" styleclass="Normal" translate="true">l&apos;aide de mIRC</link><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Une fois que vous avez configuré mIRC à votre guise, vous pouvez à présent configurer le PFScript. Normalement lorsque vous lancez le script pour la première fois, le menu des </text><text styleclass="Highlight" translate="true">Options</text><text styleclass="Normal" translate="true"> vous sera affiché automatiquement pour que vous puissiez le configurer. Sinon, vous avez le choix entre trois possibilités:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:10pt; font-weight:normal;" translate="true">- A partir du menu de mIRC: </text><text styleclass="Highlight" translate="true">PFScript -&gt; Préférences</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:10pt; font-weight:normal;" translate="true">- A partir de la barre d&apos;outils (Barre d&apos;outils perso uniquement)</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:10pt; font-weight:normal;" translate="true">- En tapant </text><text styleclass="Highlight" translate="true">/setup</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Une fois que vous avez ouvert le menu des Options, vous devriez avoir une fenêtre du style:</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="img_1.png" scale="100.00%" padding="1" styleclass="Normal"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">La </text><text styleclass="Highlight" translate="true">table des matières</text><text styleclass="Normal" translate="true"> à gauche présente les différentes sections de configuration du script. Cliquez sur une section pour afficher les options qu&apos;elle contient. Lorsque vous avez terminé, fermez la fenêtre ou cliquez sur OK.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">Note</text><text styleclass="Normal" translate="true">: Les options sont modifiées &quot;</text><text styleclass="Normal" style="text-decoration:underline;" translate="true">à la volée</text><text styleclass="Normal" translate="true">&quot;, ce qui signifie qu&apos;une fois que vous avez modifié une option, celle-ci est modifiée immédiatement, il n&apos;y a donc pas de moyen de revenir en arrière en fermant la fenêtre par exemple. Si jamais vous désirez revenir à la configuration par défaut, renommez le fichier de configuration &quot;</text><text styleclass="Highlight" translate="true">pfscript.ini</text><text styleclass="Normal" translate="true">&quot; en &quot;pfscript.ini.bak&quot; (pour pouvoir garder une copie de sauvegarde au cas où), et relancez le script: un nouveau fichier pfscript.ini sera créé avec les </text><text styleclass="Highlight" translate="true">options par défaut</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Faites donc un tour parmi les différentes options pour voir celles qui pourraient vous intéresser. Pour le moment, nous allons nous intéresser aux </text><text styleclass="Highlight" translate="true">Options Générales</text><text styleclass="Normal" translate="true">. Cliquez sur la sous-section &quot;</text><text styleclass="Highlight" translate="true">Générales</text><text styleclass="Normal" translate="true">&quot; de la section &quot;Options Générales&quot;. Voici quelques unes des options qu&apos;elle contient:</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="0" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Normal"><text styleclass="Subtopic" translate="true">Garder les clés des canaux en mémoire</text></li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Lorsque vous entrez sur un canal protégé par une clé (+k) en entrant la clé (commande &quot;/join #canal &lt;clé&gt;&quot;), celle-ci sera automatiquement mise en mémoire si cette option est cochée. Dès lors, vous pouvez entrer sur le canal en tapant simplement &quot;/join #canal&quot; sans besoin de spécifier la clé.</text></para>
+    <para styleclass="Normal"></para>
+    <list id="1" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Normal"><text styleclass="Subtopic" translate="true">Vider le presse-papiers à la fermeture</text></li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette option vide le contenu du presse-papiers lorsque vous quittez mIRC. Pratique lorsque vous copiez/collez souvent des pans de phrases des canaux qui peuvent prendre de la place ou devenir embarassants à dévoiler hors d&apos;IRC.</text></para>
+    <para styleclass="Normal"></para>
+    <list id="2" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Subtopic" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Subtopic"><text styleclass="Subtopic" translate="true">Format des messages publics</text></li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Spécifie le format des messages publics tels que le répondeur en cas d&apos;absence, où encore les infos système, etc...</text></para>
+    <para styleclass="Normal"></para>
+    <list id="3" type="ul" listtype="bullet" formatstring="&#183;" format-charset="SYMBOL_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Subtopic" style="font-family:Symbol; font-size:8pt; color:#000000;">
+      <li styleclass="Subtopic"><text styleclass="Subtopic" translate="true">Afficher les highlights dans la fenêtre active</text></li>
+    </list>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette option affiche un message signalant qu&apos;un message contenant un highlight a été prononcé sur un autre canal que le canal actif. Pratique notamment lorsque vous avez un Highlight sur votre pseudo.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Voici pour les options les plus importantes de cette section. Passez ensuite à la section &quot;</text><text styleclass="Highlight" translate="true">Serveurs</text><text styleclass="Normal" translate="true">&quot;.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="img_2.png" scale="100.00%" padding="1" styleclass="Normal"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette section permet de paramétrer un certain nombre de </text><text styleclass="Highlight" translate="true">champs d&apos;identification</text><text styleclass="Normal" translate="true"> sur chacun de vos serveurs favoris tels que votre pseudo habituel, votre pseudo alternatif, etc... Puisque le script a été conçu pour </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.epiknet.org" target="_blank" styleclass="Normal" style="font-weight:bold;" translate="true">Epiknet</link><text styleclass="Normal" translate="true">, configurons donc le serveur Epiknet.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Affichez le serveur Epiknet dans la liste de gauche. Si il n&apos;y est pas, cela signifie que vous ne disposez pas de la dernière liste des </text><text styleclass="Highlight" translate="true">serveurs IRC</text><text styleclass="Normal" translate="true"> (fichier </text><text styleclass="Normal" style="font-weight:bold;" translate="true">servers.ini</text><text styleclass="Normal" translate="true">). Vous pouvez le télécharger sur le </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.com" styleclass="Normal" translate="true">site officiel</link><text styleclass="Normal" translate="true">. Ensuite, cliquez sur la flèche de droite pour l&apos;ajouter à vos serveurs favoris.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Les champs en dessous sont à présent éditables. Remplissez chacun des champs et cochez les checkboxes que vous souhaitez. A présent, à chaque fois que vous vous connecterez sur Epiknet, vous vous </text><text styleclass="Highlight" translate="true">connecterez avec ces valeurs</text><text styleclass="Normal" translate="true">, que ce soit votre pseudonyme principal, votre pseudonyme alternatif, votre nom réel, votre email, etc... Pour supprimer ces paramètres, sélectionnez le serveur de la liste de droite et cliquez sur la flèche de gauche.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Enfin, pour terminer, nous allons enregistrer votre pseudo sur le serveur (dans cet exemple, Epiknet). Pour cela, choisissez la section &quot;</text><text styleclass="Highlight" translate="true">NickServ</text><text styleclass="Normal" translate="true">&quot; dans la catégorie &quot;</text><text styleclass="Highlight" translate="true">Services IRC</text><text styleclass="Normal" translate="true">&quot;.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="img_3.png" scale="100.00%" padding="1" styleclass="Normal"></image></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette section comporte deux parties: la première partie concerne l&apos;</text><text styleclass="Highlight" translate="true">auto-identification</text><text styleclass="Normal" translate="true"> de vos pseudos, et la seconde représente un panel d&apos;actions que vous pouvez effectuer une fois connecté au serveur concernant le </text><text styleclass="Highlight" translate="true">service de pseudos (NickServ)</text><text styleclass="Normal" translate="true">, tels que l&apos;enregistrement de pseudos, le changement de mot de passe, etc.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si vous disposez déjà d&apos;un pseudo enregistré, simplement remplissez les champs d&apos;auto-identification afin que vous puissiez vous identifier à chaque connexion sur le serveur. Sinon, vous pouvez décider d&apos;enregistrer votre pseudo en cliquant sur le bouton &quot;</text><text styleclass="Highlight" translate="true">Enregistrer un pseudo</text><text styleclass="Normal" translate="true">&quot; (nécessite d&apos;être connecté au serveur d&apos;abord). Une fenêtre apparait alors vous demandant de renseigner un </text><text styleclass="Normal" style="font-weight:bold;" translate="true">mot de passe</text><text styleclass="Normal" translate="true"> qui sera le mot de passe de votre pseudo, et une </text><text styleclass="Normal" style="font-weight:bold;" translate="true">adresse email</text><text styleclass="Normal" translate="true"> qui sera utilisée en cas de perte du mot de passe. Ces informations fournies, un mail d&apos;activation vous sera envoyé à l&apos;adresse mentionnée, qui aura pour effet d&apos;enregistrer le pseudo sur le serveur. </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Cependant, ce n&apos;est pas encore fini, il vous faut encore entrer le pseudo et mot de passe dans les champs d&apos;auto-identification pour que celle-ci prenne effet</text><text styleclass="Normal" translate="true">!</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Une fois que vous avez fini de remplir tous les champs, cliquez sur OK pour fermer la fenêtre. A présent, vous n&apos;avez plus besoin de vous identifier, le script le fera tout seul!</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Bien entendu, cela ne représente qu&apos;une mince partie des possibilités du script. Si le coeur vous en dit, allez voir les autres fonctionnalités disponibles et configurez les à votre guise. Si vous avez besoin d&apos;aide, consultez la section appropriée, et si vous ne trouvez toujours pas de réponse à votre question, posez-les directement au </text><text styleclass="Highlight" translate="true">créateur du script</text><text styleclass="Normal" translate="true"> (cf </text><link displaytype="text" defaultstyle="true" type="topiclink" href="Auteur" styleclass="Normal" translate="true">Auteur</link><text styleclass="Normal" translate="true">)</text></para>
+  </body>
+</topic>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Ordre d&apos;exécution</title>
+  <keywords>
+    <keyword translate="true">Ordre d&apos;exécution</keyword>
+    <keyword translate="true">Pré-Requis<keyword translate="true">Ordre d&apos;exécution</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Ordre d&apos;exécution des scripts</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cette page présente l&apos;</text><text styleclass="Highlight" translate="true">ordre actuel de chargement</text><text styleclass="Normal" translate="true"> des scripts du PFScript permettant aux différents scripts de fonctionner ensemble. Rappel: Pour modifier l&apos;ordre d&apos;exécution, dans mIRC, ouvrez le </text><text styleclass="Highlight" translate="true">Scripts Editor</text><text styleclass="Normal" translate="true"> (Alt+R), puis allez dans </text><text styleclass="Highlight" translate="true">File -&gt; Order</text><text styleclass="Normal" translate="true"> et organisez les scripts.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cet ordre est très important, notamment pour les évènements appelant la commande /</text><text styleclass="Highlight" translate="true">halt</text><text styleclass="Normal" translate="true"> permettant de stopper l&apos;execution des commandes ultérieures. Par exemple, le fichier &quot;</text><text styleclass="Normal" style="font-style:italic;" translate="true">copypasta.mrc</text><text styleclass="Normal" translate="true">&quot;, qui remplace le Ctrl+V par une version améliorée du Ctrl+V, interrompt via &quot;</text><text styleclass="Normal" style="font-weight:bold;" translate="true">halt</text><text styleclass="Normal" translate="true">&quot; le comportement original du collage dans un évènement &quot;</text><text styleclass="Normal" style="font-weight:bold;" translate="true">ON *:TEXT</text><text styleclass="Normal" translate="true">&quot;.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ainsi, si ce fichier n&apos;était pas chargé </text><text styleclass="Highlight" translate="true">en amont</text><text styleclass="Normal" translate="true"> de tous les autres, mIRC ne stopperait pas automatiquement la commande Coller lors de l&apos;exécution des scripts antérieurs, causant au texte d&apos;être collé deux fois au lieu d&apos;une, ce qui serait très gênant. Ainsi, soyez vigilants lorsque vous écrivez vos scripts en les ordonnant convenablement.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Voici l&apos;ordre d&apos;exécution des scripts fournis lors d&apos;une installation fraîche:</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <list id="1" type="ol" listtype="decimal" formatstring="&#37;&#48;&#58;&#115;&#46;" format-charset="DEFAULT_CHARSET" levelreset="true" legalstyle="false" startfrom="1" styleclass="Normal" style="font-family:Verdana; font-size:8pt; color:#000000;">
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">startup.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Scripts lancés au démarrage</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">misc.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Fonctionnalités diverses (splash window, tips...)</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">stats.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Statistiques d&apos;utilisation</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">replace.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Auto-correction du texte envoyé</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">copypasta.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Remplacement de la commande &quot;Coller&quot;</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">idents.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Liste d&apos;identifieurs spéciaux</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">prot.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Protections spéciales</text></li>
+      <li styleclass="Normal"><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">autotab.mrc</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Autocomplétion améliorée</text></li>
+    </list>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Pour le reste, l&apos;ordre n&apos;est pas important, mis à part le fichier</text><text styleclass="Normal" style="font-weight:bold;" translate="true"> themes.mrc</text><text styleclass="Normal" translate="true"> qui doit se situer, au contraire, </text><text styleclass="Highlight" translate="true">en aval</text><text styleclass="Normal" translate="true"> de tous les scripts, car c&apos;est lui qui affichera le texte final à la fenêtre.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ainsi, lorsque vous écrivez vos propres scripts, réfléchissez bien pour déterminer à quelle position placer vos scripts: doit-il s&apos;activer avant l&apos;autocorrection? Avant les protections? etc... De plus, n&apos;oubliez pas de placer le signe &quot;</text><text styleclass="Highlight" translate="true">&amp;</text><text styleclass="Normal" translate="true">&quot; dans vos évènements (ex: ON &amp;*:TEXT:), permettant à mIRC de ne pas exécuter l&apos;évènement si une commande &quot;halt&quot; a été appelée dans un évènement d&apos;un </text><text styleclass="Highlight" translate="true">script antérieur</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">L&apos;ordre des scripts est une </text><text styleclass="Highlight" translate="true">grande source d&apos;erreur</text><text styleclass="Normal" translate="true"> dans le développement de scripts mIRC... ! :)</text></para>
+  </body>
+</topic>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="helpproject.xsl" ?>
+<topic template="Default" status="Complete" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="helpproject.xsd">
+  <title translate="true">Autres Fichiers</title>
+  <keywords>
+    <keyword translate="true">Autres Fichiers</keyword>
+    <keyword translate="true">Pré-Requis<keyword translate="true">Autres fichiers</keyword></keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Autres Fichiers</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Hormis les fichiers nécessaires à l&apos;exécution du script, le PFScript est aussi installé avec une ribambelle d&apos;</text><text styleclass="Highlight" translate="true">autres fichiers</text><text styleclass="Normal" translate="true">: scripts, fichiers texte, images, fichiers d&apos;aide, sons... Ces fichiers ne sont pas indispensables, mais font partie constituante du PFScript. Sans ces fichiers, le script marchera toujours, mais perdra ce qui le rend attrayant...</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Lors de l&apos;installation, si vous choisissez l&apos;</text><text styleclass="Highlight" translate="true">installation personnalisée</text><text styleclass="Normal" translate="true">, vous pouvez choisir quels fichiers installer ou non. Ces fichiers sont regroupés en catégories:</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">- Scripts</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">- Fichiers d&apos;aide</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">- Bibliothèques d&apos;images</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">- Polices</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">- Thèmes</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold;" translate="true">- Outils de développement</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Scripts:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Absence (Away)</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Protections</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Barres</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Thèmes</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Services IRC</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Autocorrection</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Copier/Coller</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Mail-check</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Quotes</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Applauncher</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Fichiers d&apos;aide:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Aide du PFScript</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Aide de mirc.ini</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Aide de MDX</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Aide de DCX</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Spécifications de MTS</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Guide de développement mIRC</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Bibliothèques d&apos;images:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Icônes</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Barres d&apos;outils</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Polices:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Polices spéciales</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Thèmes:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Thèmes MTS</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Thèmes NNT</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Outils de développement:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Plugin Notepad++</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Editeur mEditor</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Editeur de dialogues WYSIWIG</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Voir aussi: </text><link displaytype="text" defaultstyle="true" type="topiclink" href="Ordre_dexecution" styleclass="Normal" translate="true">Ordre d&apos;exécution des scripts</link></para>
+  </body>
+</topic>

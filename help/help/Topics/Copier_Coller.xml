@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Copier/Coller</title>
+  <keywords>
+    <keyword translate="true">/pstop</keyword>
+    <keyword translate="true">Copier/Coller</keyword>
+    <keyword translate="true">copypasta</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Copier/Coller</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ce topic présente les options de Copier/Coller (catégorie </text><text styleclass="Highlight" translate="true">Copier/Coller</text><text styleclass="Normal" translate="true"> dans les options, nom de code &quot;</text><text styleclass="Highlight" translate="true">copypasta</text><text styleclass="Normal" translate="true">&quot; dans la liste des fonctionnalités).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript améliore la fonctionnalité interne de </text><text styleclass="Highlight" translate="true">Copier/Coller</text><text styleclass="Normal" translate="true"> de mIRC en fournissant quelques fonctionnalités bien utiles, telles que le </text><text styleclass="Highlight" translate="true">Collage différé</text><text styleclass="Normal" translate="true">, qui permet de differer le collage afin d&apos;éviter la diffusion involontaire d&apos;informations ou encore afin d&apos;éviter de coller des lignes de flood au risque d&apos;un ban sur le canal sur lequel vous êtes.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="coller.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Subtopic"></para>
+    <para styleclass="Subtopic"><anchor id="collagediff" styleclass="Subtopic"><keywords><keyword translate="true">Copier/Coller<keyword translate="true">Collage différé</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Collage différé</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript altère la fonctionnalité interne du collage (</text><text styleclass="Highlight" translate="true">Ctrl + V</text><text styleclass="Normal" translate="true">) en offrant la possibilité de </text><text styleclass="Highlight" translate="true">différer</text><text styleclass="Normal" translate="true"> le collage. En activant le collage différé, lorsque vous collerez un texte à l&apos;aide de Ctrl+V, Ctrl+Inser ou option &quot;Coller&quot; dans le menu clic droit, le PFScript activera un décompte au cours duquel vous pourrez décider d&apos;interrompre le collage en tapant la commande </text><text styleclass="Highlight" translate="true">/pstop</text><text styleclass="Normal" translate="true"> (que vous pouvez assigner à une touche FN si vous le souhaitez).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le collage différé permet ainsi d&apos;éviter le collage involontaire d&apos;informations privées telles que des informations personnelles, mots de passe, etc... que vous avez copiées préalablement dans un autre but que de les diffuser sur un canal. D&apos;autre part, il vous permettra aussi d&apos;éviter des situations telles que le collage de multiples lignes provoquant un kick pour flood; le collage de lignes contenant des badwords; de lignes contenant un surplus de codes couleurs; etc...</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Vous avez le choix entre trois modes de collage:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Highlight" translate="true">Collage interdit</text><text styleclass="Normal" translate="true"> : Ne colle pas le texte lorsque celui-ci contient plus d&apos;une ligne.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Highlight" translate="true">Collage différé</text><text styleclass="Normal" translate="true"> : Diffère le collage dans les deux secondes qui suivent afin de permettre à l&apos;utilisateur d&apos;interrompre le collage en tapant la commande </text><text styleclass="Highlight" translate="true">/pstop</text><text styleclass="Normal" translate="true">. D&apos;autre part, des options de collage sont disponibles pour le collage différé qui sont:</text></para>
+    <para styleclass="Normal" style="text-indent:-12px; margin-right:0px; margin-left:49px; tabstops:none;"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">Différer le collage ligne par ligne</text><text styleclass="Normal" style="font-size:8pt;" translate="true"> : Lorsque vous collez un texte contenant plusieurs lignes, plutôt que de tout coller tout d&apos;un bloc, diffère le collage ligne par ligne à raison de X millisecondes par ligne, ceci afin d&apos;éviter la déconnexion par &quot;</text><text styleclass="Normal" style="font-size:8pt; font-style:italic;" translate="true">Excess Flood</text><text styleclass="Normal" style="font-size:8pt;" translate="true">&quot;.</text></para>
+    <para styleclass="Normal" style="text-indent:-12px; margin-right:0px; margin-left:49px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">- </text><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">Différer le collage uniquement si certaines conditions sont remplies</text><text styleclass="Normal" style="font-size:8pt;" translate="true">, à savoir:</text></para>
+    <para styleclass="Normal" style="text-indent:10px; margin-right:0px; margin-left:49px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Nombre de lignes du texte à coller</text></para>
+    <para styleclass="Normal" style="text-indent:10px; margin-right:0px; margin-left:49px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Taille en octets du texte à coller</text></para>
+    <para styleclass="Normal" style="text-indent:-12px; margin-right:0px; margin-left:49px; tabstops:none;"><text styleclass="Normal" style="font-size:8pt;" translate="true">- </text><text styleclass="Normal" style="font-size:8pt; font-weight:bold;" translate="true">Notification en cas de collage différé</text><text styleclass="Normal" style="font-size:8pt;" translate="true">: Affiche un texte sur le canal actif avertissant l&apos;utilisateur que le texte collé sera différé.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Highlight" translate="true">Collage normal</text><text styleclass="Normal" translate="true"> : Colle le texte tel quel.</text></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="Optionsdecollage" styleclass="Subtopic"><keywords><keyword translate="true">Copier/Coller<keyword translate="true">Options de Collage</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Options de collage</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Vous avez aussi la possibilité de modifier le </text><text styleclass="Highlight" translate="true">comportement du collage</text><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal" style="text-indent:-12px; margin-right:0px; margin-left:29px; tabstops:none;"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Couper les lignes de plus de X caractères</text><text styleclass="Normal" translate="true">: coupe par lignes le texte à coller à raison de X caractères par ligne.</text></para>
+    <para styleclass="Normal" style="text-indent:-12px; margin-right:0px; margin-left:29px; tabstops:none;"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Enlever les codes de couleurs</text><text styleclass="Normal" translate="true"> : Retire les codes de couleurs du texte à coller.</text></para>
+    <para styleclass="Normal" style="text-indent:-14px; margin-right:0px; margin-left:50px; tabstops:none;"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Seulement en cas de mode +c</text><text styleclass="Normal" translate="true"> : Activez cette option pour ne retirer les codes couleurs uniquement lorsque le canal est en mode +c (codes couleurs interdits).</text></para>
+    <para styleclass="Normal" style="text-indent:-12px; margin-right:0px; margin-left:29px; tabstops:none;"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Coller dans l&apos;editbox seulement</text><text styleclass="Normal" translate="true"> : Colle le texte directement dans l&apos;editbox sans l&apos;envoyer (utile pour modifier le texte avant de l&apos;afficher sur le canal).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>

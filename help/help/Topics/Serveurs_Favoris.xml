@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Serveurs Favoris</title>
+  <keywords>
+    <keyword translate="true">Connexion</keyword>
+    <keyword translate="true">servers</keyword>
+    <keyword translate="true">Serveurs Favoris</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Serveurs Favoris</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ce topic présente les options de connexion à vos </text><text styleclass="Highlight" translate="true">serveurs favoris</text><text styleclass="Normal" translate="true">. (catégorie &quot;</text><text styleclass="Highlight" translate="true">Serveurs</text><text styleclass="Normal" translate="true">&quot; dans les options, nom de code &quot;</text><text styleclass="Highlight" translate="true">servers</text><text styleclass="Normal" translate="true">&quot; dans la liste des fonctionnalités).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">mIRC vous offre la possibilité de vous connecter à un serveur parmi une liste de </text><text styleclass="Highlight" translate="true">serveurs prédéfinis</text><text styleclass="Normal" translate="true"> (qui se trouve dans le fichier &quot;</text><text styleclass="File" translate="true">servers.ini</text><text styleclass="Normal" translate="true">&quot;, situé à la racine du programme). Pour cela, allez dans les options de mIRC, catégorie &quot;</text><text styleclass="Normal" style="font-weight:bold;" translate="true">Connect -&gt; Servers</text><text styleclass="Normal" translate="true">&quot;, et choisissez le serveur sur lequel vous voulez vous connecter. Vous vous connecterez alors avec les informations entrées dans l&apos;onglet &quot;</text><text styleclass="Normal" style="font-weight:bold;" translate="true">Connect</text><text styleclass="Normal" translate="true">&quot;.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Si vous avez l&apos;habitude de ne vous connecter qu&apos;à un seul serveur, alors cette fonctionnalité vous sera sûrement peu utile. Cependant, si vous avez l&apos;habitude de vous connecter à plusieurs serveurs différents, il est probable que vous ayiez envie de vous connecter à chacun des serveurs avec des informations différentes: </text><text styleclass="Highlight" translate="true">pseudonyme principal</text><text styleclass="Normal" translate="true">, </text><text styleclass="Highlight" translate="true">nom réel</text><text styleclass="Normal" translate="true">, </text><text styleclass="Highlight" translate="true">adresse mail</text><text styleclass="Normal" translate="true">... option que mIRC n&apos;offre pas nativement.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript comble ce manque en vous permettant de choisir vos </text><text styleclass="Highlight" translate="true">serveurs favoris</text><text styleclass="Normal" translate="true"> parmi la liste des serveurs disponibles et d&apos;entrer pour chacun d&apos;eux vos </text><text styleclass="Highlight" translate="true">informations d&apos;identification</text><text styleclass="Normal" translate="true"> sur ce serveur, à savoir:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Nom réel</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Adresse email de contact</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Pseudonyme principal</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Pseudo alternatif</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Port à utiliser</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Identifiant sur le serveur (identd)</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Mais aussi une liste d&apos;</text><text styleclass="Highlight" translate="true">options</text><text styleclass="Normal" translate="true"> lors de la connexion au serveur, qui sont:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Connexion automatique au démarrage</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Connexion en mode invisible</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Connexion sécurisée avec SSL (nécessite le plugin libssl, voir aide de mIRC)</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Reconnexion automatique</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-size:8pt;" translate="true">- Commandes à exécuter lors de la connexion</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Ainsi, lorsque vous vous connecterez à l&apos;un de vos serveurs favoris, mIRC vous connectera avec ces informations et ces options, qui seront différentes d&apos;un serveur à l&apos;autre.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal" style="text-align:center;"><image src="img_2.png" scale="100.00%" styleclass="Image Caption"></image></para>
+    <para styleclass="Normal" style="text-align:center;"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Voici une courte description des boutons et champs disponibles:</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="servdispo" styleclass="Subtopic"><keywords><keyword translate="true">Serveurs Favoris<keyword translate="true">Serveurs disponibles</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Serveurs disponibles</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Affiche la liste des serveurs disponibles (fichier </text><text styleclass="Highlight" translate="true">servers.ini</text><text styleclass="Normal" translate="true">). Si la liste est vide ou qu&apos;il manque certains serveurs, téléchargez le fichier servers.ini sur le </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.com" target="_blank" styleclass="Normal" translate="true">site officiel de mIRC</link><text styleclass="Normal" translate="true">.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="servfav" styleclass="Subtopic"><keywords><keyword translate="true">Serveurs Favoris<keyword translate="true">Favoris</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Serveurs favoris</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Affiche la liste de vos </text><text styleclass="Highlight" translate="true">serveurs favoris</text><text styleclass="Normal" translate="true">. L&apos;ordre représente l&apos;ordre de connexion à chacun des serveurs.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cliquer sur l&apos;un des serveurs affiche les informations de connexion au serveur en question.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><text styleclass="Subtopic" translate="true">Flèches gauche et droite</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Cliquer sur la </text><text styleclass="Highlight" translate="true">flèche droite</text><text styleclass="Normal" translate="true"> en ayant un serveur sélectionné dans la liste des serveurs disponibles a pour effet d&apos;ajouter ledit serveur dans la liste des serveurs favoris.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">La </text><text styleclass="Highlight" translate="true">flèche de gauche</text><text styleclass="Normal" translate="true"> effectue l&apos;opération inverse. </text></para>
+    <para styleclass="Normal"><text styleclass="Normal" style="font-weight:bold; color:#ff0000;" translate="true">Attention: Enlever un serveur de la liste des serveurs favoris efface définitivement les informations de connexion enregistrées! (Même si vous le reajoutez par la suite, vous devrez reremplir les informations de connexion).</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><text styleclass="Subtopic" translate="true">Flèches haut et bas</text></para>
+    <para styleclass="Normal"><text styleclass="Highlight" translate="true">Ordonne</text><text styleclass="Normal" translate="true"> la connexion aux serveurs favoris.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Subtopic"><anchor id="paramsServ" styleclass="Subtopic"><keywords><keyword translate="true">Serveurs Favoris<keyword translate="true">Paramètres des serveurs favoris</keyword></keyword></keywords></anchor><text styleclass="Subtopic" translate="true">Paramètres des serveurs favoris</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Spécifie les </text><text styleclass="Highlight" translate="true">informations de connexion</text><text styleclass="Normal" translate="true"> et les </text><text styleclass="Highlight" translate="true">options de connexion</text><text styleclass="Normal" translate="true"> au serveur favori sélectionné:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Nom Complet</text><text styleclass="Normal" translate="true">: Nom affiché lors d&apos;un Whois.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Adresse email</text><text styleclass="Normal" translate="true">: Adresse email affichée lors d&apos;un Whois.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Pseudonyme principal</text><text styleclass="Normal" translate="true"> : Pseudonyme pris sur ce serveur.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Pseudonyme alternatif</text><text styleclass="Normal" translate="true"> : Pseudonyme pris lorsque le pseudo principal est indisponible.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Port par défaut</text><text styleclass="Normal" translate="true">: Port de connexion au serveur.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Identifiant identd</text><text styleclass="Normal" translate="true">: Identifiant de connexion au serveur (identd) sur ce serveur.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Connexion au démarrage</text><text styleclass="Normal" translate="true">: Vous connecte au serveur sélectionné à chaque démarrage de mIRC.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Mode invisible</text><text styleclass="Normal" translate="true">: Vous évite d&apos;être affiché dans les commandes /who (dépend de la configuration du serveur)</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Utiliser SSL</text><text styleclass="Normal" translate="true">: Vous permet de vous connecter au serveur de manière sécurisée. Nécessite la présence de la librairie </text><text styleclass="File" translate="true">openSSL</text><text styleclass="Normal" translate="true"> (cf </text><link displaytype="text" defaultstyle="true" type="weblink" href="http://www.mirc.com" target="_blank" styleclass="Normal" translate="true">aide de mIRC</link><text styleclass="Normal" translate="true">)</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Reconnexion automatique</text><text styleclass="Normal" translate="true">: En cas de déconnexion soudaine, vous reconnecte au serveur.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">- </text><text styleclass="Normal" style="font-weight:bold;" translate="true">Activer Perform</text><text styleclass="Normal" translate="true">: Appliquer les commandes spécifiées dans le menu &quot;</text><text styleclass="Highlight" translate="true">Perform</text><text styleclass="Normal" translate="true">&quot; des options de mIRC (</text><text styleclass="Normal" style="font-weight:bold;" translate="true">Connect -&gt; Options -&gt; Perform</text><text styleclass="Normal" translate="true">)</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Note: Laissez un champ vide pour utiliser a valeur </text><text styleclass="Highlight" translate="true">par défaut</text><text styleclass="Normal" translate="true"> (définie dans les options de mIRC).</text></para>
+  </body>
+</topic>

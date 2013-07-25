@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../helpproject.xsl" ?>
+<topic template="Default" lasteditedby="helio" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../helpproject.xsd">
+  <title translate="true">Commandes CLI</title>
+  <keywords>
+    <keyword translate="true">Commandes CLI</keyword>
+  </keywords>
+  <body>
+    <header>
+      <para styleclass="Heading1"><text styleclass="Heading1" translate="true">Commandes CLI</text></para>
+    </header>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Le PFScript est un script surtout visuel, où tout se modifie par le biais de fenêtres, de boites de dialogues et autres moyens graphiques. Cependant, certains peuvent préférer de ne pas passer par l&apos;interface graphique pour appliquer leurs changements, que ce soit pour des raisons de mémoire, de rapidité ou tout simplement par choix personnel, et préféreraient avoir à taper directement leur commande pour appliquer leurs modifications. C&apos;est pour cela que le PFScript dispose de commandes spécifiques à cet effet, regroupées sous le nom de &quot;</text><text styleclass="Highlight" translate="true">Commandes CLI</text><text styleclass="Normal" translate="true"> (Command Line Interface)&quot; et qui vont directement agir sur les options du script sans que l&apos;utilisateur n&apos;aie à passer par la fenêtre d&apos;options.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Voici la liste des différentes commandes, regroupées par sections représentant les fonctionnalités du script.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Options Générales</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="misc.options" styleclass="Highlight"><keywords><keyword translate="true">/misc.options</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/misc.options [-skuacvdpth] [&lt;nombre&gt;]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Modifie les options générales du script.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s: ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-k: active/désactive option &quot;garder clé des canaux en mémoire&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-u: active/désactive option &quot;vérifier mises à jour&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-a suivi d&apos;un nombre: change la durée de l&apos;antiidle</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-c: active/désactive option &quot;compteur de kicks&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-v: active/désactive option &quot;vider le presse papiers&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-d: active/désactive option &quot;dcc info a la fin du transfert&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-p: active/désactive option &quot;afficher le splash screen&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-t: active/désactive option &quot;tips au démarrage&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h: afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="misc.format" styleclass="Highlight"><keywords><keyword translate="true">/misc.format</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/misc.format [-sevh] [format]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Change le format des messages publics.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s: ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-v: visualise le format actuel</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-e [format] : change le format</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h: afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="misc.masks" styleclass="Normal"><keywords><keyword translate="true">/misc.masks</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/misc.masks [-sbih] [&lt;nombre&gt;]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Modifie le type de masque utilisé pour les bans/ignores.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : Ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-b : Modifie le masque de ban avec le type &lt;nombre&gt;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-i : Modifie le masque d&apos;ignore avec le type &lt;nombre&gt;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="misc.highlights" styleclass="Normal"><keywords><keyword translate="true">/misc.highlights</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/misc.highlights [-saonih]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Modifie les options des highlights.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : Ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-a : Active/Désactive l&apos;affichage des highlights dans la fenêtre active.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-o : Active/Désactive l&apos;affichage des highlights dans une fenêtre séparée.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-n : Active/Désactive l&apos;affichage des notices dans une fenêtre spécifique.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-i : Active/Désactive l&apos;affichage des services dans une fenêtre séparée.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Touches FN</text></para>
+    <para styleclass="Subheading"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="fkeys.keys" styleclass="Normal"><keywords><keyword translate="true">/fkeys.keys</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/fkeys.keys [-s(f/e/d/c/r/a)h] [&lt;fn&gt;] [&lt;commande&gt; $chr(1) &lt;description&gt;]</text></para>
+    <para styleclass="Highlight"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Actions sur les touches FN.</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-f &lt;fn&gt; : recuperer les informations du raccourci</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-e &lt;fn&gt; &lt;commande&gt; $chr(1) &lt;description&gt;: modifie la touche &lt;fn&gt; avec la &lt;commande&gt; suivie ou non de la &lt;description&gt;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-d &lt;fn&gt; : efface le raccourci &lt;fn&gt;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-c : efface tous les raccourcis</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-r &lt;fn&gt; : restaurer la touche &lt;fn&gt; par défaut</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-a : appliquer tous les raccourcis</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Serveurs Favoris</text></para>
+    <para styleclass="Subheading"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="servers.favs" styleclass="Normal"><keywords><keyword translate="true">/servers.favs</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/servers.favs [-sarpeh] [&lt;nom&gt;] [&lt;option&gt; &lt;valeur&gt;]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Actions sur les serveurs favoris</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-a &lt;nom&gt; : ajouter le serveur &lt;nom&gt; à la liste des serveurs favoris</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-r &lt;nom&gt; : enlever le serveur &lt;nom&gt; de la liste des serveurs favoris</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-p &lt;nom&gt; : affiche les infos du serveur favori &lt;nom&gt;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-e &lt;nom&gt; &lt;option&gt; &lt;valeur&gt; : modifie les options du serveur &lt;nom&gt;:</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Les options sont: </text><text styleclass="Normal" style="font-weight:bold;" translate="true">realname, email, nick, anick, port, identd, aconnect, invisible, ssl, reconnect, perform</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><line style="height:1px; color:#000000;" /></para>
+    <para styleclass="Subheading"><text styleclass="Subheading" translate="true">Copier/coller</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="copypasta.paste" styleclass="Highlight"><keywords><keyword translate="true">/copypasta.paste</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/copypasta.paste [-s(b/n/d)h]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Change le mode de collage</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-b : Active le mode &quot;Pas de C/C&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-n : Active le mode &quot;C/C normal&quot;</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-d : Active le collage différé</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="copypasta.delay" styleclass="Highlight"><keywords><keyword translate="true">/copypasta.delay</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/copypasta.delay [-sclbnh] [&lt;nombre&gt;]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Modifie les options de C/C différé</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-c &lt;nombre&gt; : Change la valeur du découpage par lignes</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-l &lt;nombre&gt; : Change la valeur du nombre de lignes minimum</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-b &lt;nombre&gt; : Change la valeur du nombre d&apos;octets minimum</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-n : Active/Désactive la notification</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Highlight"><anchor id="copypasta.options" styleclass="Normal"><keywords><keyword translate="true">/copypasta.options</keyword></keywords></anchor><text styleclass="Highlight" translate="true">/copypasta.options [-sckveh] [&lt;nombre&gt;]</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">Modifie les options de C/C</text></para>
+    <para styleclass="Normal"></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-s : ouvre les options</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-c [&lt;nombre&gt;] : Active/Désactive le coupage de lignes, à raison de &lt;nombre&gt; caractères par ligne si spécifié.</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-k : Active/Désactive le stripping des codes couleurs</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-v : Active/Désactive le stripping des codes couleurs uniquement en cas de mode +c</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-e : Active/Désactive le collage dans l&apos;editbox</text></para>
+    <para styleclass="Normal"><text styleclass="Normal" translate="true">-h : afficher l&apos;aide</text></para>
+    <para styleclass="Normal"></para>
+  </body>
+</topic>
