@@ -1,0 +1,22 @@
+/* This file sets the look of docs. Set file as read-only after making changes,  */
+/* else the file will be overwritten next time you run mDoc and the changes lost. */
+
+/* Api documentation properties */
+body.api      { background: #eeeeee; color: black;                                        }  
+a.codelink    { text-decoration: none; color: blue;                                       }  
+h1, h2        { margin: 0px;                                                              }  
+table         { margin: 1em 0em 1em 0em; width: 100%;                                     }  
+table         { border: silver solid; border-width: 1px 1px 2px 2px;                      }  
+td,th         { border: silver solid; border-width: 1px 1px 0px 0px; padding: 3px;        }  
+th            { background: #ccccff; color: black; text-align: left;                      }  
+td.rettype    { font-size: 0.85em; vertical-align: top; text-align: right; width: 55px;   }  
+dt            { font-weight: bold;                                                        }  
+.aliasdesc    { margin-left: 40px; margin-bottom: 20px;                                   }  
+.local        { display: none;                                                            }  
+.event        { display: none;                                                            }  
+
+/* File list properties */
+body.filelist { background: #eeeeee; color: black;                                        }  
+
+/* Source code listing properties */
+body.code     { background: silver; color: black;                                         }  

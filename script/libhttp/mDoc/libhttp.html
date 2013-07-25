@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Documentation for libhttp.mrc</title>
+  <link rel="stylesheet" href="mdoc.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body class=api onload="parent.document.title=&quot;Documentation for libhttp.mrc&quot;"><h1>libhttp.mrc</h1>
+<p><b>LibHTTP</b>, small yet powerful library to simplify the use of HTTP in scripts. <p> Takes care of proxies, authentication, URL parsing, making the actual request, parsing headers, and following redirects (HTTP-redirects only). After this "boring" work is complete, LibHTTP transfers control back to the calling script, giving you full freedom to do whatever your need to do with the data. All headers will have been consumed at this point - the data you get from the socket with sockread is the document, without headers. LibHTTP accomplishes this by opening the socket with a different [temporary] name, and renaming it back to what you specified after it has finished its task. <p> Right click status window and select "Config HTTP Proxy" to do just that. The dialog should be clear enough for end users to understand but if you already have a config dialog in your script you may want to move the options there instead. Proxy support is automatic and transparent: making and handling the requests works exactly the same way whether or not a proxy is used - your script doesn't need to do anything special for proxies to work. <p> <code>/http_get SOCKETNAME %URL<br> on *:sockread:SOCKETNAME {<br> &nbsp;&nbsp;&nbsp;&nbsp;[read data and do things with it]<br> }</code> <p> <hr width="250" align="left"> Errors are communicated with signal (replace "SocketName" in the signal name):<br> <code>on *:signal:HttpErr_SocketName: /echo -s HTTP connection error: $1-</code><br> <p> This signal is triggered if <ul> <li>LibHTTP is unable to connect to the server <li>the connection is lost while reading headers <li>server response code != 200 (200 means all went ok) <li>redirection limit is exceeded (limit is 5 redirections) </ul> The socket is automatically closed if any of these errors occur, meaning your custom sockread and sockclose event handlers are never executed. The reverse of this also guaranteed - if your sockread handler is executed you can 100% sure everything went ok. You don't <i>have to</i> catch and handle the error signal, but in most cases you <i>should</i> do it, at least to echo the message to status window. Without any kind of error message users will have no idea what is going wrong and how to fix it. <p> Of course you still need to test for $sockerr in the sockread and sockclose events, just like you have to with any other socket. LibHTTP detects errors only while connecting and reading headers - after this all control, including responsibilty to detect and handle errors, is yours. <hr width="250" align="left"> <p> <b>Note:</b> You can not use <code>/sockmark</code> with connections opened by LibHTTP, the library uses the mark for storing various data. <p> <code>/set %libhttp.debug 1</code> - enables some debugging messages. Unset to disable.</p>
+<br><hr><br>
+
+<table class=exported cellspacing=0>
+<thead>
+  <tr><th colspan=2><h2>Exported Alias Summary</h2></th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td class=rettype>
+      <code>boolean</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#sockfree">sockfree</a></b>(sockname)</code><br>
+      Test whether Sockname is already in use
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#http_get">http_get</a></b>(sockname, url)</code><br>
+      Request one file from remote server
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>int</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#httpsock">httpsock</a></b>(sockname, [n])<i> .rcvd .redirects .percent .size</i></code><br>
+      Retrieve special information about Sockname
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<table class=local cellspacing=0>
+<thead>
+  <tr><th colspan=2><h2>Local Alias Summary</h2></th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td class=rettype>
+      <code>String</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#lhttp_parse_url">lhttp_parse_url</a></b>(url)</code><br>
+      Parses URL and returns a space separated list of URL-components, suitable for input to <code>/http_get</code>
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#lhttp_sockopen">lhttp_sockopen</a></b>(finalname, redirects, host, port, path, [user], [pass])</code><br>
+      This is what actually opens the connection
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#lhttp_process_reply">lhttp_process_reply</a></b>(sockname)</code><br>
+      Headers have been read, determine the next step
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#lhttp_timeout">lhttp_timeout</a></b>(sockname)</code><br>
+      30 second timeout for the temp-socket
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp.html#lhttp_proxytest">lhttp_proxytest</a></b>()</code><br>
+      Test proxy address by attempting to connect to it 
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<table class=event cellspacing=0>
+<thead>
+  <tr><th><h2>Event Summary</h2></th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code><b>on *:sockopen:LIBHTTP_TEMP_*: {</b></code> <a class=codelink href="libhttp_code.html#229">*</a><br>
+      Writes the HTTP-request to socket
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:LIBHTTP_TEMP_*: {</b></code> <a class=codelink href="libhttp_code.html#274">*</a><br>
+      Read and save headers
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockclose:LIBHTTP_TEMP_*: {</b></code> <a class=codelink href="libhttp_code.html#370">*</a><br>
+      Connection closed while we were still reading headers
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:dialog:ProxyConfig:init:0: {</b></code> <a class=codelink href="libhttp_code.html#405">*</a><br>
+      Proxy configuration dialog init
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:dialog:ProxyConfig:sclick:1: {</b></code> <a class=codelink href="libhttp_code.html#418">*</a><br>
+      User toggled the "Use Proxy" checkbox
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:dialog:ProxyConfig:edit:*: {</b></code> <a class=codelink href="libhttp_code.html#428">*</a><br>
+      User edited one of the four text inputs
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockopen:LIBHTTP_PROXYTEST: {</b></code> <a class=codelink href="libhttp_code.html#454">*</a><br>
+      Show result of the proxy test
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:UNLOAD: {</b></code> <a class=codelink href="libhttp_code.html#463">*</a><br>
+      Unset global variables used by libhttp
+    </td>
+  </tr>
+</tbody>
+</table>
+<div class=exported>
+  <h3>sockfree <a name="sockfree" class=codelink href="libhttp_code.html#58">*</a></h3> 
+  <code>boolean <b>sockfree</b>(sockname)</code>
+  <div class=aliasdesc>
+    <p>Test whether Sockname is already in use. The normal test '<code>if ($sock(SOCKNAME) != $null)</code>' is not enough because <code>/http_get</code> opens the sockets using temporary names (these are later renamed to the final form). $sockfree will also check the temporary names to see if there is a socket that will soon be renamed to Sockname. </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>sockname</code> - The socket name to test </dd>
+      <dt>Returns:</dt>
+        <dd>$true if Socketname is free, $false if not</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_get <a name="http_get" class=codelink href="libhttp_code.html#81">*</a></h3> 
+  <code>void <b>http_get</b>(sockname, url)</code>
+  <div class=aliasdesc>
+    <p>Request one file from remote server. </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>sockname</code> - Name for this connections </dd>
+        <dd><code>url</code> - Location of the file </dd>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>httpsock <a name="httpsock" class=codelink href="libhttp_code.html#98">*</a></h3> 
+  <code>int <b>httpsock</b>(sockname, [n])<i> .rcvd .redirects .percent .size</i></code>
+  <div class=aliasdesc>
+    <p>Retrieve special information about Sockname. Uses same syntax as mIRC's <code>$sock(...).property</code>, meaning you can specify wildcard Sockname and select Nth match by passing a second param. This alias works only with sockets opened by <code>/http_get</code>, and even then only after the connection has been handed over to the calling script (IOW, when your on:sockread has run at least once). </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>sockname</code> - Socket name or wildcard </dd>
+        <dd><code>[n]</code> - Select Nth wildcard match </dd>
+      <dt>Properties:</dt>
+        <dd><code>.rcvd</code> - Number of bytes received, not counting HTTP-headers </dd>
+        <dd><code>.redirects</code> - Number of redirects followed (usually 0) </dd>
+        <dd><code>.percent</code> - Percent done, available only if .size is known </dd>
+        <dd><code>.size</code> - Size of the file (value of the Content-Lenght header). Server does not know in advance the size for dynamic content so this works only with static files. </dd>
+      <dt>Returns:</dt>
+        <dd>Numeric value, $null if the value isn't known (size/percent)</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=local>
+  <h3>lhttp_parse_url <a name="lhttp_parse_url" class=codelink href="libhttp_code.html#137">*</a></h3> 
+  <code>String <b>lhttp_parse_url</b>(url)</code>
+  <div class=aliasdesc>
+    <p>Parses URL and returns a space separated list of URL-components, suitable for input to <code>/http_get</code>. </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>url</code> - The url to parse </dd>
+      <dt>Returns:</dt>
+        <dd>Host Port Path [User] [Pass]</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=local>
+  <h3>lhttp_sockopen <a name="lhttp_sockopen" class=codelink href="libhttp_code.html#159">*</a></h3> 
+  <code>void <b>lhttp_sockopen</b>(finalname, redirects, host, port, path, [user], [pass])</code>
+  <div class=aliasdesc>
+    <p>This is what actually opens the connection. http_get is really just a wrapper, this where the magic happens. The point of having a wrapper is to be able to change this API without breaking existing programs. Programs use the public, very simple API of the wrapper that never changes, internally we have this more complex and freely changable thing. <p> The socket is opened with a temporary name, LIBTTP_TEMP_[number]. A hash table of the same name is also created, it is used for storing both request and response headers plus other misc data LibHTTP uses. The hashtable is automatically hfreed if an error occurs, or when control is handed over to user (socket is renamed).  </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>finalname</code> - The final name for this connections </dd>
+        <dd><code>redirects</code> - Number of redirects followed so far </dd>
+        <dd><code>host</code> - Hostname or IP-address of the server </dd>
+        <dd><code>port</code> - Port to connect to (usually 80) </dd>
+        <dd><code>path</code> - Path of the requested resource </dd>
+        <dd><code>[user]</code> - Username (if the server requires one) </dd>
+        <dd><code>[pass]</code> - Password (if the server requires one) </dd>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=local>
+  <h3>lhttp_process_reply <a name="lhttp_process_reply" class=codelink href="libhttp_code.html#317">*</a></h3> 
+  <code>void <b>lhttp_process_reply</b>(sockname)</code>
+  <div class=aliasdesc>
+    <p>Headers have been read, determine the next step. If server replied with code 200, rename the socket and hand over control. If the server replied with code 301 or 302 AND sent a Location: header, follow the redirect and close current connection. If the server replied with any other code, signal an error. </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>sockname</code> - </dd>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=local>
+  <h3>lhttp_timeout <a name="lhttp_timeout" class=codelink href="libhttp_code.html#353">*</a></h3> 
+  <code>void <b>lhttp_timeout</b>(sockname)</code>
+  <div class=aliasdesc>
+    <p>30 second timeout for the temp-socket. If server doesn't respond within 30 seconds of sending the request, or if the connection goes idle for more than 30 sec while reading headers, close the socket and signal an error. </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>sockname</code> - </dd>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=local>
+  <h3>lhttp_proxytest <a name="lhttp_proxytest" class=codelink href="libhttp_code.html#440">*</a></h3> 
+  <code>void <b>lhttp_proxytest</b>()</code>
+  <div class=aliasdesc>
+    <p>Test proxy address by attempting to connect to it </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+
+</body>
+</html>

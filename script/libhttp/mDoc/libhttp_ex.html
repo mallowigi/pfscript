@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Documentation for libhttp_ex.mrc</title>
+  <link rel="stylesheet" href="mdoc.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body class=api onload="parent.document.title=&quot;Documentation for libhttp_ex.mrc&quot;"><h1>libhttp_ex.mrc</h1>
+<p><b>LibHTTP Examples</b> <p> Series of simple real-world tests/examples to demonstrate the use of LibHTTP. <p> <code><b>/load -rs libhttp_examples.mrc</b></code> and run <code><b>/http_test_1</b></code> through <code><b>/http_test_8</b></code> <p> All tests echo their output to status window.</p>
+<br><hr><br>
+
+<table class=exported cellspacing=0>
+<thead>
+  <tr><th colspan=2><h2>Exported Alias Summary</h2></th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_1">http_test_1</a></b>()</code><br>
+      Example 1: Get RSS feed from slashdot and echo the headlines to status window
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_2">http_test_2</a></b>()</code><br>
+      Example 2: Check www.mirc.com for latest mirc release
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_3">http_test_3</a></b>()</code><br>
+      Example 3: Downloads latest servers.ini
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_4">http_test_4</a></b>()</code><br>
+      Example 4: Test 3 with a twist - redirection
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_5">http_test_5</a></b>()</code><br>
+      Example 5: Retrieve password protected file
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_6">http_test_6</a></b>()</code><br>
+      Example 6: Error handling, attempt to download a non-existing file
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_7">http_test_7</a></b>()</code><br>
+      Example 7: Error handling, attempt connecting to invalid host
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>void</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#http_test_8">http_test_8</a></b>()</code><br>
+      Example 8: Simple URL parsing test
+    </td>
+  </tr>
+  <tr>
+    <td class=rettype>
+      <code>String</code>
+    </td>
+    <td>
+      <code><b><a href="libhttp_ex.html#parse_url">parse_url</a></b>(url)</code><br>
+      Needed for test_8
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<table class=local cellspacing=0>
+<thead>
+  <tr><th colspan=2><h2>Local Alias Summary</h2></th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<table class=event cellspacing=0>
+<thead>
+  <tr><th><h2>Event Summary</h2></th></tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code><b>on *:sockread:SLASHDOT {</b></code> <a class=codelink href="libhttp_ex_code.html#27">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:MIRCVER {</b></code> <a class=codelink href="libhttp_ex_code.html#49">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:SERVERSINI {</b></code> <a class=codelink href="libhttp_ex_code.html#76">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockclose:SERVERSINI {</b></code> <a class=codelink href="libhttp_ex_code.html#83">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:SERVERSINI2 {</b></code> <a class=codelink href="libhttp_ex_code.html#103">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockclose:SERVERSINI2 {</b></code> <a class=codelink href="libhttp_ex_code.html#110">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:SECRET: {</b></code> <a class=codelink href="libhttp_ex_code.html#134">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:signal:HttpErr_BADFILE: {</b></code> <a class=codelink href="libhttp_ex_code.html#156">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:BADFILE {</b></code> <a class=codelink href="libhttp_ex_code.html#161">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:signal:HttpErr_BADHOST: {</b></code> <a class=codelink href="libhttp_ex_code.html#181">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:sockread:BADHOST {</b></code> <a class=codelink href="libhttp_ex_code.html#186">*</a><br>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code><b>on *:UNLOAD: {</b></code> <a class=codelink href="libhttp_ex_code.html#229">*</a><br>
+      Remove server_ini_demo_txt created in tests 2 & 3
+    </td>
+  </tr>
+</tbody>
+</table>
+<div class=exported>
+  <h3>http_test_1 <a name="http_test_1" class=codelink href="libhttp_ex_code.html#16">*</a></h3> 
+  <code>void <b>http_test_1</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 1: Get RSS feed from slashdot and echo the headlines to status window. The regex just extracts the string between &lt;title&gt;...&lt;/title&gt;. </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_2 <a name="http_test_2" class=codelink href="libhttp_ex_code.html#37">*</a></h3> 
+  <code>void <b>http_test_2</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 2: Check www.mirc.com for latest mirc release. This could of course break at any time if the site maintainers decide to change the layout. No need to complain if that happens, it is just an example... </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_3 <a name="http_test_3" class=codelink href="libhttp_ex_code.html#62">*</a></h3> 
+  <code>void <b>http_test_3</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 3: Downloads latest servers.ini. The file is saved in your mircdir as servers.ini.demo.txt (so it won't overwrite your real servers.ini). This is a static file so the server knows and tells us the filesize, meaning it's possible to have a progress indicator using $httpsock. For dynamic content the filesize is usually not known in advance, so no way to have percentage indicator. </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_4 <a name="http_test_4" class=codelink href="libhttp_ex_code.html#91">*</a></h3> 
+  <code>void <b>http_test_4</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 4: Test 3 with a twist - redirection. Instead of going directly to mirc.co.uk, do "I'm feeling lucky" search on google. The search redirects to the correct address, and LibHTTP automatically follows it. </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_5 <a name="http_test_5" class=codelink href="libhttp_ex_code.html#118">*</a></h3> 
+  <code>void <b>http_test_5</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 5: Retrieve password protected file. The file is there "for now", some day I'll remove it and this test will stop working. Also shows how to guard against making duplicate requests by using $sockfree(...). </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_6 <a name="http_test_6" class=codelink href="libhttp_ex_code.html#144">*</a></h3> 
+  <code>void <b>http_test_6</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 6: Error handling, attempt to download a non-existing file. Server returns the <a href="http://offline.home.cern.ch/offline/web/http_error_codes.html">404 error</a>. </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_7 <a name="http_test_7" class=codelink href="libhttp_ex_code.html#168">*</a></h3> 
+  <code>void <b>http_test_7</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 7: Error handling, attempt connecting to invalid host. The error manifests in a slightly different way if user has set to use a proxy. Connection to the proxy is possible, but obviously the proxy can't fullfill the request so it returns an error (usually code 500). </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>http_test_8 <a name="http_test_8" class=codelink href="libhttp_ex_code.html#193">*</a></h3> 
+  <code>void <b>http_test_8</b>()</code>
+  <div class=aliasdesc>
+    <p>Example 8: Simple URL parsing test. The $parse_url alias used for this is an exact copy of LibHTTP's URL parser, <code>lhttp_parse_url</code>. lhttp_parse_url is a local alias of LibHTTP, which is why this test cannot use it directly. </p>
+    <dl>
+      <dt>Returns:</dt>
+        <dd>-</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+<div class=exported>
+  <h3>parse_url <a name="parse_url" class=codelink href="libhttp_ex_code.html#210">*</a></h3> 
+  <code>String <b>parse_url</b>(url)</code>
+  <div class=aliasdesc>
+    <p>Needed for test_8. </p>
+    <dl>
+      <dt>Parameters:</dt>
+        <dd><code>url</code> - </dd>
+      <dt>Returns:</dt>
+        <dd>Host Port Path [Username] [Password]</dd>
+    </dl>
+  </div>
+  <hr>
+</div>
+
+
+</body>
+</html>

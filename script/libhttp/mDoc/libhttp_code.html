@@ -1,0 +1,481 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>libhttp.mrc</title>
+  <link rel="stylesheet" href="mdoc.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+</head>
+
+<body class=code onload="parent.document.title=&quot;libhttp.mrc&quot;">
+<pre>
+<a name="0">/****************************************************************************************</a>
+<a name="1">* &lt;b&gt;LibHTTP&lt;/b&gt;, small yet powerful library to simplify the use of HTTP in scripts.</a>
+<a name="2">* &lt;p&gt;</a>
+<a name="3">* Takes care of proxies, authentication, URL parsing, making the actual request, parsing</a>
+<a name="4">* headers, and following redirects (HTTP-redirects only). After this "boring" work is</a>
+<a name="5">* complete, LibHTTP transfers control back to the calling script, giving you full freedom</a>
+<a name="6">* to do whatever your need to do with the data. All headers will have been consumed at</a>
+<a name="7">* this point - the data you get from the socket with sockread is the document, without</a>
+<a name="8">* headers. LibHTTP accomplishes this by opening the socket with a different [temporary]</a>
+<a name="9">* name, and renaming it back to what you specified after it has finished its task.</a>
+<a name="10">* &lt;p&gt;</a>
+<a name="11">* Right click status window and select "Config HTTP Proxy" to do just that. The dialog</a>
+<a name="12">* should be clear enough for end users to understand but if you already have a config</a>
+<a name="13">* dialog in your script you may want to move the options there instead. Proxy support is</a>
+<a name="14">* automatic and transparent: making and handling the requests works exactly the same way</a>
+<a name="15">* whether or not a proxy is used - your script doesn't need to do anything special for</a>
+<a name="16">* proxies to work.</a>
+<a name="17">* &lt;p&gt;</a>
+<a name="18">* &lt;code&gt;/http_get SOCKETNAME %URL&lt;br&gt;</a>
+<a name="19">* on *:sockread:SOCKETNAME {&lt;br&gt;</a>
+<a name="20">* &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;[read data and do things with it]&lt;br&gt;</a>
+<a name="21">* }&lt;/code&gt;</a>
+<a name="22">* &lt;p&gt;</a>
+<a name="23">* &lt;hr width="250" align="left"&gt;</a>
+<a name="24">* Errors are communicated with signal (replace "SocketName" in the signal name):&lt;br&gt;</a>
+<a name="25">* &lt;code&gt;on *:signal:HttpErr_SocketName: /echo -s HTTP connection error: $1-&lt;/code&gt;&lt;br&gt;</a>
+<a name="26">* &lt;p&gt;</a>
+<a name="27">* This signal is triggered if </a>
+<a name="28">* &lt;ul&gt;</a>
+<a name="29">* &lt;li&gt;LibHTTP is unable to connect to the server </a>
+<a name="30">* &lt;li&gt;the connection is lost while reading headers</a>
+<a name="31">* &lt;li&gt;server response code != 200 (200 means all went ok)</a>
+<a name="32">* &lt;li&gt;redirection limit is exceeded (limit is 5 redirections)</a>
+<a name="33">* &lt;/ul&gt;</a>
+<a name="34">* The socket is automatically closed if any of these errors occur, meaning your</a>
+<a name="35">* custom sockread and sockclose event handlers are never executed. The reverse of this</a>
+<a name="36">* also guaranteed - if your sockread handler is executed you can 100% sure everything</a>
+<a name="37">* went ok. You don't &lt;i&gt;have to&lt;/i&gt; catch and handle the error signal, but in most </a>
+<a name="38">* cases you &lt;i&gt;should&lt;/i&gt; do it, at least to echo the message to status window.</a>
+<a name="39">* Without any kind of error message users will have no idea what is going wrong and</a>
+<a name="40">* how to fix it.</a>
+<a name="41">* &lt;p&gt;</a>
+<a name="42">* Of course you still need to test for $sockerr in the sockread and sockclose events,</a>
+<a name="43">* just like you have to with any other socket. LibHTTP detects errors only while</a>
+<a name="44">* connecting and reading headers - after this all control, including responsibilty</a>
+<a name="45">* to detect and handle errors, is yours.</a>
+<a name="46">* &lt;hr width="250" align="left"&gt;</a>
+<a name="47">* &lt;p&gt;</a>
+<a name="48">* &lt;b&gt;Note:&lt;/b&gt; You can not use &lt;code&gt;/sockmark&lt;/code&gt; with connections opened</a>
+<a name="49">* by LibHTTP, the library uses the mark for storing various data.</a>
+<a name="50">* &lt;p&gt;</a>
+<a name="51">* &lt;code&gt;/set %libhttp.debug 1&lt;/code&gt; - enables some debugging messages. Unset to disable.</a>
+<a name="52">*</a>
+<a name="53">*/</a>
+<a name="54"></a>
+<a name="55"></a>
+<a name="56"></a>
+<a name="57"></a>
+<a name="58">/****************************************************************************************</a>
+<a name="59">* Test whether Sockname is already in use. The normal test '&lt;code&gt;if ($sock(SOCKNAME) !=</a>
+<a name="60">* $null)&lt;/code&gt;' is not enough because &lt;code&gt;/http_get&lt;/code&gt; opens the sockets using</a>
+<a name="61">* temporary names (these are later renamed to the final form). $sockfree will also check</a>
+<a name="62">* the temporary names to see if there is a socket that will soon be renamed to Sockname.</a>
+<a name="63">* @param sockname The socket name to test</a>
+<a name="64">* @return boolean $true if Socketname is free, $false if not</a>
+<a name="65">*/</a>
+<a name="66">alias sockfree {</a>
+<a name="67">  var %sockname = $1</a>
+<a name="68">  if ($sock(%sockname)) return $false</a>
+<a name="69">  var %i = 1 </a>
+<a name="70">  var %tempsock = $sock(LIBHTTP_TEMP_*,%i)</a>
+<a name="71">  while (%tempsock != $null) { </a>
+<a name="72">    if ($hget(%tempsock,_Final-Sockname) == %sockname) return $false</a>
+<a name="73">    inc %i</a>
+<a name="74">    var %tempsock = $sock(LIBHTTP_TEMP_*,%i)</a>
+<a name="75">  }</a>
+<a name="76">  return $true</a>
+<a name="77">}</a>
+<a name="78"></a>
+<a name="79"></a>
+<a name="80"></a>
+<a name="81">/****************************************************************************************</a>
+<a name="82">* Request one file from remote server.</a>
+<a name="83">* @param Sockname Name for this connections </a>
+<a name="84">* @param URL Location of the file</a>
+<a name="85">* @return void</a>
+<a name="86">*/</a>
+<a name="87">alias http_get {</a>
+<a name="88">  var %sockname = $1, %url = $2</a>
+<a name="89">  if (!$sockfree(%sockname)) {</a>
+<a name="90">    echo -sat HTTP socket error: socket name %sockname already in use</a>
+<a name="91">    halt</a>
+<a name="92">  }</a>
+<a name="93">  lhttp_sockopen %sockname 0 $lhttp_parse_url(%url)</a>
+<a name="94">}</a>
+<a name="95"></a>
+<a name="96"></a>
+<a name="97"></a>
+<a name="98">/****************************************************************************************</a>
+<a name="99">* Retrieve special information about Sockname. Uses same syntax as mIRC's </a>
+<a name="100">* &lt;code&gt;$sock(...).property&lt;/code&gt;, meaning you can specify wildcard Sockname and select</a>
+<a name="101">* Nth match by passing a second param. This alias works only with sockets opened by</a>
+<a name="102">* &lt;code&gt;/http_get&lt;/code&gt;, and even then only after the connection has been handed over</a>
+<a name="103">* to the calling script (IOW, when your on:sockread has run at least once). </a>
+<a name="104">* @param sockname Socket name or wildcard</a>
+<a name="105">* @optparam n Select Nth wildcard match</a>
+<a name="106">* @prop rcvd Number of bytes received, not counting HTTP-headers</a>
+<a name="107">* @prop redirects Number of redirects followed (usually 0)</a>
+<a name="108">* @prop percent Percent done, available only if .size is known</a>
+<a name="109">* @prop size Size of the file (value of the Content-Lenght header). Server does not know</a>
+<a name="110">* in advance the size for dynamic content so this works only with static files.</a>
+<a name="111">* @return int Numeric value, $null if the value isn't known (size/percent)</a>
+<a name="112">*/</a>
+<a name="113">alias httpsock {</a>
+<a name="114">  var %sockname = $1, %n = $2</a>
+<a name="115">  if (%n == $null) %n = 1</a>
+<a name="116">  if ($sock(%sockname,%n) == $null) return</a>
+<a name="117">  if ($prop == rcvd)      return $calc($sock(%sockname,%n).rcvd - $gettok($sock(%sockname,%n).mark,1,32))</a>
+<a name="118">  if ($prop == size)      return $gettok($sock(%sockname,%n).mark,3,32)</a>
+<a name="119">  if ($prop == redirects) return $gettok($sock(%sockname,%n).mark,2,32)</a>
+<a name="120">  if ($prop == percent) {</a>
+<a name="121">    if ($gettok($sock(%sockname,%n).mark,3,32) == $null) return $null</a>
+<a name="122">    return $int($calc(($sock(%sockname,%n).rcvd - $gettok($sock(%sockname,%n).mark,1,32)) / $gettok($sock(%sockname,%n).mark,3,32) * 100))</a>
+<a name="123">  }</a>
+<a name="124">}</a>
+<a name="125"></a>
+<a name="126"></a>
+<a name="127"></a>
+<a name="128"></a>
+<a name="129"></a>
+<a name="130">;;;;;;;;;;;; Public API ends here. Rest is the internal workings of LibHTTP ;;;;;;;;;;;;</a>
+<a name="131"></a>
+<a name="132"></a>
+<a name="133"></a>
+<a name="134"></a>
+<a name="135"></a>
+<a name="136"></a>
+<a name="137">/****************************************************************************************</a>
+<a name="138">* Parses URL and returns a space separated list of URL-components, suitable for input</a>
+<a name="139">* to &lt;code&gt;/http_get&lt;/code&gt;. </a>
+<a name="140">* @param URL The url to parse</a>
+<a name="141">* @return String Host Port Path [User] [Pass]</a>
+<a name="142">*/</a>
+<a name="143">alias -l lhttp_parse_url {</a>
+<a name="144">  var %url = $1</a>
+<a name="145">  var %port = 80</a>
+<a name="146">  var %host = $gettok($remove(%url,http://),1,47)</a>
+<a name="147">  var %path = / $+ $gettok($remove(%url,http://),2-,47)</a>
+<a name="148">  if ($regex(%host,/^(.+):(.+)@(.+)$/)) {</a>
+<a name="149">    var %user = $regml(1), %pass = $regml(2), %host = $regml(3)</a>
+<a name="150">  }</a>
+<a name="151">  if ($regex(%host,/^(.+):(\d+)$/)) {</a>
+<a name="152">    var %host = $regml(1), %port = $regml(2)</a>
+<a name="153">  }</a>
+<a name="154">  return %host %port %path %user %pass</a>
+<a name="155">}</a>
+<a name="156"></a>
+<a name="157"></a>
+<a name="158"></a>
+<a name="159">/****************************************************************************************</a>
+<a name="160">* This is what actually opens the connection. http_get is really just a wrapper, this</a>
+<a name="161">* where the magic happens. The point of having a wrapper is to be able to change this</a>
+<a name="162">* API without breaking existing programs. Programs use the public, very simple API of</a>
+<a name="163">* the wrapper that never changes, internally we have this more complex and freely </a>
+<a name="164">* changable thing. </a>
+<a name="165">* &lt;p&gt;</a>
+<a name="166">* The socket is opened with a temporary name, LIBTTP_TEMP_[number]. A hash table of the</a>
+<a name="167">* same name is also created, it is used for storing both request and response headers</a>
+<a name="168">* plus other misc data LibHTTP uses. The hashtable is automatically hfreed if an error</a>
+<a name="169">* occurs, or when control is handed over to user (socket is renamed).</a>
+<a name="170">*</a>
+<a name="171">* @param finalname The final name for this connections</a>
+<a name="172">* @param redirects Number of redirects followed so far</a>
+<a name="173">* @param host Hostname or IP-address of the server</a>
+<a name="174">* @param port Port to connect to (usually 80)</a>
+<a name="175">* @param path Path of the requested resource</a>
+<a name="176">* @optparam user Username (if the server requires one)</a>
+<a name="177">* @optparam pass Password (if the server requires one)</a>
+<a name="178">* @return void</a>
+<a name="179">*/</a>
+<a name="180">alias -l lhttp_sockopen {</a>
+<a name="181">  var %finalname = $1, %redirects = $2, %host = $3, %port = $4, %path = $5, %user = $6, %pass = $7, %auth = none</a>
+<a name="182"></a>
+<a name="183">  if (%redirects &gt; 5) {</a>
+<a name="184">    .signal HttpErr_ $+ %finalname Redirect limit (5) exceeded - likely an infinite redirect loop.</a>
+<a name="185">    return</a>
+<a name="186">  }</a>
+<a name="187"></a>
+<a name="188">  var %i = 1 </a>
+<a name="189">  while ($sock(LIBHTTP_TEMP_ $+ %i) != $null) inc %i</a>
+<a name="190">  var %tempname = LIBHTTP_TEMP_ $+ %i</a>
+<a name="191">  hmake %tempname</a>
+<a name="192"></a>
+<a name="193">  if ((%libhttp.useproxy) &amp;&amp; (%libhttp.proxy.host != $null) &amp;&amp; (%libhttp.proxy.port != $null)) {</a>
+<a name="194">    if (%libhttp.debug) echo -s *** sockopen %tempname %libhttp.proxy.host %libhttp.proxy.port</a>
+<a name="195">    sockopen %tempname %libhttp.proxy.host %libhttp.proxy.port</a>
+<a name="196">    hadd %tempname _Request-String GET http:// $+ %host $+ : $+ %port $+ %path HTTP/1.0</a>
+<a name="197">    hadd %tempname _Connection-Host %libhttp.proxy.host</a>
+<a name="198">    hadd %tempname _Connection-Port %libhttp.proxy.port</a>
+<a name="199">    if ((%libhttp.proxy.user != $null) &amp;&amp; (%libhttp.proxy.pass != $null)) {</a>
+<a name="200">      hadd %tempname Proxy-Authorization: Basic $encode(%libhttp.proxy.user $+ : $+ %libhttp.proxy.pass,m)</a>
+<a name="201">    }</a>
+<a name="202">    hadd %tempname Proxy-Connection: close</a>
+<a name="203">  }</a>
+<a name="204">  else {</a>
+<a name="205">    if (%libhttp.debug) echo -s *** sockopen %tempname %host %port</a>
+<a name="206">    sockopen %tempname %host %port</a>
+<a name="207">    hadd %tempname _Request-String GET %path HTTP/1.0</a>
+<a name="208">    hadd %tempname _Connection-Host %host</a>
+<a name="209">    hadd %tempname _Connection-Port %port</a>
+<a name="210">  }</a>
+<a name="211"></a>
+<a name="212">  ; Vars with leading underscore are for internal use of LibHTTP</a>
+<a name="213">  hadd %tempname _Redirects-Followed %redirects</a>
+<a name="214">  hadd %tempname _Final-Sockname %finalname</a>
+<a name="215"></a>
+<a name="216">  ; Vars without leading underscore are headers</a>
+<a name="217">  hadd %tempname Host: %host $+ : $+ %port</a>
+<a name="218">  hadd %tempname Pragma: no-cache</a>
+<a name="219">  hadd %tempname Cache-Control: no-cache</a>
+<a name="220">  hadd %tempname Connection: close</a>
+<a name="221">  hadd %tempname User-Agent: Mirc/ $+ $version (Windows $os $+ ) LibHTTP/1.0</a>
+<a name="222">  if ((%user != $null) &amp;&amp; (%pass != $null)) {</a>
+<a name="223">    hadd %tempname Authorization: Basic $encode(%user $+ : $+ %pass,m)</a>
+<a name="224">  }</a>
+<a name="225">}</a>
+<a name="226"></a>
+<a name="227"></a>
+<a name="228"></a>
+<a name="229">/****************************************************************************************</a>
+<a name="230">* Writes the HTTP-request to socket. The request string and the headers were constructed</a>
+<a name="231">* in lhttp_sockopen, this just loops throught the headers and sends them over the socket.</a>
+<a name="232">* &lt;p&gt;</a>
+<a name="233">* It is very important that this event be "duplication tolerant", meaning it must still</a>
+<a name="234">* work if user has two copies of this script installed (happens if two independently</a>
+<a name="235">* distributed scripts bundle LibHTTP). First script to handle this sockopen event sets a</a>
+<a name="236">* hash table item "_Request-Sent" to $true - second script detects the presence of that</a>
+<a name="237">* flag and returns immediately. "if ($hget($sockname) != $null)" in the sockerr-branch</a>
+<a name="238">* of the code provides the same safeguard in error conditions.</a>
+<a name="239">*/</a>
+<a name="240">on *:sockopen:LIBHTTP_TEMP_*: {</a>
+<a name="241">  if ($sockerr &gt; 0) { </a>
+<a name="242">    if ($hget($sockname) != $null) {</a>
+<a name="243">      .signal HttpErr_ $+ $hget($sockname,_Final-Sockname) Unable to connect to $hget($sockname,_Connection-Host) $+ , port $hget($sockname,_Connection-Port)</a>
+<a name="244">      hfree $sockname</a>
+<a name="245">    }</a>
+<a name="246">    return</a>
+<a name="247">  }</a>
+<a name="248"></a>
+<a name="249">  if ($hget($sockname,_Request-Sent)) return</a>
+<a name="250">  hadd $sockname _Request-Sent $true</a>
+<a name="251"></a>
+<a name="252">  if (%libhttp.debug) echo -s --&gt; $hget($sockname,_Request-String)</a>
+<a name="253">  sockwrite -n $sockname $hget($sockname,_Request-String)</a>
+<a name="254"></a>
+<a name="255">  var %hindex = $hget($sockname,0).item</a>
+<a name="256">  while (%hindex &gt; 0) {</a>
+<a name="257">    var %key = $hget($sockname,%hindex).item</a>
+<a name="258">    if (_* iswm %key) {</a>
+<a name="259">      ; Key is some internal var, not a header</a>
+<a name="260">    }</a>
+<a name="261">    else {     </a>
+<a name="262">      sockwrite -n $sockname %key $hget($sockname,%key)</a>
+<a name="263">      if (%libhttp.debug) echo -s --&gt; %key $hget($sockname,%key)</a>
+<a name="264">    }</a>
+<a name="265">    dec %hindex</a>
+<a name="266">  }</a>
+<a name="267"></a>
+<a name="268">  sockwrite $sockname $crlf</a>
+<a name="269">  .timer $+ $sockname $+ _TIMEOUT 1 30 lhttp_timeout $sockname</a>
+<a name="270">}</a>
+<a name="271"></a>
+<a name="272"></a>
+<a name="273"></a>
+<a name="274">/****************************************************************************************</a>
+<a name="275">* Read and save headers. Once headers have been fully consumed, calls http_process_reply</a>
+<a name="276">* which determines what to do next.</a>
+<a name="277">* &lt;p&gt;</a>
+<a name="278">* Duplication tolerance is needed here also: Ordinarily getting $null from sockread</a>
+<a name="279">* indicates end of headers - with two scripts installed that may not always be correct.</a>
+<a name="280">* Since the sockread event now triggers twice whenever there is a CRLF terminated line</a>
+<a name="281">* in the buffer, it is possible that the first script consumes a normal headerline, </a>
+<a name="282">* leaving the buffer completely empty. When the second script triggers, sockread</a>
+<a name="283">* tries to read from empty buffer and returns $null. Thus it is crucial to test $sockbr</a>
+<a name="284">* to verify that we indeed got an "empty" line, instead of just hitting empty buffer.</a>
+<a name="285">*/</a>
+<a name="286">on *:sockread:LIBHTTP_TEMP_*: {</a>
+<a name="287">  if ($sockerr &gt; 0) { </a>
+<a name="288">    if ($hget($sockname) != $null) {</a>
+<a name="289">      .signal HttpErr_ $+ $hget($sockname,_Final-Sockname) Connection lost while reading headers (sockerr $sockerr $+ )</a>
+<a name="290">      .timer $+ $sockname $+ _TIMEOUT off</a>
+<a name="291">      hfree $sockname</a>
+<a name="292">    }</a>
+<a name="293">    return</a>
+<a name="294">  }</a>
+<a name="295"></a>
+<a name="296">  var %sockinput</a>
+<a name="297">  sockread %sockinput</a>
+<a name="298">  if (%libhttp.debug) echo -s &lt;-- %sockinput [ $+ $sockbr bytes]</a>
+<a name="299"></a>
+<a name="300">  if (%sockinput != $null) {</a>
+<a name="301">    var %header = $gettok(%sockinput,1,32), %value = $gettok(%sockinput,2-,32)</a>
+<a name="302">    if (HTTP/1.? iswm %header) {</a>
+<a name="303">      hadd $sockname _Response-Code $gettok(%value,1,32)</a>
+<a name="304">    }</a>
+<a name="305">    else {</a>
+<a name="306">      hadd $sockname _Response-Header_ $+ %header %value</a>
+<a name="307">    }</a>
+<a name="308">    .timer $+ $sockname $+ _TIMEOUT 1 30 lhttp_timeout $sockname</a>
+<a name="309">  }</a>
+<a name="310">  elseif ($sockbr &gt; 0) {</a>
+<a name="311">    lhttp_process_reply $sockname</a>
+<a name="312">  }</a>
+<a name="313">}</a>
+<a name="314"></a>
+<a name="315"></a>
+<a name="316"></a>
+<a name="317">/****************************************************************************************</a>
+<a name="318">* Headers have been read, determine the next step. If server replied with code 200,</a>
+<a name="319">* rename the socket and hand over control. If the server replied with code 301 or 302 AND</a>
+<a name="320">* sent a Location: header, follow the redirect and close current connection. If the server</a>
+<a name="321">* replied with any other code, signal an error. @return void</a>
+<a name="322">*/</a>
+<a name="323">alias -l lhttp_process_reply {</a>
+<a name="324">  var %sockname = $1</a>
+<a name="325">  var %respcode = $hget(%sockname,_Response-Code)</a>
+<a name="326">  var %location = $hget(%sockname,_Response-Header_Location:)</a>
+<a name="327">  var %filesize = $hget(%sockname,_Response-Header_Content-Length:)</a>
+<a name="328">  var %finalname = $hget(%sockname,_Final-Sockname)</a>
+<a name="329">  var %redirects = $hget(%sockname,_Redirects-Followed)</a>
+<a name="330"></a>
+<a name="331">  if (%respcode == 200) {</a>
+<a name="332">    sockmark %sockname $sock(%sockname).rcvd %redirects %filesize</a>
+<a name="333">    if (%libhttp.debug) echo -s *** sockrename %sockname %finalname</a>
+<a name="334">    sockrename %sockname %finalname</a>
+<a name="335">  }</a>
+<a name="336">  elseif ((%respcode isnum 301-302) &amp;&amp; (%location != $null)) {</a>
+<a name="337">    lhttp_sockopen %finalname $calc(%redirects + 1) $lhttp_parse_url(%location)</a>
+<a name="338">    if (%libhttp.debug) echo -s *** sockclose %sockname</a>
+<a name="339">    sockclose %sockname</a>
+<a name="340">  }</a>
+<a name="341">  else {</a>
+<a name="342">    .signal HttpErr_ $+ %finalname Server returned error %respcode</a>
+<a name="343">    if (%libhttp.debug) echo -s *** sockclose %sockname</a>
+<a name="344">    sockclose $sockname</a>
+<a name="345">  }</a>
+<a name="346">  hfree %sockname</a>
+<a name="347">  .timer $+ %sockname $+ _TIMEOUT off</a>
+<a name="348">}</a>
+<a name="349"></a>
+<a name="350"></a>
+<a name="351"></a>
+<a name="352"></a>
+<a name="353">/****************************************************************************************</a>
+<a name="354">* 30 second timeout for the temp-socket. If server doesn't respond within 30 seconds of</a>
+<a name="355">* sending the request, or if the connection goes idle for more than 30 sec while reading</a>
+<a name="356">* headers, close the socket and signal an error. @return void</a>
+<a name="357">*/</a>
+<a name="358">alias -l lhttp_timeout {</a>
+<a name="359">  var %sockname = $1</a>
+<a name="360">  if ($hget(%sockname) != $null) {</a>
+<a name="361">    .signal HttpErr_ $+ $hget(%sockname,_Final-Sockname) Connection timeout of 30 seconds reached while awaiting server responce</a>
+<a name="362">    sockclose %sockname</a>
+<a name="363">    hfree %sockname</a>
+<a name="364">  }</a>
+<a name="365">}</a>
+<a name="366"></a>
+<a name="367"></a>
+<a name="368"></a>
+<a name="369"></a>
+<a name="370">/****************************************************************************************</a>
+<a name="371">* Connection closed while we were still reading headers</a>
+<a name="372">*/</a>
+<a name="373">on *:sockclose:LIBHTTP_TEMP_*: {</a>
+<a name="374">  if ($hget($sockname) != $null) {</a>
+<a name="375">    .signal HttpErr_ $+ $hget($sockname,_Final-Sockname) Connection lost while reading headers (sockerr: $sockerr $+ )</a>
+<a name="376">    hfree $sockname</a>
+<a name="377">  }</a>
+<a name="378">}</a>
+<a name="379"></a>
+<a name="380"></a>
+<a name="381"></a>
+<a name="382"></a>
+<a name="383">/****************************************************************************************</a>
+<a name="384">* Fancy dialog for proxy configuration</a>
+<a name="385">*/</a>
+<a name="386">menu status {</a>
+<a name="387">  Config HTTP Proxy: dialog -md ProxyConfig ProxyConfig_Table</a>
+<a name="388">}</a>
+<a name="389"></a>
+<a name="390">dialog ProxyConfig_Table {</a>
+<a name="391">  size -1 -1 250 150</a>
+<a name="392">  title "HTTP Proxy Configuration"</a>
+<a name="393">  check "Use Proxy for HTTP connections", 1, 5 5 180 14</a>
+<a name="394">  box "Server and Port" 10, 6 22 240 75</a>
+<a name="395">  edit "" 11, 12 38 165 24, autohs disabled</a>
+<a name="396">  text ":" 12, 179 41 3 14</a>
+<a name="397">  edit "" 13, 183 38 55 24, autohs disabled</a>
+<a name="398">  text "Status:" 14, 20 69 40 14</a>
+<a name="399">  text "" 15, 60 69 170 14</a>
+<a name="400">  box "Login and Password (optional)" 20, 6 89 240 55</a>
+<a name="401">  edit "" 21, 12 110 110 24, autohs disabled</a>
+<a name="402">  edit "" 22, 128 110 110 24, autohs pass disabled</a>
+<a name="403">}</a>
+<a name="404"></a>
+<a name="405">/****************************************************************************************</a>
+<a name="406">* Proxy configuration dialog init</a>
+<a name="407">*/</a>
+<a name="408">on *:dialog:ProxyConfig:init:0: {</a>
+<a name="409">  did -ra $dname 11 %libhttp.proxy.host</a>
+<a name="410">  did -ra $dname 13 %libhttp.proxy.port</a>
+<a name="411">  did -ra $dname 21 %libhttp.proxy.user</a>
+<a name="412">  did -ra $dname 22 %libhttp.proxy.pass</a>
+<a name="413">  if (%libhttp.useproxy) { did -c $dname 1 | did -e $dname 11,13,21,22 }</a>
+<a name="414">  lhttp_proxytest</a>
+<a name="415">}</a>
+<a name="416"></a>
+<a name="417"></a>
+<a name="418">/****************************************************************************************</a>
+<a name="419">* User toggled the "Use Proxy" checkbox</a>
+<a name="420">*/</a>
+<a name="421">on *:dialog:ProxyConfig:sclick:1: {</a>
+<a name="422">  if ($did($dname,$did).state == 1) { %libhttp.useproxy = $true | did -e $dname 11,13,21,22 }</a>
+<a name="423">  if ($did($dname,$did).state == 0) { %libhttp.useproxy = $false | did -b $dname 11,13,21,22 }</a>
+<a name="424">  lhttp_proxytest</a>
+<a name="425">}</a>
+<a name="426"></a>
+<a name="427"></a>
+<a name="428">/****************************************************************************************</a>
+<a name="429">* User edited one of the four text inputs</a>
+<a name="430">*/</a>
+<a name="431">on *:dialog:ProxyConfig:edit:*: {</a>
+<a name="432">  %libhttp.proxy.host = $did($dname,11)</a>
+<a name="433">  %libhttp.proxy.port = $did($dname,13)</a>
+<a name="434">  %libhttp.proxy.user = $did($dname,21)</a>
+<a name="435">  %libhttp.proxy.pass = $did($dname,22)</a>
+<a name="436">  if ($did &lt; 20) .timerTEST_PROXY 1 1 lhttp_proxytest</a>
+<a name="437">}</a>
+<a name="438"></a>
+<a name="439"></a>
+<a name="440">/****************************************************************************************</a>
+<a name="441">* Test proxy address by attempting to connect to it @param void @return void</a>
+<a name="442">*/</a>
+<a name="443">alias -l lhttp_proxytest {</a>
+<a name="444">  if ($dialog(ProxyConfig) == $null) return</a>
+<a name="445">  if ($sock(LIBHTTP_PROXYTEST) != $null) sockclose LIBHTTP_PROXYTEST</a>
+<a name="446">  if ((%libhttp.proxy.host != $null) &amp;&amp; (%libhttp.proxy.port != $null) &amp;&amp; (%libhttp.useproxy)) {</a>
+<a name="447">    sockopen LIBHTTP_PROXYTEST %libhttp.proxy.host %libhttp.proxy.port</a>
+<a name="448">    did -ra ProxyConfig 15 Testing....</a>
+<a name="449">  }</a>
+<a name="450">  else did -r ProxyConfig 15 </a>
+<a name="451">}</a>
+<a name="452"></a>
+<a name="453"></a>
+<a name="454">/****************************************************************************************</a>
+<a name="455">* Show result of the proxy test</a>
+<a name="456">*/</a>
+<a name="457">on *:sockopen:LIBHTTP_PROXYTEST: {</a>
+<a name="458">  if ($dialog(ProxyConfig) != $null) did -ra ProxyConfig 15 $iif($sockerr, Unable to connect, OK)</a>
+<a name="459">  sockclose $sockname</a>
+<a name="460">}</a>
+<a name="461"></a>
+<a name="462"></a>
+<a name="463">/****************************************************************************************</a>
+<a name="464">* Unset global variables used by libhttp</a>
+<a name="465">*/</a>
+<a name="466">on *:UNLOAD: {</a>
+<a name="467">  unset %libhttp.*</a>
+<a name="468">}</a>
+</pre>
+</body>

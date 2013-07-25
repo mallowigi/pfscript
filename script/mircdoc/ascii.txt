@@ -1,0 +1,21 @@
+--------------------
+-------Alias-------
+--------------------
+
+alias ascTo
+
+ Identifieur $ascTo Syntaxe: $ascTo(<0-255>) propriété: [.chr|.hex|.oct|.char]
+ Convertit la valeur spécifiée.
+
+------------------------------
+
+alias ascii
+
+ Syntaxe: /ascii [searchstring]
+ Ouvre la liste et affiche la valeur trouvée.
+
+ Identifieur $ascii Syntaxe: $ascii(<searchstring>) propriété: [.asc|.chr|.char|.hex|.oct]
+ Retourne le premier résultat (Pour les caractères 0-32,127,160, retourne "Text")
+
+------------------------------
+

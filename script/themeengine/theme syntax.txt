@@ -1,0 +1,317 @@
+This file contains information about each identifier and command found in the theme engine that it comes with (version 1.03).
+This is just a quick lookup with syntax for the aliases, and a short description of it.
+You can use this as a reference, if you want to build the engine into your script.
+It has been made using a fairly small font, fullscreen, on a resolution of 1152x864, so it might look a bit stretched on a low resolution =)
+
+< >	= mandatory
+[ ]	= optional
+
+Command / Identifier with syntax						Description
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+$mtsversion								returns supported MTS version
+$xtsversion								returns supported XTS version
+$themesversion								returns the engine's version
+$themesengine								returns the engine's name, author, and version
+$themesdir(N)								returns path themes dir
+$theme.current([item])							returns format of current loaded theme, if any
+$theme.setting(item)							returns theme item
+$ptext(text)								applies parentext event to given text
+$theme.menu.schemes($1)							creates scheme $submenu
+$theme.menu.fonts($1,type)							creates font $submenu
+$theme.menu.fontcheck([type])						determines whether the font submenu should be shown or not
+
+$lt									returns <
+$gt									returns >
+$amp									returns &
+$lp									returns (
+$rp									returns )
+$lb									returns [
+$rb									returns ]
+$la									returns {
+$ra									returns }
+$nsym									$cmode for XTS
+$tstamp									returns timestamp format
+$pre									returns theme's prefix
+$cdef									returns mIRC's default color settings
+$rgbdef									returns mIRC's default RGB settings
+$bc(1|2|3|4)								returns base color 1-4
+$cmdchar									returns command character
+$cmode(nick,chan)								returns mode character for nick in channel
+
+$theme.options(load|add)							returns which options are enabled on the options tab in the main dialog
+	a = everything
+  load:	f = apply font
+	c = apply colors
+	n = apply nicklist colors
+	s = apply sounds
+	b = apply background images
+                i = apply toolbar/switchbar images
+	t = apply timestamp
+	e = apply scripted events
+	h = load all schemes
+  add:	p = preview on click
+	w = minimize windows
+	l = clear windows
+	u = unload old theme
+	c = cache preview
+	g = show progress
+
+/ha <item> [data]								add data to settings hash table
+$hg(item)									read data from settings hash table
+/hat <item> [data]								add data to theme hash table
+$hgt(item)								read data from theme hash table
+/hap <item> [data]								add data to preview hash table
+$hgp(item)								read data from preview hash table
+/wi <topic> <item> <data>							write data to mirc.ini
+/remi <section> [item]							remove data from mirc.ini
+$ri(topic,item)								read data from mirc.ini
+/mdx <stuff>								do stuff with mdx
+$mdxdir									returns path to mdx.dll
+/xml <stuff>								do stuff with xml
+$xmldir									returns path to xml.dll
+/szip <stuff>								do stuff with szip
+$szipdir									returns path to szip.dll
+$fontdll									opens font dialog and returns result
+$fontdir									returns path to font.dll
+$cell(dialog,id,line,cell)							retrieve data from a cell in an mdx listview (made by morphy)
+$isfont(font name)								determine whether a font is installed on your system or not (made by Airlines & ToKeN, modified by me)
+$shorten(N,text)[.cutpath]							shorten text to N characters, and add three dots to the end
+/wins [window options]							used to minimize/maximize windows
+
+/themes [help]								opens main dialog
+/theme.list [-a] [file]							lists themes in dialog listbox
+  a		= add file to list (called from $findfile)
+/theme.dispinfo [-p] <file>							displays selected theme's info on the dialog's information tab
+  p		= preview
+/theme.clearcache [-pz]							clears cache, no flags means both
+  p		= previews
+  z		= unzipped files
+
+/theme.opt.dispevent <on event>						displays info and settings for selected event
+/theme.opt.editevent -af <event> <option>					edit settings for an event
+/theme.opt.restoreevents							restore event settings
+/theme.opt.listraw <N>							displays list of raws and loads descriptions
+/theme.opt.dispraw <[group.]raw|all>						display info about selected raw and show it's current actions
+/theme.opt.editraw -adf <[group.]raw|all> <option>				change the display option for the selected raw
+$theme.inforaw(N)								returns display option for selected raw
+/theme.opt.restoreraws							restore raw settings
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Parsing and the like.
+
+$theme.parse(mx,text)							replaces and evaluates tags and identifiers in given text
+  m		= MTS
+  x		= XTS
+
+$theme.info([N],[section],event,file)						returns single event from theme file
+  N		= Nth scheme (0 or nothing = default (info))
+  section		= xts section inside scheme
+
+/theme.xtsparse								used in $theme.info to process xts parse data
+
+/theme.vars <echo settings>							sets common event variables
+/theme.text <theme event> <event> [text]					echo the parsed and evaluated text
+/xecho									used to echo scripted XTS raws
+
+/theme.echo [-sdaeiNhtqlbfnmgr] [#channel | [=]nick | @window] [text]		just like /echo but with theme's echo event
+/theme.error  [-sdaeiNhtqlbfnmgr] [#channel | [=]nick | @window] [text]		just like /theme.echo but with the error event
+
+$theme.colornum(theme name [- scheme name])					returns position of color palette in mirc.ini
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Loading and unloading commands and supporting commands.
+
+/theme.load [-fcnsbitehwlu] [N] <file>						loads theme with specified options
+  u		= unload old theme
+  f		= apply font
+  b		= apply background images
+  i		= apply toolbar/switchbar images
+  t		= apply timestamp
+  c		= apply colors
+  n		= apply nicklist colors
+  e		= load scripted events
+  l		= clear windows
+  w		= minimize windows
+  s		= apply sounds
+  h		= load all schemes
+
+  N		= load Nth scheme
+
+Loading is done in several steps, which are:
+
+  STEP ONE:	version checking / unzipping
+  STEP TWO:	unloading old theme
+  STEP THREE:	loading .mts/.xml to hash table
+  STEP FOUR:	scheme overlay
+  STEP FIVE:	load theme file
+  STEP SIX:	timestamp applying
+  STEP SEVEN:	load event
+  STEP EIGHT:	color applying
+  STEP NINE:	nicklist color applying
+  STEP TEN:	font applying
+  STEP ELEVEN:	background applying
+
+
+/theme.load.show <id> [data]						control load dialog progressbars
+/theme.load.hash [-h] [N] <file>						loads theme to hash table
+/theme.xts.parse								used to process xts parse data (also used for previewing)
+/theme.load.resetcolors							resets the colors in mirc.ini
+/theme.load.color <index> <name>						apply index colors
+/theme.load.nicks <flags> <cline> <char>					apply nicklist settings
+/theme.load.font <type> <font> <size> [b]					apply font settings
+/theme.load.resetfont							resets font to default
+/theme.load.background [style] <file>						apply background images
+/theme.load.resetback							resets background images to default
+
+
+/theme.scheme [N]								change scheme, leave blank for default scheme
+/theme.brightness [+-N]							change current scheme's brightness
+
+/theme.unload [-wl]								unload current theme
+  w		= minimize windows
+  l		= clear windows
+
+  STEP ONE:	restoring colors
+  STEP TWO:	removing nicklist colors
+  STEP THREE:	restoring rgb colors
+  STEP FOUR:	removing background images
+  STEP FIVE:	restoring fonts
+  STEP SIX:	restoring timestamps
+  STEP SEVEN:	unloading files
+
+/theme.refresh								updates settings from mirc.ini
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Previewing and supporting commands.
+
+/theme.preview [-l] [N] <file>						preview specified theme, small or large
+  l		= large
+  N		= preview Nth scheme
+
+/theme.preview.hash [N] <file>
+
+/theme.preview.show <file>							load preview image to main dialog or large preview dialog
+/theme.preview.add <-mx> <index> <line> [raw]				adds line to preview window
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Covered events, mIRC aliases, sounds, and supporting commands.
+
+  on INPUT	/say
+  on TEXT		/theme.textevent
+  on ACTION	/theme.textevent
+  on NOTICE	/theme.textevent
+  on CHAT
+  on JOIN		/theme.joinpart
+  on PART		/theme.joinpart
+  on NICK		/theme.nickquit
+  on QUIT		/theme.nickquit
+  on NOTIFY	/theme.notify
+  on UNOTIFY	/theme.notify
+  on DNS
+  on USERMODE
+  on ERROR
+  on SNOTICE
+  on INVITE
+  on TOPIC
+  on KICK
+  on RAWMODE
+  on WALLOPS
+  on CTCPREPLY
+  CTCP
+
+  /say		/msg
+  /msg
+  /dns
+  /describe
+  /me		/describe
+  /amsg		/theme.msg
+  /ame		/theme.msg
+  /qmsg		/theme.msg
+  /qme		/theme.msg
+  /notice
+  /ctcp		/theme.ctcp
+  /ctcpreply	/theme.ctcp
+
+  /theme.event <event> <target|command>  [text]				processes event strings, sets variables, and sends it to /theme.text
+
+  /theme.sound <sound>							plays specified sound
+
+Supported sound events:
+
+  SndStart
+  SndConnect
+  SndDisconnect
+  SndQuit
+  SndQuitSelf
+  SndOp
+  SndOpSelf
+  SndDeop
+  SndDeopSelf
+  SndHop
+  SndHopSelf
+  SndDehop
+  SndDehopSelf
+  SndVoice
+  SndVoiceSelf
+  SndDevoice
+  SndDevoiceSelf
+  SndNick
+  SndNickSelf
+  SndTopic
+  SndTopicSelf
+  SndKick
+  SndKickSelf
+  SndBan
+  SndBanSelf
+  SndJoin
+  SndJoinSelf
+  SndPart
+  SndPartSelf
+  SndMode
+  SndModeSelf
+  SndUsermode
+  SndQuery
+  SndNotice
+  SndNoticeSelf
+  SndNotify
+  SndUnotify
+  SndInvite
+  SndInviteSelf
+  SndChat
+  SndServ
+  SndFilesent
+  SndFilercvd
+  SndSendfail
+  SndGetfail
+  SndCTCP
+  SndCTCPSelf
+  SndCTCPreply
+  SnDCTCPreplySelf
+  SndError
+  SndSnotice
+  SndOpen
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Covered raws, and supporting commands.
+
+  Connection:	001, 002, 003, 004, 005, 221, 250, 251, 252, 253, 254, 255, 265, 266, 372, 375, 376, 391
+  Join:		331, 332, 333, 353, 366, 471, 473, 474, 475
+  Whois:		301, 311, 312, 313, 314, 317, 318, 319, 330, 338, 369, 406, 431
+  Who:		315, 352, 416
+  Mode:		324, 329, 367, 368, 467, 472, 478, 484, 501, 502
+  Error:		263, 401, 403, 404, 405, 411, 421, 432, 433, 436, 442, 451, 481, 482
+  Stats:		211, 212, 213, 214, 215, 216, 217, 218, 219, 223, 243, 244, 247, 248, 249
+  Admin:		256, 257, 258, 259, 423
+  Misc:		271, 272, 302, 303, 305, 306, 307, 321, 322, 323, 381, 382, 438, 443
+
+
+  $theme.rawdigit(N)							returns raws in tripple digit
+  $theme.raw.echo(N,[window])						returns where to echo the raw to
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+[eof]

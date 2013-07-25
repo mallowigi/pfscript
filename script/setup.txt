@@ -1,0 +1,811 @@
+ ; elseif ($did == 39) {
+  ; sdt email.checker
+  ; if ($did($did).state) {
+  ; .timermailchk -io 0 %mail.delay checkmail
+  ; did -e $dname 2311,67,2303,2307,59,27,28,29,53,6,199
+  ; if (%lb.enabled) { did -e $dname 2010 }
+  ; if ($did(29).sel) {
+  ; did -e $dname 30,64,65,66,63,2304,2301,2305,61,2306,63,64,61,2301
+  ; if ($sslready) { did -e $dname 62 }
+  ; }
+  ; }
+  ; else {
+  ; .timermailchk off
+  ; did -b $dname 6,2311,67,2010,2303,2307,59,27,28,29,30,53,65,66,2304,2305,2306,63,64,61,2301,62,199
+  ; }
+  ; toolbar.refinfo
+  ; }
+  ; elseif ($did == 2010) {
+  ; if ($did($did).state) {
+  ; set %email.bar 1
+  ; mail.tref -n
+  ; }
+  ; else { unset %email.bar }
+  ; toolbar.refinfo
+  ; }
+  ; elseif ($did == 2309) {
+  ; sdt lb.enabled
+  ; if ($did($did).state) {
+  ; nntoolbar
+  ; did -e $dname 266,268,277,267
+  ; if ($did(266).lines > 1) { did -e $dname 276 }
+  ; did -e $dname 76,77,78,1535,2312
+  ; if (%email.checker) { did -e $dname 2010 }
+  ; did -e $dname 222,223,1340,1341,287,286,250,334,333,251
+  ; if (%tb.lagcol == 2) {
+  ; did -e $dname 292,293,294,270,253,252
+  ; chgedcol $dname 271 %tb.lagcol.bg.sel
+  ; chgedcol $dname 272 %tb.lagcol.gr.sel
+  ; chgedcol $dname 273 %tb.lagcol.grh.sel
+  ; }
+  ; toolbar.dlaghist
+  ; if (%email.checker) && (%email.bar) { mail.tref -n }
+  ; lagchktimer -e
+  ; }
+  ; else {
+  ; nntoolbar -u
+  ; did -b $dname 287,286,223,222,2010,1340,1341,76,77,78,1535,251,292,293,294,270,253,252,292,293,294,333,250,334,266,268,277,274,275,276,281,282,267
+  ; mdxunsel $dname 266
+  ; chgedcol $dname 271,272,273 reset
+  ; }
+  ; }
+  ; elseif ($did == 270) {
+  ; crmlagbar
+  ; var %x = $$nn.rgb(%tb.lagcol.bg),%o = %tb.lagcol.bg
+  ; set %tb.lagcol.bg $chkrgb(%x)
+  ; set %tb.lagcol.bg.sel %tb.lagcol.bg
+  ; chgedcol $dname 271 %tb.lagcol.bg
+  ; drawrect -nrf @tb.lagbar %tb.lagcol.bg 1 0 0 100 22
+  ; toolbar.dlaghist
+  ; }
+  ; elseif ($did == 253) {
+  ; var %x = $$nn.rgb(%tb.lagcol.gr),%o = %tb.lagcol.gr
+  ; set %tb.lagcol.gr $chkrgb(%x)
+  ; set %tb.lagcol.gr.sel %tb.lagcol.gr
+  ; chgedcol $dname 272 %tb.lagcol.gr
+  ; toolbar.dlaghist
+  ; }
+  ; elseif ($did == 252) {
+  ; var %x = $$nn.rgb(%tb.lagcol.grh),%o = %tb.lagcol.grh
+  ; set %tb.lagcol.grh $chkrgb(%x)
+  ; set %tb.lagcol.grh.sel %tb.lagcol.grh
+  ; chgedcol $dname 273 %tb.lagcol.grh
+  ; toolbar.dlaghist
+  ; }
+  ; elseif ($istok(286 287 251,$did,32)) {
+  ; set %tb.lagcol $iif($did(286).state,1,$iif($did(251).state,2,0))
+  ; if (%tb.lagcol != 2) {
+  ; did -b $dname 292,293,294,270,253,252
+  ; chgedcol $dname 271,272,273 reset
+  ; }
+  ; else {
+  ; did -e $dname 292,293,294,270,253,252
+  ; chgedcol $dname 271 %tb.lagcol.bg.sel
+  ; chgedcol $dname 272 %tb.lagcol.gr.sel
+  ; chgedcol $dname 273 %tb.lagcol.grh.sel
+  ; }
+  ; if (%tb.lagcol == 1) {
+  ; set %tb.lagcol.bg $color($color(back))
+  ; set %tb.lagcol.gr $color($color(info))
+  ; set %tb.lagcol.grh $color($color(info2))
+  ; }
+  ; elseif (%tb.lagcol == 2) {
+  ; set %tb.lagcol.bg %tb.lagcol.bg.sel
+  ; set %tb.lagcol.gr %tb.lagcol.gr.sel
+  ; set %tb.lagcol.grh %tb.lagcol.grh.sel
+  ; }
+  ; else {
+  ; set %tb.lagcol.bg 0
+  ; unset %tb.lagcol.gr %tb.lagcol.grh
+  ; }
+  ; toolbar.dlaghist
+  ; }
+  ; elseif ($did == 161) { contentfilter.edit }
+  ; elseif ($did == 162) { noop $dialog(contentfilter.add,contentfilter.add,-4) }
+  ; elseif ($did == 160) {
+  ; while ($did(150).sel) { did -d $dname 150 $v1 }
+  ; contentfilter.savelist
+  ; did -b $dname 160,161
+  ; if (!$did(150).lines) { did -b $dname 153 }
+  ; }
+  ; elseif ($did == 153) {
+  ; if ($ydialog(Do you really want to remove all content filters?)) {
+  ; did -b $dname 160,161,153
+  ; did -r $dname 150
+  ; unset %contentfilter %contentfilter.regex.*
+  ; }
+  ; }
+  ; elseif ($did == 167) {
+  ; sdt contentfilter.chans
+  ; if (!%contentfilter.queries) && (!%contentfilter.chans) { did -b $dname 150,162,161,160,153 }
+  ; else {
+  ; did -e $dname 150,162
+  ; if ($did(150).sel) { did -e $dname 160,161 }
+  ; if ($did(150).lines) { did -e $dname 153 }
+  ; }
+  ; }
+  ; elseif ($did == 151) {
+  ; sdt contentfilter.queries
+  ; if (!%contentfilter.queries) && (!%contentfilter.chans) { did -b $dname 150,162,161,160,153 }
+  ; else {
+  ; did -e $dname 150,162
+  ; if ($did(150).sel) { did -e $dname 160,161 }
+  ; if ($did(150).lines) { did -e $dname 153 }
+  ; }
+  ; }
+  ; elseif ($did == 150) { did $iif($did($did).sel,-e,-b) $dname 160,161 }
+  ; elseif ($did == 131) { sdt chanpasses.save }
+  ; elseif ($did == 26) { sortmdx $dname $did }
+  ; elseif ($did == 34) { sdt dcc.sinfo }
+  ; elseif ($did == 29) {
+  ; mail.setload
+  ; did $iif($did($did).sel,-e,-b) $dname 30
+  ; }
+  ; elseif ($did == 67) { sdt mail.echo }
+  ; elseif ($did == 53) {
+  ; var %a = $$eddialog(Enter the name of your new mail account! Don't use spaces and wildcards (* $+ $chr(44) ?) in the account name!)
+  ; if (* isin %a) || (? isin %a) || ($chr(32) isin %a) { errdialog %a is not a valid account name! Please don't use spaces and wildcards (*, ?) in the account name! }
+  ; else {
+  ; if (!%mailacc. [ $+ [ %a ] ]) {
+  ; set %mailacc. $+ %a &null &null 0 &null 0
+  ; did -c $dname 65
+  ; did -u $dname 66
+  ; did -ac $dname 29 %a
+  ; did -e $dname 2301,61,63,64,65,66,30
+  ; if ($sslready) { did -e $dname 62 }
+  ; did -er $dname 2304,2305,2306
+  ; }
+  ; else { errdialog a mail account with that name already exists! Please choose a different name. }
+  ; }
+  ; }
+  ; elseif ($did == 30) {
+  ; unset %mailacc. $+ $did(29).seltext %mailchk. $+ $did(29).seltext
+  ; did -d $dname 29 $did(29).sel
+  ; if ($did(29).lines) {
+  ; did -c $dname 29 1
+  ; mail.setload
+  ; }
+  ; else {
+  ; did -r $dname 29,2304,2305,2306
+  ; did -u $dname 66
+  ; did -c $dname 65
+  ; did -b $dname 30,2304,2305,2306,2301,61,63,64,65,66,62
+  ; }
+  ; mail.tref -n
+  ; }
+
+  ; elseif ($did == 58) { url -an http://www.syndic8.com/ }
+  ; elseif ($did == 284) { url -an http://www.2rss.com/ }
+  ; elseif ($did == 70) { sdt nwstick.serror }
+  ; elseif ($did == 225) { noop $dialog(nt.add,nt.add,-4) }
+  ; elseif ($did == 226) {
+  ; if ($ydialog(Do you really want to remove the selected newsticker(s)?)) {
+  ; while ($did(224).sel) {
+  ; hdel -w rssdone $encode($cell(224,1),m) $+ *
+  ; hdel rss $wd($did(224).seltext,-1)
+  ; hsave -ob rss scripts\tables\rss.tbl
+  ; did -d $dname 224 $did(224).sel
+  ; }
+  ; did -b $dname 226,227
+  ; if ($did(224).lines < 2) { did -b $dname 241 }
+  ; }
+  ; }
+  ; elseif ($did == 241) {
+  ; if ($ydialog(Do you really want to remove all newstickers?)) {
+  ; hdel -w rssdone *
+  ; hdel -w rss *
+  ; hsave -ob rss scripts\tables\rss.tbl
+  ; did -r $dname 224
+  ; did -b $dname 226,227,241
+  ; }
+  ; }
+  ; elseif ($did == 227) { nt.edit }
+  ; elseif ($did == 224) {
+  ; did $iif($did($did).sel,-e,-b) $dname 226,227
+  ; if (stateclick recent * iswm $did($did,1)) { .timerrsssave -io 1 0 rss.setsave }
+  ; }
+  ; elseif ($did == 214) {
+  ; sdt paste.breaklines
+  ; did $iif($did($did).state,-e,-b) $dname 216
+  ; }
+  ; elseif ($did == 218) {
+  ; sdt paste.stripcodes
+  ; did $iif($did($did).state,-e,-b) $dname 219
+  ; }
+  ; elseif ($did == 219) { sdt paste.stripcodes.mode }
+  ; elseif ($did == 215) { sdt paste.singleeditbox }
+  ; elseif ($did == 213) {
+  ; if ($ydialog(Do you really want to load the default slaps?)) {
+  ; if ($isfile(scripts\txt\slaps-def.txt)) {
+  ; .copy -o scripts\txt\slaps-def.txt scripts\txt\slaps.txt
+  ; did -b $dname 204,655
+  ; prevbmp $dname 658 344 action 2
+  ; did -r $dname 653
+  ; loadslaps
+  ; did $iif($did(653).lines,-e,-b) $dname 203
+  ; saveslaps
+  ; }
+  ; else { errdialog scripts\txt\slaps-def.txt not found! }
+  ; }
+  ; }
+  ; elseif ($did == 207) {
+  ; if ($ydialog(Do you really want to load the default kick messages?)) {
+  ; if ($isfile(scripts\txt\kickmsg-def.txt)) {
+  ; .copy -o scripts\txt\kickmsg-def.txt scripts\txt\kickmsg.txt
+  ; loadbuf -ro $dname 2333 scripts\txt\kickmsg.txt
+  ; did $iif($did(2333).lines,-e,-b) $dname 159
+  ; did -b $dname 163,2337
+  ; prevbmp $dname 2335 344 kick 2
+  ; }
+  ; else { errdialog scripts\txt\kickmsg-def.txt not found! }
+  ; }
+  ; }
+  ; elseif ($did == 209) {
+  ; if ($ydialog(Do you really want to load the default quit messages?)) {
+  ; if ($isfile(scripts\txt\quitmsg-def.txt)) {
+  ; .copy -o scripts\txt\quitmsg-def.txt scripts\txt\quitmsg.txt
+  ; loadbuf -ro $dname 2323 scripts\txt\quitmsg.txt
+  ; did $iif($did(2323).lines,-e,-b) $dname 164
+  ; did -b $dname 165,2327
+  ; prevbmp $dname 2325 344 quit 2
+  ; }
+  ; else { errdialog scripts\txt\quitmsg-def.txt not found! }
+  ; }
+  ; }
+  ; elseif ($did == 69) { sns.save }
+  ; elseif ($did == 138) { sdt awretain }
+  ; elseif ($did == 57) { sdt news.sepwinall }
+  ; elseif ($did == 132) { sdt showialupd }
+  ; elseif ($did == 126) { sdt x.hosthide.nbnc }
+  ; elseif ($did == 127) { sdt q.hosthide.nbnc }
+  ; elseif ($did == 102) { sdt gs.hosthide.nbnc }
+  ; elseif ($did == 60) { sdt sendversion }
+  ; elseif ($did == 55) { sns.save }
+  ; elseif ($did == 56) { sns.save }
+  ; elseif ($did == 54) { sns.load }
+  ; elseif ($did == 311) {
+  ; noop $dialog(netsel,netsel,-4)
+  ; if (%netsel.result) {
+  ; did -ac $dname 54 $v1
+  ; unset %netsel.result
+  ; did -e $dname 335
+  ; sns.load
+  ; }
+  ; }
+  ; elseif ($did == 335) {
+  ; unset %nsset. [ $+ [ $did(settings,54).seltext ] ] %pass.cs. [ $+ [ $did(settings,54).seltext ] $+ ] .*
+  ; did -d $dname 54 $did(54).sel
+  ; did -c $dname 54 1
+  ; if (!$did(54).sel) { did -b $dname $did }
+  ; sns.load
+  ; }
+  ; elseif ($did == 166) {
+  ; if ($ydialog(Do you really want to unset all ChanServ channel passwords for $did(54).seltext $+ ?)) {
+  ; did -r $dname 211
+  ; did -b $dname 212,534,166
+  ; unset $+(%,pass.cs.,$did(54).seltext,.*)
+  ; }
+  ; }
+  ; elseif ($did == 593) {
+  ; noop $dialog(cs.add,cs.add,-4)
+  ; if (%cs.chan) && (%cs.pass) {
+  ; set $+(%,pass.cs.,$did(54).seltext,.,%cs.chan) %cs.pass
+  ; did -a $dname 211 %cs.chan
+  ; did -e $dname 166
+  ; }
+  ; unset %cs.pass %cs.chan
+  ; }
+  ; elseif ($did == 211) { did $iif($did(211).sel,-e,-b) $dname 212,534 }
+  ; elseif ($did == 212) { csauth.edit }
+  ; elseif ($did == 534) {
+  ; while ($did(211).sel) {
+  ; unset $+(%,pass.cs.,$did(54).seltext,$did(211).seltext)
+  ; did -d $dname 211 $did(211).sel
+  ; }
+  ; did -b $dname 212,534
+  ; if (!$did(211).lines) { did -b $dname 166 }
+  ; }
+  ; elseif ($did == 535) {
+  ; sns.save
+  ; sns.load
+  ; }
+  ; elseif ($did == 1351) { sdt hlown }
+  ; elseif ($istok(47 49 50 52 106 108,$did,32)) { url -an $did($did) }
+  ; elseif ($did == 169) {
+  ; did $iif($did($did).state,-e,-b) $dname 172
+  ; sdt titlebar.cref
+  ; titlebar.ctmr
+  ; }
+  ; elseif ($did == 536) {
+  ; if ($ydialog(Are you sure you want to reset all bindings to the script default?)) {
+  ; fkey.ldef
+  ; fkey.ref
+  ; }
+  ; }
+  ; elseif ($did == 25) { sdt pastenotify }
+  ; elseif ($did == 8) {
+  ; sdt nopaste
+  ; unset %paste.nodelay %pastedelay
+  ; did -b $dname 11,14,21,23,25,22,24
+  ; }
+  ; elseif ($did == 9) {
+  ; sdt paste.nodelay
+  ; unset %pastedelay %nopaste
+  ; did -b $dname 11,14,21,23,25,22,24
+  ; }
+  ; elseif ($did == 10) {
+  ; sdt pastedelay
+  ; unset %nopaste %paste.nodelay
+  ; did -e $dname 11,14,25,22,24
+  ; did $iif(%pasteminlinedelay,-e,-b) $dname 21,23
+  ; }
+  ; elseif ($did == 14) {
+  ; sdt pasteminlinedelay
+  ; did $iif($did($did).state,-e,-b) $dname 21,23
+  ; }
+  ; elseif ($did == 1376) { set %ignore.mask $calc($did($did).sel -1) }
+  ; elseif ($did == 1377) { set %ban.mask $calc($did($did).sel -1) }
+  ; elseif ($did == 1375) { sdt bndsp }
+  ; elseif ($did == 1990) { sdt excl.prot }
+  ; elseif ($did == 133) {
+  ; sdt splitwin
+  ; if (!$did($did).state) {
+  ; .timerntsplt.* off
+  ; hfree -w netsplit.*
+  ; }
+  ; }
+  ; elseif ($did == 1914) {
+  ; sdt qcls.auto
+  ; did $iif(%qcls.auto,-e,-b) $dname 1915
+  ; if (%qcls.auto) {
+  ; .timerqcls -io 0 30 scon -a chkqcls
+  ; chkqcls
+  ; }
+  ; else { .timerqcls off }
+  ; }
+  ; elseif ($did == 15) { sdt q.auth.auto }
+  ; elseif ($did == 100) { sdt gs.auth.auto }
+  ; elseif ($did == 109) { sdt gs.autoghost }
+  ; elseif ($did == 20) {
+  ; if ($ydialog(Do you really want to unset all bindings?)) {
+  ; unset %dbc.?.* %F1 %F2 %F3 %F4 %F5 %F6 %F7 %F8 %F9 %F10 %F11 %F12 %sF1 %sF2 %sF3 %sF4 %sF5 %sF6 %sF7 %sF8 %sF9 %sF10 %sF11 %sF12 %cF6 %cF7 %cF8 %cF9 %cF10 %cF11 %cF12
+  ; fkey.ref
+  ; }
+  ; }
+  ; elseif ($did == 73) {
+  ; sdt qryevent
+  ; did $iif(%qryevent,-e,-b) $dname 1924,1925,1926,1927,1928,1931
+  ; }
+  ; elseif ($did == 79) {
+  ; did $iif($did($did).sel,-e,-b) $dname 777
+  ; if (endlabeledit labelEdit* iswm $did($did,1)) {
+  ; var %u = $cell($did,2),%c = $wd($did($did,1),3-),%k
+  ; if ($did($did).sel < 33) { %k = $replace(%u,Shift+,s,Control+,c) }
+  ; else { %k = $+(dbc.,$left($gettok(%u,-1,43),1),.,$iif(control isin %u,ctrl,$iif(shift isin %u,shift,def))) }
+  ; if (%c) {
+  ; did -oc $dname $did $did($did).sel 1 + 0 0 0 %c $+     0 0 0 %u
+  ; set % $+ %k %c
+  ; }
+  ; else {
+  ; did -oc $dname $did $did($did).sel 1 + 0 0 0    0 0 0 %u
+  ; unset % [ $+ [ %k ] ]
+  ; }
+  ; }
+  ; }
+  ; elseif ($did == 1830) {
+  ; sdt news.awin
+  ; did $iif($did($did).state,-e,-b) $dname 57
+  ; }
+  ; elseif ($did == 329) {
+  ; var %x = $$eddialog(Enter an exclude in nick!ident@host format!)
+  ; if (*!*@* !iswm %x) { errdialog you have to enter an exclude in nick!ident@host format! }
+  ; elseif ($hget(pexclude,%x)) { errdialog you already added this exclude! }
+  ; else {
+  ; hadd pexclude %x 1
+  ; hsave -ob pexclude scripts\tables\pexclude.tbl
+  ; did -a $dname 332 %x
+  ; did -e $dname 158
+  ; }
+  ; }
+  ; elseif ($did == 332) { did $iif($did($did).sel,-e,-b) $dname 210,330 }
+  ; elseif ($did == 158) {
+  ; if ($ydialog(Do you really want to remove all excludes?)) {
+  ; hdel -w pexclude *
+  ; hsave -ob pexclude scripts\tables\pexclude.tbl
+  ; did -r $dname 332
+  ; did -b $dname 210,330,158
+  ; }
+  ; }
+  ; elseif ($did == 330) {
+  ; while ($did(332).sel) {
+  ; hdel pexclude $did(332).seltext
+  ; did -d $dname 332 $v1
+  ; }
+  ; did -b $dname 210,330
+  ; if (!$did(332).lines) { did -b $dname 158 }
+  ; hsave -ob pexclude scripts\tables\pexclude.tbl
+  ; }
+  ; elseif ($did == 601) {
+  ; sdt nick.comp
+  ; did $iif(%nick.comp,-e,-b) $dname 42,40,41,603
+  ; }
+  ; elseif ($did == 615) { sdt q.autorecmode }
+  ; elseif ($did == 103) { sdt gs.autorecmode }
+  ; elseif ($did == 1551) { sdt x.autorecmode }
+  ; elseif ($did == 777) {
+  ; var %u = $cell(79,2)
+  ; if ($did(79).sel < 33) { unset % [ $+ [ $replace(%u,Shift+,s,Control+,c) ] ] }
+  ; else { unset %dbc. [ $+ [ $left($gettok(%u,-1,43),1) ] $+ ] . [ $+ [ $iif(control isin %u,ctrl,$iif(shift isin %u,shift,def))) ] ] }
+  ; did -o $dname 79 $did(79).sel 1 +fs 0 0 0    0 0 0 %u
+  ; }
+  ; elseif ($did == 825) {
+  ; sdt q.hosthide
+  ; did $iif($did($did).state,-e,-b) $dname 127
+  ; }
+  ; elseif ($did == 101) {
+  ; sdt gs.hosthide
+  ; did $iif($did($did).state,-e,-b) $dname 102
+  ; }
+  ; elseif ($did == 826) {
+  ; sdt x.hosthide
+  ; did $iif($did($did).state,-e,-b) $dname 126
+  ; }
+  ; elseif ($did == 148) { sdt getexternalip }
+  ; elseif ($did == 961) {
+  ; if ($did($did).sel) {
+  ; loadnetdata $did($did).seltext
+  ; did $iif($did($did).sel == $did($did).lines,-b,-e) $dname 972
+  ; did $iif($did($did).sel == 1,-b,-e) $dname 971
+  ; did $iif($did($did).sel,-e,-b) $dname 963
+  ; }
+  ; }
+  ; elseif ($did == 962) { autocon -a }
+  ; elseif ($did == 963) { autocon }
+  ; elseif ($did == 971) {
+  ; if ($did(961).sel) {
+  ; var %l = $v1,%t = $did(961).seltext
+  ; did -d $dname 961 %l
+  ; did -ic $dname 961 $calc(%l -1) %t
+  ; set %autoconservs $didtok(961,32)
+  ; if ($did(961).sel != $did(961).lines) { did -e $dname 972 }
+  ; if ($did(961).sel == 1) { did -b $dname 971 }
+  ; }
+  ; }
+  ; elseif ($did == 972) {
+  ; if ($did(961).sel) {
+  ; var %l = $v1,%t = $did(961).seltext
+  ; did -d $dname 961 %l
+  ; did -ic $dname 961 $calc(%l +1) %t
+  ; set %autoconservs $didtok(961,32)
+  ; if ($did(961).sel == $did(961).lines) { did -b $dname 972 }
+  ; if ($did(961).sel != 1) { did -e $dname 971 }
+  ; }
+  ; }
+  ; elseif ($did == 1315) { sdt x.auth.auto }
+  ; elseif ($did == 1464) { sdt totd }
+  ; elseif ($istok(1924 1925 1926 1927 1928 1931,$did,32)) {
+  ; var %v = $replace($did,1924,j,1925,q,1926,p,1927,k,1928,n,1931,o)
+  ; set %qrytypes $iif($did($did).state,%qrytypes $+ %v,$remove(%qrytypes,%v))
+  ; }
+  ; elseif ($did == 2024) {
+  ; sdt anti.idle
+  ; did $iif($did($did).state,-e,-b) $dname 2982
+  ; if (%anti.idle) { .timeraidle -io 0 %aidle.max scon -at1 aidle }
+  ; else { .timeraidle off }
+  ; }
+  ; elseif ($did == 2025) { sdt kickcounter }
+  ; elseif ($did == 267) {
+  ; popdll.new
+  ; popdll.add 1    + 1 0 &Defaulttb.ldef Default
+  ; if ($findfile(iconsets\buttons\,*.ico,1)) { popdll.add 2    + 2 0 &Buttonstb.ldef Buttons }
+  ; if ($findfile(iconsets\classic\,*.ico,1)) { popdll.add 3    + 3 0 &Classictb.ldef Classic }
+  ; if ($findfile(iconsets\gartoon\,*.ico,1)) { popdll.add 4    + 4 0 &Gartoontb.ldef Gartoon }
+  ; if ($findfile(iconsets\jaffa\,*.ico,1)) { popdll.add 5    + 5 0 &Jaffatb.ldef Jaffa }
+  ; if ($findfile(iconsets\kresky\,*.ico,1)) { popdll.add 6    + 6 0 &kreskytb.ldef kresky }
+  ; if ($findfile(iconsets\metrox\,*.ico,1)) { popdll.add 7    + 7 0 &Metroxtb.ldef Metrox }
+  ; if ($findfile(iconsets\modern\,*.ico,1)) { popdll.add 8    + 8 0 Mod&erntb.ldef Modern }
+  ; if ($findfile(iconsets\moonshine\,*.ico,1)) { popdll.add 9    + 9 0 M&oonshinetb.ldef Moonshine }
+  ; if ($findfile(iconsets\megapack\,*.ico,1)) { popdll.add 10    + 10 0 M&Ptb.ldef MP }
+  ; if ($findfile(iconsets\phoenity\,*.ico,1)) { popdll.add 11    + 11 0 p&hoenitytb.ldef phoenity }
+  ; popdll.disp
+  ; }
+  ; elseif ($did == 2074) {
+  ; sdt rssticker
+  ; if ($did($did).state) {
+  ; did -e $dname 1828,1830,1827,1829,224,225,1814,70,5
+  ; if (%news.awin) { did -e $dname 57 }
+  ; if ($did(224).sel) { did -e $dname 226,227 }
+  ; if ($did(224).lines > 1) { did -e $dname 241 }
+  ; .timernwstick -io 0 $calc(%nwstick.mins *60) newsticker
+  ; }
+  ; else {
+  ; did -b $dname 57,1828,1830,1827,1829,224,225,226,227,1814,70,241,5
+  ; .timernwstick off
+  ; }
+  ; }
+  ; elseif ($did == 2089) { sdt querystats }
+  ; elseif ($did == 2311) { sdt mail.beep }
+  ; elseif ($did == 2323) {
+  ; prevbmp $dname 2325 344 quit 2 $did($did).seltext
+  ; did $iif($did($did).sel,-e,-b) $dname 165,2327
+  ; }
+  ; elseif ($did == 2326) {
+  ; did -a $dname 2323 $$eddialog(Enter a new quit message!)
+  ; did -e $dname 164
+  ; savebuf -o $dname 2323 scripts\txt\quitmsg.txt
+  ; }
+  ; elseif ($did == 2327) {
+  ; while ($did(2323).sel) { did -d $dname 2323 $v1 }
+  ; did -b $dname 165,2327
+  ; if (!$did(2323).lines) { did -b $dname 164 }
+  ; savebuf -o $dname 2323 scripts\txt\quitmsg.txt
+  ; prevbmp $dname 2325 344 quit 2
+  ; }
+  ; elseif ($did == 165) { quitmsg.edit }
+  ; elseif ($did == 164) {
+  ; if ($ydialog(Do you really want to remove all quit messages?)) {
+  ; did -r $dname 2323
+  ; did -b $dname 164,165,2327
+  ; savebuf -o $dname 2323 scripts\txt\quitmsg.txt
+  ; prevbmp $dname 2325 344 quit 2
+  ; }
+  ; }
+  ; elseif ($did == 2333) {
+  ; prevbmp $dname 2335 344 kick 2 $did($did).seltext
+  ; did $iif($did($did).sel,-e,-b) $dname 163,2337
+  ; }
+  ; elseif ($did == 159) {
+  ; if ($ydialog(Do you really want to remove all kick messages?)) {
+  ; did -r $dname 2333
+  ; did -b $dname 163,2337,159
+  ; savebuf -o $dname 2333 scripts\txt\kickmsg.txt
+  ; prevbmp $dname 2335 344 kick 2
+  ; }
+  ; }
+  ; elseif ($did == 163) { kickmsg.edit }
+  ; elseif ($did == 2336) {
+  ; did -a $dname 2333 $$eddialog(Enter a new kick message!)
+  ; did -e $dname 159
+  ; savebuf -o $dname 2333 scripts\txt\kickmsg.txt
+  ; }
+  ; elseif ($did == 2337) {
+  ; while ($did(2333).sel) { did -d $dname 2333 $v1 }
+  ; did -b $dname 163,2337
+  ; if (!$did(2333).lines) { did -b $dname 159 }
+  ; savebuf -o $dname 2333 scripts\txt\kickmsg.txt
+  ; prevbmp $dname 2335 344 kick 2
+  ; }
+  ; elseif ($did == 653) {
+  ; prevbmp $dname 658 344 action 2 * $chkme $replace($gettok($did(653).seltext,2-,58),<nick>,$randnick)
+  ; did $iif($did($did).sel,-e,-b) $dname 204,655
+  ; }
+  ; elseif ($did == 204) { slaps.edit }
+  ; elseif ($did == 656) {
+  ; var %z = $$eddialog(Enter a slap in "title: text" format.Example: "Crevasse: pushes <nick> into a crevasse")
+  ; if (?*:?* iswm %z) {
+  ; tokenize 58 %z
+  ; did -a $dname 653 $1 $+ : $2-
+  ; did -e $dname 203
+  ; saveslaps
+  ; }
+  ; else { errdialog slaps must be in the format "title: text", for example: "Crevasse: pushes <nick> into a crevasse" }
+  ; }
+  ; elseif ($did == 203) {
+  ; if ($ydialog(Do you really want to remove all slaps?)) {
+  ; did -r $dname 653
+  ; did -b $dname 203,204,655
+  ; prevbmp $dname 658 344 action 2
+  ; saveslaps
+  ; }
+  ; }
+  ; elseif ($did == 210) { exclude.edit }
+  ; elseif ($did == 655) {
+  ; while ($did(653).sel) { did -d $dname 653 $v1 }
+  ; did -b $dname 655,204
+  ; prevbmp $dname 658 344 action 2
+  ; saveslaps
+  ; }
+  ; elseif ($did == 2426) { sdt joinclones }
+  ; elseif ($did == 2947) { sdt joincchan }
+  ; elseif ($did == 1579) {
+  ; var %v = %autoconserv. [ $+ [ $did($did).seltext ] ],%varmails = $wd(%v,1),%x
+  ; if (%v) && (%varmails != &null) { %x = %varmails }
+  ; if ($did($did).seltext == > All other networks) {
+  ; did -ra $dname 637 Default nickname
+  ; did -era $dname 81 %nick.def
+  ; did -ra $dname 83 %nick.away
+  ; did -b $dname 135
+  ; }
+  ; else {
+  ; did -e $dname 135
+  ; if (%x) {
+  ; did -ra $dname 637 Default nick (from favs)
+  ; did -bra $dname 81 %x
+  ; }
+  ; else {
+  ; did -ra $dname 637 Default nickname
+  ; did -era $dname 81 %nick.def. [ $+ [ $did(1579).seltext ] ]
+  ; }
+  ; did -ra $dname 83 %nick.away. [ $+ [ $did(1579).seltext ] ]
+  ; }
+  ; }
+  ; elseif ($did == 306) {
+  ; noop $dialog(netsel,netsel,-4)
+  ; if (%netsel.result) {
+  ; if (!$istok($didtok($dname,1579,44),%netsel.result,44)) {
+  ; did -ac $dname 1579 %netsel.result
+  ; unset %netsel.result
+  ; did -e $dname 135
+  ; var %v = %autoconserv. [ $+ [ $did(1579).seltext ] ],%varmails = $wd(%v,1),%x
+  ; if (%v) && (%varmails != &null) { %x = %varmails }
+  ; if (%x) {
+  ; did -ra $dname 637 Default nick (from favs)
+  ; did -bra $dname 81 %x
+  ; }
+  ; else {
+  ; did -ra $dname 637 Default nickname
+  ; did -era $dname 81 %nick.def. [ $+ [ $did(1579).seltext ] ]
+  ; }
+  ; did -ra $dname 83 %nick.away. [ $+ [ $did(1579).seltext ] ]
+  ; }
+  ; else { errdialog this network is already in the list! }
+  ; }
+  ; }
+  ; elseif ($did == 135) {
+  ; if ($did(81).enabled) { unset %nick.def. $+ $did(1579).seltext }
+  ; unset %nick.away. $+ $did(1579).seltext
+  ; did -d $dname 1579 $did(1579).sel
+  ; did -c $dname 1579 1
+  ; did -ra $dname 637 Default nickname
+  ; did -era $dname 81 %nick.def
+  ; did -ra $dname 83 %nick.away
+  ; if ($did(1579).seltext == > All other networks) { did -b $dname $did }
+  ; }
+  ; elseif ($istok(123 124 125 136 324,$did,32)) { savenetdata }
+  ; elseif ($did == 68) { savetitlebar }
+  ; elseif ($istok(65 66,$did,32)) {
+  ; set %mailacc. $+ $did(29).seltext $puttok(%mailacc. [ $+ [ $did(29).seltext ] ],$did(66).state,3,32)
+  ; unset %mailchk. $+ $did(29).seltext
+  ; mail.tref -n
+  ; }
+  ; elseif ($did == 62) {
+  ; set %mailacc. $+ $did(29).seltext $puttok(%mailacc. [ $+ [ $did(29).seltext ] ],$did(62).state,5,32)
+  ; unset %mailchk. $+ $did(29).seltext
+  ; mail.tref -n
+  ; }
+
+
+
+  ; if ($istok(304 172 279 245 229 236 216 64 11 21 23 1915 1828 170 171 172 173 174 176 177 178 179 180 193 194 195 196 197 198 316 317 318 319 320 321 322 324 325 326 327 1236 77 1340 2307 2982 999,$did,32)) { numonlyedit $dname $did }
+  ; if ($did == 17) { set %q.auth.nick $did($did) }
+  ; elseif ($istok(186 187,$did,32)) {
+  ; hadd awaypreset $replace($did(154).seltext,$chr(32),_) $iif($remove($did(187),$chr(32)),$v1,$iif(%nick.away,$v1,<me>)) $iif($did(186),$v1,gone)
+  ; hsave -ob awaypreset scripts\tables\awaypreset.tbl
+  ; }
+  ; elseif ($did == 343) {
+  ; var %d = $did($did)
+  ; noop $regsub(%d,/^[ ]*/,,%d) $regsub(%d,/[ ]*$/,,%d)
+  ; if (%d) && (!$istok($didtok(331,1),%d,1)) {
+  ; var %o = $encode(%game.oldtitle,m),%n = $encode(%d,m)
+  ; did -oc $dname 331 $did(331).sel %d
+  ; set %game. $+ %n $+ .added 1
+  ; set %game. $+ %n $+ .path %game. [ $+ [ %o ] $+ ] .path
+  ; set %game. $+ %n $+ .cmdline %game. [ $+ [ %o ] $+ ] .cmdline
+  ; set %game. $+ %n $+ .setaway %game. [ $+ [ %o ] $+ ] .setaway
+  ; set %game. $+ %n $+ .awaynick %game. [ $+ [ %o ] $+ ] .awaynick
+  ; set %game. $+ %n $+ .awaymsg %game. [ $+ [ %o ] $+ ] .awaymsg
+  ; set %game. $+ %n $+ .favs %game. [ $+ [ %o ] $+ ] .favs
+  ; unset %game. [ $+ [ %o ] $+ ] .*
+  ; set %game.oldtitle %d
+  ; }
+  ; }
+  ; elseif ($did == 344) { set %game. [ $+ [ $encode($did(331).seltext,m) ] $+ ] .path $did($did) }
+  ; elseif ($did == 345) { set %game. [ $+ [ $encode($did(331).seltext,m) ] $+ ] .cmdline $did($did) }
+  ; elseif ($did == 346) { set %game. [ $+ [ $encode($did(331).seltext,m) ] $+ ] .awaynick $did($did) }
+  ; elseif ($did == 357) { set %game. [ $+ [ $encode($did(331).seltext,m) ] $+ ] .awaymsg $did($did) }
+  ; elseif ($did == 304) {
+  ; set %sbar.refdelay $iif($did($did) isnum 1-,$v1,1)
+  ; sbar.timer
+  ; }
+  ; elseif ($did == 81) {
+  ; if ($did(1579).seltext == > All other networks) { set %nick.def $did($did) }
+  ; elseif ($did($did)) { set %nick.def. $+ $did(1579).seltext $did($did) }
+  ; else { unset %nick.def. $+ $did(1579).seltext }
+  ; }
+  ; elseif ($did == 83) {
+  ; if ($did(1579).seltext == > All other networks) { set %nick.away $did($did) }
+  ; elseif ($did($did)) { set %nick.away. $+ $did(1579).seltext $did($did) }
+  ; else { unset %nick.away. $+ $did(1579).seltext }
+  ; }
+  ; elseif ($did == 1236) { set %auto.awaytime $iif($did($did),$calc($v1 *60),3000) }
+  ; elseif ($did == 77) {
+  ; set %lag.chk.delay $iif($did($did) isnum 5-,$v1,5)
+  ; lagchktimer
+  ; }
+  ; elseif ($did == 1340) {
+  ; crmlagbar
+  ; set %lag.chk.len $iif($did($did) isnum 10-,$v1,1000)
+  ; drawrect -nrf @tb.lagbar %tb.lagcol.bg 1 0 0 100 22
+  ; toolbar.dlaghist
+  ; }
+  ; elseif ($did == 172) {
+  ; set %titlebar.cint $iif($did($did) isnum 1-,$v1,1)
+  ; titlebar.ctmr
+  ; }
+  ; elseif ($did == 96) { set %gs.auth.nick $did($did) }
+  ; elseif ($did == 2304) {
+  ; set %mailacc. $+ $did(29).seltext $puttok(%mailacc. [ $+ [ $did(29).seltext ] ],$iif($remove($did($did),$chr(32)),$v1,&null),1,32)
+  ; unset %mailchk. $+ $did(29).seltext
+  ; mail.tref -n
+  ; }
+  ; elseif ($did == 2305) {
+  ; set %mailacc. $+ $did(29).seltext $puttok(%mailacc. [ $+ [ $did(29).seltext ] ],$iif($remove($did($did),$chr(32)),$v1,&null),2,32)
+  ; unset %mailchk. $+ $did(29).seltext
+  ; mail.tref -n
+  ; }
+  ; elseif ($did == 2306) {
+  ; set %mailacc. $+ $did(29).seltext $puttok(%mailacc. [ $+ [ $did(29).seltext ] ],$iif($did($did),$encode($did($did),m),&null),4,32)
+  ; unset %mailchk. $+ $did(29).seltext
+  ; mail.tref -n
+  ; }
+  ; elseif ($did == 279) { set %maxwhousers $did($did) }
+  ; elseif ($did == 216) { set %paste.breaklines.bytes $iif($did($did) >= 10,$v1,500) }
+  ; elseif ($istok(92 120 121 122,$did,32)) { savenetdata }
+  ; elseif ($did == 517) { sns.save }
+  ; elseif ($did == 518) { sns.save }
+  ; elseif ($did == 41) {
+  ; set %nickcomp.format $did($did)
+  ; prevbmp $dname 43 146 own 2 $replace($did($did),<nick>,$randnick) sample text
+  ; }
+  ; elseif ($did == 11) { set %pastedelay.ms $iif($did($did),$v1,2000) }
+  ; elseif ($did == 21) { set %pasteminlinedelay.num $iif($did($did) > 0,$v1,1) }
+  ; elseif ($did == 23) { set %pasteminlinedelay.bytes $iif($did($did) > 1,$v1,2) }
+  ; elseif ($did == 1915) { set %qcls.secs $calc($iif($did($did),$v1,15) *60) }
+  ; elseif ($did == 18) { set %pass.q $encode($did($did),m) }
+  ; elseif ($did == 97) { set %pass.gs $encode($did($did),m) }
+  ; elseif ($did == 603) { set %nick.comp.chr $iif($did($did),$v1,:) }
+  ; elseif ($did == 1317) { set %x.auth.nick $did($did) }
+  ; elseif ($did == 1318) { set %pass.x $encode($did($did),m) }
+  ; elseif ($did == 1828) {
+  ; set %nwstick.mins $iif($did($did),$v1,5)
+  ; .timernwstick -io 0 $calc(%nwstick.mins *60) newsticker
+  ; }
+  ; elseif ($did == 2307) {
+  ; set %mail.delay $iif($did($did) !isnum 1-999,300,$calc($did($did) *60))
+  ; .timermailchk -io 0 %mail.delay checkmail
+  ; }
+  ; elseif ($did == 2323) { prevbmp $dname 2325 344 quit 2 $did($did) }
+  ; elseif ($did == 2333) { prevbmp $dname 2335 344 kick 2 $did($did) }
+  ; elseif ($did == 653) {
+  ; if (?*:?* iswm $did(653)) { prevbmp $dname 658 344 action 2 * $chkme [ [ $replace($gettok($did(653),2-,58),<nick>,$randnick) ] ] }
+  ; else { prevbmp $dname 658 344 info 2 Invalid slap format. }
+  ; }
+  ; elseif ($did == 2901) {
+  ; set %sbr.format $did(2901)
+  ; prevbmp settings 2902 200 own 2 $replace($did(settings,2901),<text>,OS) Windows $os
+  ; }
+  ; elseif ($did == 2982) {
+  ; set %aidle.max $iif($did($did) < 10 || $did($did) !isnum,10,$did($did))
+  ; .timeraidle -io 0 %aidle.max scon -at1 aidle
+  ; }
+  ; }
+  ; elseif ($devent == close) {
+  ; var %i = $did(110).lines,%c,%s
+  ; while (%i > 1) {
+  ; var %c = $cell(110,%i,1),%s = $calc($wd($did(110,%i),5) -1)
+  ; if (%c == CTCPflood) { set %pprot.ctcpflood %s }
+  ; elseif (%c == Inviteflood) { set %pprot.inviteflood %s }
+  ; elseif (%c == Noticeflood) { set %pprot.noticeflood %s }
+  ; elseif (%c == Queryflood) { set %pprot.queryflood %s }
+  ; elseif (%c == Textflood) { set %pprot.textflood %s }
+  ; elseif (%c == Ban) { set %pprot.ban %s }
+  ; elseif (%c == Spam) { set %pprot.spam %s }
+  ; elseif (%c == Highlightflood) { set %pprot.highlightflood %s }
+  ; dec %i
+  ; }
+  ; unset %game.oldtitle
+  ; cprot.setsave
+  ; rss.setsave
+  ; savetitlebar
+  ; if (%rssticker) { newsticker }
+  ; unset % [ $+  [ $dname $+ .oa ] ]
