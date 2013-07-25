@@ -1,0 +1,3 @@
+[hashtable]
+*!services@olympe.epiknet.org=1
+*!service@rizon.net=1

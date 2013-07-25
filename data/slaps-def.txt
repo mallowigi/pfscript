@@ -1,0 +1,19 @@
+﻿[hashtable]
+Tortank=/me envoie Tortank a la rescousse. HYDROCANON!!! $iif($$1 == $me,Vous vous prenez,$1 se prend) un puissant jet d'eau sur la figure!
+Roucarnage=/me appelle Roucarnage: "Attaque Picpic!". Le gros piaf se met à picorer $iif($$1 == $me,votre tête,la tête de $1) $+ .
+Flemme=/me lance une malédicition sur $iif($$1 == $me,lui-même,$1) qui lui donne la flemme de tout faire. Hourra!
+Voiture=/me $iif($$1 == $me,se roule dessus (???),roule sur $1 !)
+Tronconneuse=/me déchiquete $iif($$1 == $me,son bras,$1) avec une tronçonneuse. HAAHAHHAHAHA!!!!
+Gâteaux=/me vole $iif($$1 == $me,ses propres gâteaux,les gâteaux de $1) $+ . Mwahaha!
+Cyanure=/me persuade $iif($$1 == $me,son autre lui,$1) de tester le sandwich au Cyanure. :o
+Default=/me slaps $iif($$1 == $me,himself,$1) around a bit with a large trout
+Désert=/me $iif($$1 == $me,se perd,abandonne $1) dans le désert. :/
+Hallebarde=/me transperce $iif($$1 == $me,son ballon de foot,$1) avec sa hallebarde des années 50.
+House=/me appelle Greg House pour $iif($$1 == $me,se soigner,soigner $1) $+ . Malheureusement c'est un LUPUS!
+Kamehameha=/me appelle Sangoku à la rescousse: Celui ci balance un gigantesque GENKIDAMA sur $iif($$1 == $me,$me . Hein?!,$1 .) Il ne reste plus de traces.
+Mewtwo=/me invoque Mewtwo qui balance une puissante BALL'OMBRE sur $iif($$1 == $me,votre belle-mère,$1) qui se désintègre à son toucher. Hourra!!!
+Fusil=/me sort sa mitraillette et fusille $iif($$1 == $me,tout le monde sur le canal,$1) $+ . SAY HELLO TO MY LITTLE FRIEND!!!
+Hack=/me lance un programme pour hacker le compte de $iif($$1 == $me,$me . Oups,$1 . OWNED) $+ !
+Might=/me appelle Might pour régler le problème $iif($$1 == $me,du canal,de $1) $+ . Mais rien ne se passe.
+RickRoll=/me a découvert une vidéo ahurissante http://bit.ly/9Hg5H0
+Slap=/me SLAPS $$1

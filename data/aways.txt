@@ -1,0 +1,11 @@
+[hashtable]
+AFK=Je vais faire une course et je reviens.
+Vaisselle=Encore faire la vaisselle :'(
+Occupé=Je suis occupé. Veuillez ne pas me déranger.
+Ménage=Corvée de ménage...
+Miam=Parti manger. MIAM MIAM!
+Absent=Je m'absente un moment.
+IRL=Je retourne dans la matrice...
+WoW=J'ai un Raid sur le feu
+Bosse=Y'en a qui bossent ici :)
+Cuisine=Parti cuisiner de bons petits plats :)

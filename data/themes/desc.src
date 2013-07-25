@@ -1,0 +1,177 @@
+;; Syntaxe: <event> <description>
+
+[Events]
+INPUT Texte que vous écrivez sur un channel, query ou chat.
+TEXT Texte que les autres users écrivent.
+ACTION Texte d'action (/me).
+NOTICE Message de notification, privé ou envoyé à tout le canal.
+CHAT Message envoyé lors d'une discussion en DCC Chat.
+JOIN Lorsque quelqu'un rejoint un canal.
+PART Lorsque quelqu'un quitte le canal.
+NICK Lorsque quelqu'un change son pseudo.
+QUIT Lorsque quelqu'un quitte IRC.
+NOTIFY Lorsqu'un user de votre Notify List est online.
+UNOTIFY Lorsqu'un user de votre Notify List est offline.
+MODE Changement de mode d'un utilisateur.
+DNS Requête DNS envoyée ou reçue.
+USERMODE Changement de modes utilisateur.
+ERROR Message d'erreur envoyé par le serveur.
+SNOTICE Notice envoyée par le serveur.
+INVITE Invité à rejoindre un canal.
+TOPIC Le topic du canal a été changé.
+KICK Lorsque quelqu'un est kické du canal.
+RAWMODE Lorsqu'un utilisateur ou un canal subit un changement de modes.
+WALLOPS Réception d'un Wallop.
+CTCPREPLY Réception d'une réponse CTCP.
+CTCP Réception ou envoi d'une requête CTCP.
+CONNECT Message de connexion au serveur réussie.
+CONNECTFAIL Message de connexion au serveur échouée.
+DISCONNECT Déconnexion volontaire du serveur.
+START Démarrage de mIRC.
+BAN Ban d'un utilisateur.
+UNBAN Déban d'un utilisateur.
+OP Op d'un utilisateur.
+DEOP Déop d'un utilisateur.
+HELP Halfop d'un utilisateur.
+DEHELP Déhalfop d'un utilisateur.
+VOICE Voice d'un utilisateur.
+DEVOICE Dévoice d'un utilisateur.
+FILESENT Envoi d'un fichier par DCC réussi.
+FILERCVD Réception d'un fichier par DCC réussi.
+SENDFAIL Envoi d'un fichier par DCC échoué.
+GETFAIL Réception d'un fichier par DCC échoué.
+
+
+;; Syntaxe: <numeric> <default option> <description>
+; 0 = aucun
+; 1 = Toujours fenêtre de statut
+; 2 = Toujours fenêtre active
+; 3 = Fenêtre définie sinon de statut
+; 4 = Fenêtre définie sinon active
+
+[Raws]
+all 4 Toutes les RAWS supportées.
+
+con.all 3 Toutes les infos relatives à la connexion au serveur.
+con.001 3 Bienvenue sur IRC.
+con.002 3 Nom du serveur et version.
+con.003 3 Date de création du serveur.
+con.004 3 Votre pseudo, serveur, version, modes utilisateur et modes du canal.
+con.005 3 Restrictions du serveur, etc.
+con.221 3 Vos modes utilisateurs.
+con.250 3 Highest connection count, also returned for a STATS u request.
+con.251 3 Total d'users, d'invisibles et de serveurs.
+con.252 3 Total d'irc opérateurs, si il y'en a.
+con.253 3 Total de connexions inconnues.
+con.254 3 Nombre total de canaux disponibles.
+con.255 3 Nombre total de clients et de serveurs locaux.
+con.265 3 Nombre total d'utilisateurs locaux et le maximum autorisé.
+con.266 3 Nombre total d'utilisateurs globaux et le maximum autorisé.
+con.372 3 Message du jour (MOTD).
+con.375 3 Début du MOTD.
+con.376 3 Fin du MOTD.
+con.391 3 Date et heure actuelle du serveur.
+
+join.all 4 Toutes les infos relatives à l'entrée sur un canal.
+join.331 3 Pas de topic.
+join.332 3 Topic du canal.
+join.333 3 Heure et auteur du topic.
+join.353 1 Liste des utilisateurs présents sur le canal, obtenus via /names.
+join.366 1 Fin de l'affichage de la liste d'utilisateurs.
+join.471 2 Impossibilité de rejoindre le canal car la limite d'utilisateurs a été atteinte (+l).
+join.473 2 Impossibilité de rejoindre le canal car celui-ci est en mode invite seulement (+i).
+join.474 2 Impossibilité de rejoindre le canal car vous êtes bannis de celui-ci (+b).
+join.475 2 Impossibilité de rejoindre le canal car celui-ci est protégé par une clé (+k).
+
+whois.all 2 Infos obtenues par un /whois ou /whowas
+whois.301 2 Message Away (répondeur), si défini.
+whois.307 2 Informations sur l'adresse IP de l'user.
+whois.311 2 Début du /whois: pseudo, nom réel et adresse mail.
+whois.312 2 Nom du serveur et informations.
+whois.313 2 L'user est un IRCOp.
+whois.314 2 Début du /whowas: pseudo, nom réel et adresse mail.
+whois.317 2 Temps total d'idle, Heure de connexion au serveur.
+whois.318 2 Fin du /whois (souvent utilisé pour afficher des Whois personnalisés).
+whois.319 2 Canaux sur lesquels l'utilisateur est présent.
+whois.330 2 Pseudo enregistré.
+whois.338 2 Votre hostname et adresse IP lors d'un Whois sur vous-même.
+whois.369 2 Fin du /whowas (souvent utilisé pour afficher des Whowas personnalisés).
+whois.406 2 Whowas: Ce pseudo n'est plus connu des services.
+whois.431 2 Erreur: Ce pseudo n'existe pas.
+
+who.all 4 Infos obtenues par un /who.
+who.315 4 Fin du /who.
+who.352 4 Informations du /who: canal, pseudo, adresse, etc.
+who.416 4 Erreur: Trop d'informations demandées.
+
+mode.all 4 Infos relatives aux modes.
+mode.324 4 Modes du canal.
+mode.329 4 Date de création du canal
+mode.367 4 Liste des bans du canal: infos de ban, pseudo, durée...
+mode.368 4 Fin de la liste des bans
+mode.467 4 Erreur: La clé du canal a déjà été définie, enlevez d'abord la précédente.
+mode.472 4 Erreur: Mode inconnu sur ce serveur.
+mode.478 4 Erreur: La liste des bans/ignore est pleine.
+mode.484 4 Erreur: Impossibilt de kill, kick ou deop le service.
+mode.501 4 Erreur: Flag de mode inconnu.
+mode.502 4 Erreur: Vous ne pouvez pas changer l'usermode des autres users.
+
+error.all 2 Affichés lorsqu'une erreur survient.
+error.263 2 Le serveur est trop chargé, réessayez ultérieurement.
+error.401 2 Ce pseudo n'existe pas.
+error.403 2 Ce canal n'existe pas.
+error.404 2 Le message n'a pas pu être envoyé sur le canal.
+error.405 2 Trop de canaux rejoints.
+error.411 2 Pas de destinataire défini(commande du type /privmsg).
+error.421 2 Commande inconnue.
+error.432 2 Pseudo interdit.
+error.433 2 Pseudo déjà utilisé.
+error.436 2 Pseudo protégé entraînant un ban du serveur.
+error.442 2 Vous n'êtes pas sur le canal.
+error.451 2 Vous devez être enregistré.
+error.481 2 Vous n'êtes pas un IRCOp.
+error.482 2 Vous n'êtes pas un ChanOp.
+error.483 2 Vous ne pouvez pas reset le serveur.
+
+stats.all 3 Informations récupérées par un /stats request.
+stats.211 3 Ports et connexion du serveur, envoyées par STATS l.
+stats.212 3 Commandes du serveur, envoyées par STATS m.
+stats.213 3 Le serveur peut/ne peut pas se connecter sur, envoyées par STATS c.
+stats.214 3 Le serveur peut/ne peut pas se connecter sur, envoyées par STATS c.
+stats.215 3 Classes de clients autorisés sur le serveur, envoyées par STATS i. stats.216 3 Liste des K-Lines, envoyées par STATS k.
+stats.217 3 Liste des ports autorisés, envoyées par STATS p.
+stats.218 3 Liste des Y-lines, envoyées par STATS y.
+stats.219 3 Fin d'une requête /stats.
+stats.223 3 Temps d'uptime du serveur, envoyée par STATS u.
+stats.243 3 Liste des O-lines, envoyées par STATS o.
+stats.244 3 Liste des Hubs du serveur, envoyées par STATS h.
+stats.247 3 Liste des G-lines, envoyées par STATS g.
+stats.248 3 Liste des U-lines, envoyées par STATS U.
+stats.249 3 Informations diverses, envoyées par STATS t ou STATS z.
+
+admin.all 3 Infos d'administration.
+admin.256 3 Infos d'administration du serveur.
+admin.257 3 Informations.
+admin.258 3 Plus d'informations.
+admin.259 3 Encore plus d'information.
+admin.423 3 Pas d'informations disponibles.
+
+misc.all 3 Autres raws.
+misc.006 3 Données de /map.
+misc.007 3 Fin of /map.
+misc.271 3 Liste des Shuns.
+misc.272 3 Fin de la liste des Shuns.
+misc.302 3 Données userhost.
+misc.303 3 Réponse à une ison request.
+misc.305 4 Vous n'êtes plus away.
+misc.306 4 Vous êtes maintenant away.
+misc.323 3 Fin de la liste des canaux.
+misc.381 3 Vous êtes maintenant IRCOp.
+misc.382 3 Rechargement de la configuration du serveur.
+misc.438 3 Vous changez trop rapidement de pseudo.
+misc.443 3 Invitation d'un user déjà sur le canal.
+misc.600 1 Connexion d'un user dans la notify list
+misc.601 1 Déconnexion d'un user dans la notify list
+misc.603 0 Notification: pseudo, pays, ip.
+misc.604 0 Notification: Nombre de notifications et d'entrées.
+misc.606 0 Notification: Pseudo.

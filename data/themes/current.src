@@ -1,0 +1,434 @@
+clinecharhop
+%
+version
+1.0
+sndconnect
+sounds/connect.mp3
+imagequery
+stretch images/fonds/afond $+ $rand(1,18) $+ .png
+sndquitself
+sounds/disconnect.mp3
+sndsnotice
+sounds/snotice.mp3
+away
+<timestamp> <pre> <c5>^^^ <text> <c5>^^^
+ctcpreplyself
+<c3>~#* -<gt> <c5>(<nick> CTCP <ctcp><c5>) Réponse : <c1><text>  <c3>*#~
+rejoin
+<pre> ~~~ Tentative de hop sur le canal <c5><chan>... ~~~
+textchanself
+<c4>[<cnick><me><c4>] <text>
+sndinvite
+sounds/notify.mp3
+wallop
+<pre> ### <c4>(Wallop<c4>) <text> ###
+actionqueryself
+<pre> <c1>*** 14<cnick><me> <text> <c1>***
+textquery
+<c5>(<cnick><nick><c5>) : <text>
+rgbpalette.theme
+16777215,0,8388608,25600,3937500,930403,9109643,30444,55295,2330219,8421376,11829830,16744448,6881490,5197613,8026746
+sndmode
+sounds/protect.mp3
+imagemirc
+tile images/bgmirc.jpg
+sndfilercvd
+sounds/dccsent.mp3
+sendfail
+<pre> [|4DCC: Echec de l'envoi du fichier "<c4><file>" <c5>(<size><c5>) à <c2><nick>. (Envoyé <c4><sent> <c5>(<percent>%<c5>) en <c4><secs>s) |]
+sndvoice
+sounds/voice.mp3
+sndbanself
+sounds/ban.mp3
+sndstart
+sounds/start.mp3
+colorspalette.scheme1
+PFScript Theme - Black Theme,1,12,4,5,3,4,12,8,4,13,9,0,4,7,6,7,11,3,3,2,14,1,0,1,0,15,6,14,0,1
+sndunotify
+sounds/disconnect.mp3
+mtsversion
+1.3
+website
+http://www.pokemon-france.com
+sndvoiceself
+sounds/voice.mp3
+getfail
+<pre> [|4DCC: Echec de la réception du fichier "<c4><file>" <c5>(<size><c5>) par <c2><nick>. (Téléchargé <c4><rcvd> <c5>(<percent>%<c5>) en <c4><secs>s) |]
+prefix
+<c4>~·-<gt>
+indent
+4
+author
+Klarth
+rgbcolors.scheme1
+16777215 0 13825351 2865963 255 2970272 13762770 3127039 6025215 9109386 12303104 11454975 16744448 16749055 9470064 14474460
+snddeopself
+sounds/deop.mp3
+echo
+<timestamp> <pre> <c1><text>
+sndpartself
+sounds/part.mp3
+kickself
+<pre> ``` Vous avez été kické de <c5><chan> par <cnick><nick> <c5>(Raison : <c1><text><c5>) ´´´
+file
+E:\Downloads\Programs\IRCScript\export\Pokémon France Script v3.0\themes\mts\PFTheme\pftheme.mts
+rgbpalette.scheme1
+16777215,0,13825351,2865963,255,2970272,13762770,3127039,6025215,9109386,12303104,11454975,16744448,16749055,9470064,14474460
+sndsend
+sounds/dccsend.mp3
+sndctcp
+sounds/ctcp.mp3
+clineme
+14
+colors
+0,10,4,5,3,2,9,11,13,10,9,1,6,7,6,10,4,2,3,5,1,1,0,1,0,15,6,5,0,1
+script
+E:\Downloads\Programs\IRCScript\export\Pokémon France Script v3.0\themes\mts\PFTheme\pftheme.mrc
+allschemesloaded
+1
+nick
+<pre> ``` <cnick><nick> s'appelle maintenant <c3><newnick> ´´´
+mode
+!script pftheme.mode
+scheme
+
+sndwallops
+sounds/notify.mp3
+quitself
+<pre> ``` Vous <c4>(<me><c4>) avez quitté IRC <parentext> ***
+actionmsgself
+<pre> <c1>*** 14<cnick><me> <text> <c1>***
+sndjoinself
+sounds/join.mp3
+highlight
+<c3>{{<cnick><nick><c3>}} <text>
+raw.437
+<pre><c3> @@@ Erreur: Vous ne pouvez pas changer de pseudo tant que vous êtes banni sur <c4><chan> @@@
+raw.401
+<pre><c3> ### Erreur: Pseudo <c4><nick><c3> inexistant! ###
+sndctcpself
+sounds/ctcp.mp3
+notice
+<c2><lt>--- (Notice) <cnick><nick>: <text>
+timestampformat
+<c5>(15HH:nn:ss<c5>)
+clinefriend
+12
+sndsendfail
+sounds/deop.mp3
+sndnotify
+sounds/notify.mp3
+ctcp
+~#* <c5>(<nick> CTCP <ctcp><c5>) <c1><text> *#~
+raw.403
+<pre><c3> ### Erreur: Canal <c4><chan><c3> inexistant! ###
+fserve
+<pre> [|FSERVE: <c2><nick> tente de vous envoyer le fichier "<c4><file>". Accepter? |]
+raw.432
+<pre><c3> @@@ Erreur: Le pseudo <c4><nick><c3> ne peut pas être utilisé. @@@
+raw.404
+<pre><c3> ### Erreur: Vous ne pouvez pas envoyer de message sur <c4><chan><c3>. ###
+actionmsg
+<pre> <c1>*** 14<cnick><nick> <text> <c1>***
+actionquery
+<pre> <c1>*** 14<cnick><nick> <text> <c1>***
+imagechan
+stretch images/fonds/afond $+ $rand(1,18) $+ .png
+servererror
+!script pftheme.servererror
+raw.433
+<pre><c3> @@@ Erreur: Le pseudo <c4><nick><c3> est déjà utilisé. @@@
+raw.421
+<pre><c5> @@@ <c4><value><c5>: Commande invalide
+textmsgself
+<c5>(<cnick><me><c5>) : <text>
+dnserror
+<pre> 12DNS: Echec de résolution de <c2><address>.
+imagestatus
+stretch images/fonds/afond $+ $rand(1,18) $+ .png
+connect
+<c1>Vous êtes maintenant <c2>connecté au serveur <c5><server>!
+ctcpchan
+~#* <c5>(<chan> CTCP <ctcp><c5>) <c1><text> *#~
+noticechan
+<c2><lt>--- <c4>[<c3>Channel Notice (<chan>)<c4>] 14<cmode><cnick><nick>: <text>
+sndhopself
+sounds/halfop.mp3
+modeuser
+!script pftheme.usermode
+raw.671
+7~~~~ 12Utilise une connexion sécurisée 7~~~~ 
+sndhop
+sounds/halfop.mp3
+colors.theme
+0,10,4,5,3,2,9,11,13,10,9,1,6,7,6,10,4,2,3,5,1,1,0,1,0,15,6,5,0,1
+raw.600
+<pre> Notification: <c2><nick> 2(14<address>2) s'est connecté à 10[<c5><value>10]
+raw.408
+<pre><c5> ~~~ Erreur: Vous ne pouvez pas utiliser de couleurs sur ce canal! ~~~
+raw.280
+<pre> <c1>Liste des utilisateurs gline: <c2><text>
+clinecharop
+@
+raw.601
+<pre> Notification: <c2><nick> 2(14<address>2) s'est déconnecté 10[<c5><value>10]
+raw.281
+<pre>
+noticeself
+<c2>---<gt> (Notice) <cnick><nick>: <text>
+clinecharvoice
++
+snddeop
+sounds/deop.mp3
+dns
+<pre> 12DNS: Résolution de <c2><address>...
+textqueryself
+<c5>(<cnick><me><c5>) : <text>
+raw.474
+<pre><c3> ^^^ Erreur: Impossible de rejoindre <c4><chan><c3> : Vous êtes banni de ce canal. ^^^
+clineenemy
+05
+clineop
+04
+part
+<pre> ``` <cnick><nick> <c4>(14<address><c4>) est sorti de <c5><chan> <parentext> ´´´
+joinself
+<pre> ``` Vous <c4>(12<me> - 14<address><c4>) parlez maintenant sur <c5><chan> ´´´
+raw.475
+<pre><c3> ^^^ Erreur: Impossible de rejoindre <c4><chan><c3> : Le canal est protégé par une clé (mode +k). Tapez /join <chan> [key] si vous avez la clé pour rejoindre le canal. ^^^
+unotify
+<pre> ---<gt> <c5>(7Notif<c5>) : <cnick><nick> s'est déconnecté. <c5>(<text><c5>) <lt>---
+sndop
+sounds/op.mp3
+sndtextquery
+sounds/query.mp3
+ctcpself
+<c3>~#* -<gt> <c5>(<nick> CTCP <ctcp><c5>) <c1><text> <c3>*#~
+scheme1
+Black Theme
+sndjoin
+sounds/join.mp3
+raw.473
+<pre><c3> ^^^ Erreur: Impossible de rejoindre <c4><chan><c3> : Le canal ne peut être rejoint que par invite (mode +i). Vous pouvez demander à quelqu'un de vous ouvrir en tapant /knock <chan> ^^^
+ctcpreply
+!script pftheme.ctcpreply
+textmsg
+<c5>(<cnick><nick><c5>) : <text>
+filesent
+<pre> [|4DCC: Vous avez bien envoyé le fichier "<c4><file>" <c5>(<size><c5>) à <c2><nick>. (Envoyé en <c4><secs>) |]
+sndkick
+sounds/kick.mp3
+textchan
+<c4>[14<cmode><cnick><nick><c4>] <text>
+sndquit
+sounds/part.mp3
+raw.471
+<pre><c3> ^^^ Erreur: Impossible de rejoindre <c4><chan><c3> : Le canal est plein (mode +l). ^^^
+raw.391
+<pre> <c1>Heure du serveur : <c5><text>
+name
+PFScript Theme
+sndnoticeself
+sounds/notice.mp3
+raw.372
+!script pftheme.motd
+raw.252
+<pre> <c1>IRCOpérateurs connectés: <c5><value>
+imageswitchbar
+fill images/sidebar.png
+colors.scheme1
+1,12,4,5,3,4,12,8,4,13,9,0,4,7,6,7,11,3,3,2,14,1,0,1,0,15,6,14,0,1
+raw.329
+!Script %:echo %::pre %::c1 $+ Canal créé le : %::c4 $+ $signontimefr(%::text)
+raw.265
+<pre> <c1>Utilisateurs locaux: <c5><users> sur un max de <c5><value>
+raw.253
+<pre> <c1>Connexions inconnues: <c5><value>
+raw.001
+<c1>Bienvenue sur IRC l'ami!!!
+invite
+<pre> ~~~ <cnick><nick> vous invite à rejoindre <c5><chan> ~~~
+snddevoice
+sounds/devoice.mp3
+sndmodeself
+sounds/protect.mp3
+noticeserver
+<pre> ### <c4>(Notice Server<c4>) <text> ###
+raw.482
+<pre><c3> ^^^ Erreur: Action refusée: Vous n'êtes pas opérateur sur <c4><chan><c3> ! ^^^
+raw.266
+<pre> <c1>Utilisateurs globaux: <c5><users> sur un max de <c5><value>
+raw.250
+<pre> <c1>Nombre total de connexions : <c5><value>
+raw.002
+<c1>Vous êtes sur le serveur <c5><server>, 14<value>
+raw.251
+<pre> <c1>Il y'a <c4><users><c1> users connectés dont <c4><text><c1> invisibles sur <c5><value><c1> serveurs
+raw.219
+13----------------------------------------------------------
+raw.003
+<c1>Serveur créé le: <c5><value>
+actionchan
+<pre> <c1>*** 14<cnick><nick> <text> <c1>***
+clinecharowner
+*
+raw.376
+!script pftheme.motdend
+raw.272
+<pre>
+raw.004
+<c1>Serveur <c5><server>, Usermode : <c4><value>
+join
+<pre> ``` <cnick><nick> <c4>(14<address><c4>) a rejoint le canal <c5><chan> <parentext> ´´´
+raw.353
+!script pftheme.listusers
+raw.341
+<pre> <c1>Invitation de <c2><nick> à rejoindre <c5><chan>
+raw.005
+<c1>Protocoles supportés: <c5><text>
+kick
+<pre> ``` <cnick><nick> a kické <cnick><knick> <c4>(14<kaddress><c4>) de <c5><chan> <c5>(Raison : <c1><text><c5>) ´´´
+quit
+<pre> ``` <cnick><nick> <c4>(14<address><c4>) a quitté IRC <parentext> ***
+clinevoice
+08
+raw.366
+<c4>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+raw.254
+<pre> <c1>Canaux enregistrés: <c5><value>
+raw.318
+!script pftheme.whoisstop
+parentext
+<c5>(<c1><text><c5>)
+basecolors
+01,03,04,10,02
+raw.375
+!script pftheme.motdbegin
+raw.271
+<pre> <c1>Liste des utilisateurs shun: <c2><nick>
+raw.263
+<pre> <c3> ### Erreur: Le serveur est temporairement surchargé. Veuillez réessayer ultérieurement. ###
+raw.255
+<pre> <c1>Clients locaux: <c5><users>
+raw.319
+!script pftheme.channels
+sndgetfail
+sounds/deop.mp3
+topic
+<pre> ~~~ <cnick><nick> a changé le topic en : <c1><text> ~~~
+schemenames
+Black Theme
+sndnotice
+sounds/notice.mp3
+raw.332
+<pre> <c1>Topic: "<c2><text>"<c1>
+timestamp
+ON
+sndfilesent
+sounds/dccsent.mp3
+snddehop
+sounds/dehalfop.mp3
+raw.333
+!script pftheme.topicsetby
+raw.321
+!script pftheme.chanlist
+raw.305
+<pre> <c5>^^^ Vous n'êtes plus absent ^^^
+raw.other
+<c1><text>
+raw.369
+!script pftheme.whowasstop
+raw.317
+!script pftheme.idle
+fontdefault
+Calibri,13,B; Verdana,12; Arial,12,B
+rgbcolors
+16777215 0 8388608 25600 3937500 930403 9109643 30444 55295 2330219 8421376 11829830 16744448 6881490 5197613 8026746
+raw.322
+!script pftheme.chanlistadd
+raw.306
+<pre> <c5>^^^ Vous êtes à présent absent ^^^
+raw.314
+!script pftheme.whowasstart
+ctcpchanself
+<c3>~#* -<gt> <c5>(<chan> CTCP <ctcp><c5>) <c1><text> <c3>*#~
+actionchanself
+<pre> <c1>*** <cnick><me> <text> <c1>***
+clinehop
+07
+snddevoiceself
+sounds/devoice.mp3
+colorspalette.theme
+PFScript Theme,0,10,4,5,3,2,9,11,13,10,9,1,6,7,6,10,4,2,3,5,1,1,0,1,0,15,6,5,0,1
+sndback
+sounds/voice.mp3
+snddisconnect
+sounds/disconnect.mp3
+sndpart
+sounds/part.mp3
+raw.323
+!script aline @chans %::c1 $+ Fin de la liste
+raw.315
+!script pftheme.whoisstop
+raw.307
+!script pftheme.registered
+error
+<timestamp> 4!!! Erreur: <c1><text>
+rgbcolors.theme
+16777215 0 8388608 25600 3937500 930403 9109643 30444 55295 2330219 8421376 11829830 16744448 6881490 5197613 8026746
+sndhighlight
+sounds/highlight.mp3
+raw.324
+<pre> <c1>Modes du canal: <c4>(<c5><modes><c4>)<c1>
+raw.312
+!script pftheme.server
+nickself
+<pre> ``` Vous vous appelez maintenant <c3><newnick> ´´´
+sndopself
+sounds/op.mp3
+raw.221
+<pre> <c1>Modes: <c5><modes>
+raw.301
+!script pftheme.awaymode
+raw.313
+!script pftheme.isircop
+send
+<pre> [|DCC: <c2><nick> tente de vous envoyer le fichier "<c4><file>". Accepter? |]
+fontquery
+Calibri,13,B; Verdana,12; Arial,12,B
+sndban
+sounds/ban.mp3
+sndsnoticeself
+sounds/snotice.mp3
+echotarget
+<timestamp> <pre> <c1><text>
+filercvd
+<pre> [|4DCC: Vous avez bien reçu le fichier "<c4><file>" <c5>(<size><c5>) de <c2><nick>. (Reçu en <c4><secs>) |]
+description
+PF Script Theme By Klarth
+raw.302
+<pre> <c1>Userhost <c2><nick>!<address>
+notify
+<pre> ---<gt> <c5>(7Notif<c5>) : <cnick><nick> est connecté! <c5>(<text><c5>) <lt>---
+imagetoolbar
+fill images/bantop.png
+sndaway
+sounds/notify.mp3
+raw.311
+!script pftheme.whoisstart
+disconnect
+<c1>Déconnexion du serveur!
+fontchan
+Calibri,13,B; Verdana,12; Arial,12,B
+clineowner
+06
+dnsresolve
+<pre> 12DNS: Adresse résolue: <c2><raddress> (14<naddress> - 14<iaddress>)
+noticechanself
+<c2>---<gt> <c4>[<c3>Channel Notice (<chan>)<c4>] <text>
+email
+mariosmilax@free.fr
+snddehopself
+sounds/dehalfop.mp3
+sndkickself
+sounds/kick.mp3

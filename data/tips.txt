@@ -1,0 +1,18 @@
+Besoin d'un mot de passe? Générez un mot de passe sécurisé avec la commande //echo -a $generatepassword .
+Besoin d'aide dans l'utilisation du script? Demandez de l'aide sur le canal #pokemonfrance ou envoyez un mail à l'auteur du script Klarth (mariosmilax@free.fr) (Même si il n'est pas sûr d'y répondre :* )
+Si vous estimez ne pas avoir besoin de certaines features, comme par exemples les protections, le filtrage, tapez /feature <nom> off pour la désactiver sans risquer de corrompre le script.
+Ne faites jamais confiance aux utilisateurs vous conseillant des commandes que vous ne connaissez pas! Utilisez l'aide de mIRC si besoin.
+Le PFScript 4 a été fortement inspiré du NoNameScript (http://www.nnscript.com), cependant il a été codé de A à Z!
+Utilisez la blacklist pour bannir automatiquement certains utilisateurs de vos canaux. Notez que si vous pouvez les empêcher de parler, non vous n'aurez pas leur liberté de penser!
+Sur le réseau Epiknet, vous pouvez envoyer des messages aux utilisateurs déconnectés, pour cela, tapez /memo suivi du nom de l'utilisateur. Ils n'auront plus d'excuses à présent!
+Si vous êtes victimes d'abus, allez sur le canal #Athènes afin qu'un modérateur puisse règler votre problème.
+La première version de mIRC a été conçue le 28/02/1995 (info de première importance!)
+Vous pouvez vous connecter à plusieurs réseaux dans la même fenêtre. Pour cela, tapez /newserv suivi du nom du réseau. Ex: Pour vous connecter sur Rizon, tapez /newserv rizon.
+Le PFScript est distribué avec son thème "Pokémon Thème", mais sachez que vous pouvez télécharger d'autres thèmes sur des sites tels que http://www.scriptsdb.org ou http://www.mircscripts.org .
+Marre du pauvre Scripts Editor de mIRC? Utilisez le plugin de Notepad++ disponible à l'adresse  http://www.pokemon-france.com/chat/script/userDefineLanguage.xml
+Besoin d'info sur un caractère ASCII? Tapez /ascii pour avoir la liste des caractères et leur code ASCII.
+Vous pouvez kicker plusieurs utilisateurs à l'aide de la commande /kickAll (Syntaxe: kickAll [+nicks séparés par des virgules] [#canal] [raison])
+Une aide sur l'utilisation du script est en cours d'écriture.
+Vous pouvez utiliser les pipes (|) lorsque vous définissez les raccourcis clavier pour effectuer plusieurs commandes à la suite.
+Si vous avez des problèmes dans l'utilisation du script, avec des messages d'erreur apparaissant un peu partout: Vérifiez que vous disposez de tous les fichiers requis. En cas de problème, réinstallez le script.
+Créez et soumettez vos propres thèmes à Klarth (mariosmilax@free.fr) pour élargir la liste de thèmes disponibles dans les futures versions.

@@ -1,0 +1,17 @@
+[hashtable]
+thunderbird.exe=Thunderbird;C:\Program Files\Mozilla Thunderbird\thunderbird.exe;1; ;
+dstudio.exe=dstudio.exe;C:\Pokemon-France Script - Copie\Pokémon France Script v3.0\dstudio\dstudio_final\dstudio.exe;1; ;
+GoogleChrome=Google Chrome;C:\Program Files\Google\Chrome\Application\chrome.exe;1; ;
+FileZilla=FileZilla;C:\Program Files\FileZilla FTP Client\filezilla.exe;1; ;
+firefox.exe=Firefox;C:\Program Files\Mozilla Firefox\firefox.exe;1; ;
+mirc=mirc;C:\Pokemon-France Script - Copie\Pokémon France Script v3.0\mirc.exe;1; ;
+Skype.exe=Skype;C:\Program Files\Skype\Phone\Skype.exe;1; ;
+charmap.exe=charmap.exe;C:\Windows\System32\charmap.exe;1; ;
+CCleaner=CCleaner;C:\Program Files\CCleaner\CCleaner.exe;1; ;
+notepad=Notepad++;C:\Program Files\Notepad++\notepad++.exe;1; ;/notepad
+Captured'ecran=Capture d'ecran;C:\Windows\System32\SnippingTool.exe;1; ;
+iTunes.exe=iTunes;C:\Program Files\iTunes\iTunes.exe;1; ;
+Calculatrice=Calculatrice;C:\Windows\System32\calc.exe;1; ;
+Paint=Paint;C:\Windows\System32\mspaint.exe;1; ;
+Winamp=Winamp;C:\Program Files\Winamp\winamp.exe;1; ;
+emule=emule;C:\Program Files\emule\emule.exe;1; ;

@@ -1,0 +1,327 @@
+[mts]
+
+[info]
+mts-info-Name Le nom du thème
+mts-info-Author L'auteur du thème
+mts-info-Email Email de l'auteur
+mts-info-Description Description du thème
+mts-info-Website Site de l'auteur
+mts-info-Version Version du thème
+mts-info-MTSVersion Version du format MTS utilisé pour le thème
+
+[colors]
+mts-colors-Colors Liste des index de couleurs des évènements IRC (Join/Part/Nick...) et des fenêtres mIRC (Editbox,Listbox,Treeview...). Doit contenir 30 index de couleurs séparés par des virgules. Se référer au menu "mIRC Colors (Alt+K)" pour la liste.
+mts-colors-RGBColors Palette de couleurs des 16 couleurs de mIRC au format RGB. Doit contenir 16 couleurs soit au format RGB (R,G,B), soit au format $rgb (nombre entre 0 et 255^3), soit un nom de couleur défini par le W3C (ex: Aliceblue...)
+mts-colors-BaseColors 4 ou 5 index de couleurs de base utilisés dans la majorité des évènements du thème (généralement représentant respectivement: texte normal/nick/highlight/parenthèses/crochets)
+
+[nicks]
+mts-nicks-CLineOwner Couleur des owners
+mts-nicks-CLineCharOwner Caractère désignant les owners
+mts-nicks-CLineOP Couleur des opérateurs
+mts-nicks-CLineCharOP Caractère désignant les opérateurs
+mts-nicks-CLineHOP Couleur des halfopérateurs
+mts-nicks-CLineCharHOP Caractère désignant les halfopérateurs
+mts-nicks-CLineVoice Couleur des voices
+mts-nicks-CLineCharVoice Caractère désignant les voices
+mts-nicks-CLineRegular Couleur des users sans access
+mts-nicks-CLineCharRegular Caractères désignant les users sans access
+mts-nicks-CLineMe Couleur de votre pseudo
+mts-nicks-CLineCharMe Caractère représentant vous-même
+mts-nicks-CLineFriend Couleur des users dans votre notify list
+mts-nicks-CLineCharFriend Caractère désignant les users dans votre notify list
+mts-nicks-CLineEnemy Couleur des users dans votre ignore list
+mts-nicks-CLineCharEnemy Caractère désignant les users dans votre ignore list
+mts-nicks-CLineIrcOP Couleur des IRCOp (note: le statut IRCOp est invisible sur la plupart des serveurs)
+mts-nicks-CLineCharIrcOp Caractère désignant les IRCOp (note: le statut IRCOp est invisible sur la plupart des serveurs)
+
+[fonts]
+mts-fonts-FontDefault Police par défaut. Le format doit être "<nom_police>,<taille>[,[bi]]"
+mts-fonts-FontChan Police affichée dans les canaux. Le format doit être "<nom_police>,<taille>[,[bi]]"
+mts-fonts-FontQuery Police affichée dans les queries. Le format doit être "<nom_police>,<taille>[,[bi]]"
+
+[misc]
+mts-misc-TimeStamp Afficher oui ou non le timestamp. Valeurs: ON/OFF
+mts-misc-TimeStampFormat Format du Timestamp (voir l'aide de mIRC à la section timestamp pour créer un format spécifique)
+mts-misc-Prefix Ensemble de caractères précédant l'affichage d'une ligne.
+mts-misc-ParenText Format de parenthésage d'un texte. Entoure un texte avec le format donné sauf si le texte est déjà parenthésé.
+mts-misc-LineSep Format du séparateur de ligne (affiché avec /linesep ou /echo -e)
+mts-misc-Indent Nombre de caractères d'indentation lors de l'affichage de textes s'affichant sur plusieurs lignes.
+mts-misc-Script Fichier de script utilisé avec le thème
+mts-misc-Load Evenement déclenché lors du chargement du thème
+mts-misc-Unload Evenement déclenché lors du déchargement du thème
+
+[scheme]
+mts-scheme-Scheme1 Nom du premier scheme.
+mts-scheme-Scheme* Nom du *-è scheme.
+
+[images]
+mts-images-ImageStatus Image de fond de la fenêtre de statut
+mts-images-ImageChan Image de fond des canaux
+mts-images-ImageQuery Image de fond des queries
+mts-images-ImageMirc Image de fond de mIRC
+mts-images-ImageToolbar Image de la barre d'outils
+mts-images-ImageButtons Image de fond des boutons de la barre d'outils
+mts-images-ImageSwitchbar Image de la switchbar
+
+[events-main]
+mts-events-main-Join Texte d'un utilisateur rejoignant un canal.
+mts-events-main-JoinSelf Texte lorsque vous rejoignez un canal.
+mts-events-main-Part Texte d'un utilisateur quittant un canal.
+mts-events-main-Quit Texte d'un utilisateur quittant mIRC.
+mts-events-main-Nick Texte d'un utilisateur changeant de nick.
+mts-events-main-NickSelf Texte lorsque vous changez de nick.
+mts-events-main-Mode Texte de changement de modes d'un canal/user.
+mts-events-main-ModeUser Texte de changement de modes utilisateur.
+mts-events-main-Kick Texte de kick d'un utilisateur.
+mts-events-main-KickSelf Texte lorsque vous êtes kické du canal.
+mts-events-main-Topic Texte de changement du topic du canal
+mts-events-main-Invite Texte d'invitation à rejoindre un canal.
+mts-events-main-Rejoin Texte lors d'un join/part (/hop)
+
+[events-text]
+mts-events-text-TextChan Texte de base affiché dans un canal.
+mts-events-text-TextChanSelf Texte que vous envoyez sur un canal.
+mts-events-text-ActionChan Texte d'action (/me) d'un utilisateur affiché sur un canal.
+mts-events-text-ActionChanSelf Texte d'action (/me) que vous envoyez sur un canal.
+mts-events-text-TextQuery Texte de base affiché dans une query.
+mts-events-text-TextQuerySelf Texte que vous envoyez à un utilisateur dans une query.
+mts-events-text-ActionQuery Texte d'action (/me) d'un utilisateur affiché dans une query.
+mts-events-text-ActionQuerySelf Texte d'action (/me) que vous envoyez à un utilisateur dans une query.
+
+[events-messages]
+mts-events-messages-Notice Notice reçue d'un utilisateur.
+mts-events-messages-NoticeSelf Notice envoyée à un utilisateur.
+mts-events-messages-NoticeChan Notice reçue destinée à tout le canal.
+mts-events-messages-NoticeChanSelf Notice envoyée destinée à tout le canal.
+mts-events-messages-TextMsg Texte de message privé reçu (/msg)
+mts-events-messages-TextMsgSelf Texte de message privé envoyé (/msg)
+mts-events-messages-ActionMsg Texte d'action privée reçue (/describe)
+mts-events-messages-ActionMsgSelf Texte d'action privée envoyée (/describe)
+mts-events-messages-WallOp Texte de Wallops
+mts-events-messages-NoticeServer Texte de notice envoyée par le serveur
+mts-events-messages-ServerError Message d'erreur envoyé par le serveur
+mts-events-messages-Ctcp CTCP reçue d'un utilisateur.
+mts-events-messages-CtcpSelf CTCP envoyée à un utilisateur.
+mts-events-messages-CtcpChan CTCP reçue d'un canal.
+mts-events-messages-CtcpChanSelf CTCP envoyée à un canal.
+mts-events-messages-CtcpReply Message de réponse CTCP reçu.
+mts-events-messages-CtcpReplySelf Message de réponse CTCP envoyé.
+
+[events-misc]
+mts-events-misc-Highlight Message déclencheant une alerte de highlight
+mts-events-misc-Notify Connexion d'un utilisateur de la notify list.
+mts-events-misc-UNotify Déconnexion d'un utilisateur de la notify list.
+mts-events-misc-DNS Tentative de résolution de noms
+mts-events-misc-DNSError Tentative de résolution de noms échouée
+mts-events-misc-DNSResolve Résolution de noms réussie
+
+[events-print]
+mts-events-print-Echo Message d'echo personnalisé
+mts-events-print-Error Message d'erreur personnalisé
+mts-events-print-EchoTarget Message d'echo envoyé à une fenêtre mIRC personnalisé
+mts-events-print-Away Message d'absence envoyé automatiquement lorsque vous êtes absent.
+
+[events-whois]
+mts-events-whois-Whois Whois d'un utilisateur
+mts-events-whois-Whowas Whowas d'un utilisateur
+mts-events-whois-RAW.* Se référer aux raws IRC.
+mts-events-whois-RAW.Other Pour toutes les raws non définies dans le thème.
+
+[events-dcc]
+mts-events-dcc-FileSent Envoi d'un fichier par DCC effectué
+mts-events-dcc-FileRcvd Réception d'un fichier par DCC effectué
+mts-events-dcc-GetFail Réception d'un fichier par DCC échoué
+mts-events-dcc-SendFail Envoi d'un fichier par DCC échoué
+
+[sounds]
+mts-sounds-SndStart Son de démarrage de mIRC
+mts-sounds-SndHighLight Son déclenché lors d'un highlight
+mts-sounds-SndTextQuery Son déclenché lors d'un message privé en query
+mts-sounds-SndNotice Son déclenché lors de la réception d'une notice
+mts-sounds-SndNoticeSelf Son déclenché lors de l'envoi d'une notice
+mts-sounds-SndSNotice Son déclenché lors de la réception d'une notice serveur
+mts-sounds-SndSNoticeSelf Son déclenché lors de l'envoi d'une notice serveur
+mts-sounds-SndJoin Son déclenché lors de l'entrée d'un user sur un canal
+mts-sounds-SndJoinSelf Son déclenché lors de l'entrée sur un canal
+mts-sounds-SndPart Son déclenché lors de la sortie d'un utilisateur d'un canal
+mts-sounds-SndPartSelf Son déclenché lors de la sortie d'un canal
+mts-sounds-SndKick Son déclenché lors du kick d'un utilisateur
+mts-sounds-SndKickSelf Son déclenché lors d'un kick
+mts-sounds-SndMode Son déclenché lors du changement de modes d'un canal/utilisateur
+mts-sounds-SndModeSelf Son déclenché lors du changement de modes
+mts-sounds-SndOp Son déclenché lorsqu'un utilisateur obtient le statut d'op
+mts-sounds-SndOpSelf Son déclenché lors de l'obtention d'un statut d'op
+mts-sounds-SndDeop Son déclenché lorsqu'un utilisateur perd le statut d'op
+mts-sounds-SndDeopSelf Son déclenché lors de la perte du statut d'op
+mts-sounds-SndHop Son déclenché lorsqu'un utilisateur obtient le statut d'halfop
+mts-sounds-SndHopSelf Son déclenché lors de l'obtention du statut d'halfop
+mts-sounds-SndDeHop Son déclenché lorsqu'un utilisateur perd le statut d'halfop
+mts-sounds-SndDeHopSelf Son déclenché lors de la perte du statut d'halfop
+mts-sounds-SndVoice Son déclenché lorsqu'un utilisateur obtient le statut de voice
+mts-sounds-SndVoiceSelf Son déclenché lors de l'obtention du statut de voice
+mts-sounds-SndDeVoice Son déclenché lorsqu'un utilisateur perd le statut de voice
+mts-sounds-SndDeVoiceSelf Son déclenché lors de la perte du statut de voice
+mts-sounds-SndBan Son déclenché lors du ban d'un utilisateur
+mts-sounds-SndBanSelf Son déclenché lors de votre ban.
+mts-sounds-SndCtcp Son déclenché lors de la réception d'un ctcp
+mts-sounds-SndCtcpSelf Son déclenché lors de l'envoi d'un ctcp
+mts-sounds-SndQuit Son déclenché lorsqu'un utilisateur quitte IRC
+mts-sounds-SndQuitSelf Son déclenché lorsque vous quittez IRC
+mts-sounds-SndNotify Son déclenché lorsqu'un utilisateur de la notify list se connecte
+mts-sounds-SndUNotify Son déclenché lorsqu'un utilisateur de la notify list se déconnecte
+mts-sounds-SndInvite Son déclenché lorsqu'un utilisateur est invité à rejoindre un canal
+mts-sounds-SndWallops Son déclenché lors de la réception d'un Wallop
+mts-sounds-SndConnect Son déclenché lors de la connexion au serveur
+mts-sounds-SndDisconnect Son déclenché lors de la déconnexion du serveur
+mts-sounds-SndSend Son déclenché lors de l'envoi d'un fichier par DCC
+mts-sounds-SndFileSent Son déclenché lors de l'envoi réussi d'un fichier par DCC
+mts-sounds-SndFileRcvd Son déclenché lors de la réception réussie d'un fichier par DCC
+mts-sounds-SndSendFail Son déclenché lors de l'envoi échoué d'un fichier par DCC
+mts-sounds-SndGetFail Son déclenché lors de la réception échouée d'un fichier par DCC
+mts-sounds-SndAway Son déclenché lors du passage en mode absent
+mts-sounds-SndBack Son déclenché lors du passage en mode non absent
+
+
+[nnt]
+
+[info]
+nnt-info-Name The name of the theme
+nnt-info-Author The author of the theme
+nnt-info-Version The version number of the theme
+nnt-info-NNTVersion The version number of the NoNameScript theme engine required for the theme
+nnt-info-Email The theme author's e-mail address
+nnt-info-Homepage The theme author's homepage
+nnt-info-Description A short description of your theme and/or other notes
+
+[nicks]
+nnt-nicks-NickColSelf The color of yourself in the nicklist/chat windows.
+nnt-nicks-NickColOp The color of operators in the nicklist/chat windows.
+nnt-nicks-NickColVoice The color of voiced users in the nicklist/chat windows.
+nnt-nicks-NickColRegular The color of regular users in the nicklist/chat windows.
+nnt-nicks-NickColProtect The color of protected users in the nicklist/chat windows.
+nnt-nicks-NickColIgnore The color of ignored users in the nicklist/chat windows.
+
+[fonts]
+nnt-fonts-Font The font the theme is using.
+nnt-fonts-FontSize The font size the theme is using.
+
+[misc]
+nnt-misc-TimeStampEnabled Determines if global timestamping is enabled.
+nnt-misc-TimeStamp Your timestamp format.
+nnt-misc-Brackets The brackets which appear when you use the brackets="1" property.
+nnt-misc-Prefix A custom prefix you can use in any event.
+nnt-misc-LineSep The line separator used by the script.
+ 
+[scheme]
+nnt-scheme-Scheme0 First Color Scheme in format: "Scheme name" "Color palette of mIRC colors in RGB Format" "Color indexes of mIRC various events and lists"
+nnt-scheme-Scheme* *nth Color Scheme in format: "Scheme name" "Color palette of mIRC colors in RGB Format" "Color indexes of mIRC various events and lists"
+
+[events-print]
+nnt-events-print-GenEcho The script echoes a general info-type message.
+nnt-events-print-GenError The script echoes an error message.
+nnt-events-print-GenHighlight The highlighted parts of GenError and GenEcho messages.
+
+[events-main]
+nnt-events-main-Join A user joins a channel.
+nnt-events-main-JoinOwn You are joining a channel.
+nnt-events-main-Part A user leaves a channel.
+nnt-events-main-Quit A user quits IRC.
+nnt-events-main-Kick A user gets kicked out of an IRC channel.
+nnt-events-main-KickOwn You get kicked out of an IRC channel.
+nnt-events-main-Nick A user changes his nickname.
+nnt-events-main-NickOwn You change your nickname.
+nnt-events-main-Mode A user changes one or more channel modes.
+nnt-events-main-UserMode Your usermode gets changed.
+
+[events-text]
+nnt-events-text-ChanText A user writes text in a channel.
+nnt-events-text-ChanTextOwn You write text in a channel.
+nnt-events-text-QueryText A user messages you in a query.
+nnt-events-text-QueryTextOwn You message a user in a query.
+nnt-events-text-Msg You receive a message without having a query open.
+nnt-events-text-MsgOwn You send a message to a user or channel and don't have a query/channel open.
+nnt-events-text-ChanAction A user performs an action in a channel.
+nnt-events-text-ChanActionOwn You perform an action in a channel.
+nnt-events-text-QueryAction A user performs an action in a query.
+nnt-events-text-QueryActionOwn You perform an action in a query.
+nnt-events-text-Action You receive an action without having a query open.
+nnt-events-text-ActionOwn You send an action to a user or channel and don't have a query/channel open.
+
+[events-whois]
+nnt-events-whois-WhoisStart The /whois begins.
+nnt-events-whois-WhoisAddress The server sends address and name info for the whoised nickname.
+nnt-events-whois-WhoisChans The server sends channel info for the whoised nickname. 
+nnt-events-whois-WhoisServer The server sends server info for the whoised nickname.
+nnt-events-whois-WhoisStatus The server sends the whoised nickname's status, like IRC operator or admin.
+nnt-events-whois-WhoisAway The server sends away info for the whoised nickname.
+nnt-events-whois-WhoisAuth The server sends auth info for the whoised nickname.
+nnt-events-whois-WhoisRealIP The server sends real IP info for the whoised nickname.
+nnt-events-whois-WhoisIdle The server sends idle and signon time info for the whoised nickname.
+nnt-events-whois-WhoisEnd The /whois ends.
+nnt-events-whois-WhowasStart The /whowas begins.
+nnt-events-whois-WhowasAddress The server sends address and name info for the whowased nickname.
+nnt-events-whois-WhowasServer The server sends server info for the whowased nickname.
+nnt-events-whois-WhowasAway The server sends away info for the whowased nickname.
+nnt-events-whois-WhowasEnd The /whowas ends.
+
+[events-messages]
+nnt-events-messages-Notice A user notices you.
+nnt-events-messages-NoticeOwn You send a notice to a user or channel.
+nnt-events-messages-ChanNotice A user performs a channel notice.
+nnt-events-messages-ServerNotice The server notices you.
+nnt-events-messages-CTCP You receive a CTCP.
+nnt-events-messages-CTCPOwn You send a CTCP to a user or channel.
+nnt-events-messages-ChanCTCP You receive a channel CTCP.
+nnt-events-messages-CTCPReply You receive a CTCP reply.
+nnt-events-messages-CTCPReplyOwn You send a CTCPReply to a user or channel.
+
+[events-misc]
+nnt-events-misc-DNS You try to DNS resolve an address or nickname.
+nnt-events-misc-DNSError A DNS request failed.
+nnt-events-misc-DNSResolve You receive a DNS result.
+nnt-events-misc-Notify A user on your notify list goes online.
+nnt-events-misc-UnNotify A user on your notify list goes offline.
+nnt-events-misc-Names You receive the /names list.
+nnt-events-misc-NamesEnd The /names list you received is complete.
+nnt-events-misc-TopicChange A user changes the topic in a channel.
+nnt-events-misc-Invite You are being invited into a channel.
+nnt-events-misc-InviteOwn You invite someone into a channel.
+nnt-events-misc-InviteAlreadyOnChan Someone you invited is already on the channel.
+nnt-events-misc-AwayStatus The server sends you away status information about a user.
+
+[events-raw]
+nnt-events-raw-Bans The server sends you one line of the channel ban list.
+nnt-events-raw-BansEnd The server sends you the end of the channel ban list.
+nnt-events-raw-ChannelCreation The server sends you the channel creation time.
+nnt-events-raw-ChannelModes The server sends you channel mode information.
+nnt-events-raw-ChanFull The channel you want to join is full (+l).
+nnt-events-raw-ChanInviteOnly The channel you want to join is invite only (+i).
+nnt-events-raw-ChanBanned You are banned on the channel you want to join (+b).
+nnt-events-raw-ChanKeyRequired The channel you want to join requires a key (+k).
+nnt-events-raw-ChanRegOnly The channel you want to join requires you to be auth'ed/registered (+r).
+nnt-events-raw-CustomRaws You can add custom raw events here.
+nnt-events-raw-HiddenHost Your host has been hidden.
+nnt-events-raw-LUsers1 The server sends you line 1 of the /lusers reply (users, invisible users, servers).
+nnt-events-raw-LUsers2 The server sends you line 2 of the /lusers reply (operators online).
+nnt-events-raw-LUsers3 The server sends you line 3 of the /lusers reply (unknown connections).
+nnt-events-raw-LUsers4 The server sends you line 4 of the /lusers reply (number of channels formed).
+nnt-events-raw-LUsers5 The server sends you line 5 of the /lusers reply (local clients and servers).
+nnt-events-raw-NickInUse The nickname you want to change to is already in use and the server replies with an error message.
+nnt-events-raw-NoSuchNick The server sends you an error message about a user not being on the network.
+nnt-events-raw-NoSuchChan The server sends you an error message about a channel not existing on the network.
+nnt-events-raw-NoTopic There is no topic set in the channel.
+nnt-events-raw-NotOpped You are unable to perform an operation because you don't have operator status in a channel.
+nnt-events-raw-RegisterFirst You receive an error message because you need to register before performing a certain action.
+nnt-events-raw-RawDef The server sends an unknown RAW message to you.
+nnt-events-raw-SupportedInfo The server sends you the supported protocols.
+nnt-events-raw-Topic The server sends the topic after you joined a channel.
+nnt-events-raw-TopicBy The server sends your further topic information after you joined.
+nnt-events-raw-UnknownCmd The server sends you an error message after you typed an invalid command.
+nnt-events-raw-UnableToSend You are unable to message a specific channel.
+nnt-events-raw-WallOp You receive a wallop message.
+nnt-events-raw-Welcome1 The server sends you line 1 of the welcome message (welcome).
+nnt-events-raw-Welcome2 The server sends you line 2 of the welcome message (host, version).
+nnt-events-raw-Welcome3 The server sends you line 3 of the welcome message (server creation time).
+nnt-events-raw-Welcome4 The server sends you line 4 of the welcome message (server, version, supported user- and channelmodes).
+nnt-events-raw-Who The server sends you information after you made a /who request.
+nnt-events-raw-WhoEnd The /who information ends.

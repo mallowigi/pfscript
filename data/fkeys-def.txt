@@ -1,0 +1,36 @@
+﻿F1helpAfficher l'aide
+F2nick $$?="Nouveau Pseudo"Changer de nick
+F3findtext $$?="Rechercher"Rechercher
+F4quitMessage $$?="Quitter?"Quitter mIRC
+F5amsg $?="Message groupé"Envoyer un message sur tous les canaux
+F6kick $snick(#,1) $?="Raison"Kicker le nick sélectionné
+F7kb $snick(#,1) $?="Raison"Bannir le nick sélectionné
+F8unban $$?="Nick/Adresse"Débannir un nick
+F9ghost $$?="Pseudo à ghoster"Ghoster un pseudo
+F10setupOuvrir les options du script
+F11url -an www.google.frOuvrir un navigateur Web
+F12themesOuvrir le gestionnaire de themes
+SF1help Ouvrir l'aide
+SF2ident $serverinfos($network).nickIdentification
+SF3awayPasser en mode away
+SF4backRevenir en mode présent
+SF5partallFermer tous les canaux ouverts
+SF6close -mFermer toutes les queries ouvertes
+SF7close -@Fermer toutes les fenetres
+SF8close -icfgmst@Fermer toutes les fenêtres, queries, dcc et chat
+SF9clipboardVider le presse-papiers
+SF10clearVider la fenêtre
+SF11newserv $$?="Nom du serveur"Ouvrir une nouvelle connexion à un serveur
+SF12showmirc -ntMinimiser mIRC dans la barre des tâches
+CF1astopStopper la connexion automatique au démarrage
+CF2pstopStopper le collage
+CF3channelOuvrir le "Channel Central"
+CF4run $mircdirOuvrir le dossier de mIRC
+CF5asciiOuvrir la liste des caractères ASCII/Unicode
+CF6checkMailVérifier la présence de nouveaux mails
+CF7applauncherOuvrir l'App Launcher
+CF8openstatsAfficher les stats d'utilisation
+CF9moo $iif($?="Sur le canal",echo)Afficher les infos système
+CF10run http://www.pokemon-france.com/forums/Aller sur les forums de Pokémon-France
+CF11openquotesOuvrir le Quote Manager
+CF12aboutA propos du PFScript

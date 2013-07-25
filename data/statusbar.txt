@@ -1,0 +1,5 @@
+﻿"images/bars/HeartGold/logviewer.ico"Date: <date>, Heure: <time>run control.exe /name Microsoft.DateAndTime 200Changer l'heurenormal
+"images/bars/HeartGold/channel.ico"Canal: <activechan>join $$?="Joindre le canal"200Joindre canalnormal
+"images/bars/HeartGold/network.ico"Réseau: <net>newserv $$?="Nouveau serveur"200Ouvrir une nouvelle fenetre de serveurnormal
+"images/bars/HeartGold/nick.ico"Nick: <nick>nick $$?="Nouveau pseudo"200Changer de pseudonormal
+"images/bars/HeartGold/clipboard.ico"C/C: <cbcontent>clipboard460Vider presse-papiersnormal

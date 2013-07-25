@@ -1,0 +1,40 @@
+[hashtable]
+Maillon_Faible=Vous êtes le maillon faible, AU REVOIR!
+Méditation=Le repos est bon pour la santé, va donc te reposer un peu!
+Surf=Carapuce, attaque Surf! Une rafale d'eau s'abat sur $$1 et l'emporte loin, très loin...
+Numéro_Inconnu=Désolé, le numéro que vous avez demandé n'est plus attribué. Veuillez réessayer ultérieurement.
+Pub=La publicité est interdite sur ce canal.
+Ramzy=J'annonce... coup de pied latéral, en pleine face!
+Raichu="En avant, Raichu!" 7TOYYINNNDJDJDJ !!!!! 6$$1 : Qu'est-ce c'est que ce cri... FUYONS!!!
+Bouton_Kick=Oh comme j'adore presser cette touche ^3^
+Hacktou="Hé, $$1, j'ai un code pour toi: Tape /run shutdown.exe et tu pourras devenir op!!!!" ..... $$1 a quitté IRC (Connection reset by peer)
+Artikodin="Artikodin! A l'attaque!" 2ARTIKODIN balance un 0,11LASER-GLACE dans la tronche de 7$$1, hop, 2 semaines d'angine!!
+Bouton_test=Random kick de test ^^
+Cool=Désolé, on n'accepte que des gens cools ici.
+Porte=|¯| <- Go prendre la porte
+Dracaufeu="Fini la rigolade, j'appelle... 4DRACAUFEU!!! Hahaha... Hein?! AAAAAH!!!" 4DRACAUFEU balance un tourbillon de flammes qui brûle 7$$1 et 6<nick> par la même occasion... Dommage ^^
+Tyran=LA LOI, C'EST MOI!
+Mic_Check=Test 1..2..1..2.. ah ben non ca marche pas!
+Op=Les Ops ont toujours raison (sisi!)
+Kick_Porte=Reviens plus tard. Bien plus tard.
+Enfer=On se reverra en enfer.
+Feinte="Oh regarde là bas, c'est Justin Bieber!!!" $$1 pousse $$1 hors du canal pendant qu'il tourne la tête.
+Sailor_Moon=Paillettes d'argent, agissez tout de suite!
+Tonnerre=Pikachu, attaque 1,8TONNERRE! 7$$1 est littéralement électrocuté!
+Flood=Le flood est interdit sur ce canal.
+GTFO=GTFO!!!
+Majs=N'utilisez pas trop de majuscules.
+Tortank="Hé Tortank ! Regarde-moi 7$$1! Pour qui il se prend ???" A-Attaque 2HYDROCANON ??!!! 7$$1 s'est fait expulser de 3<chan> tellement la vague était forte !
+Kaira=Wech vasy casse toi la natchav de là ma gueule!
+Luffy=GOMU GOMU NO... 8GIGANT PISTOL!!!!! $$1 est éjecté de la pièce avec force...
+Eric=Attends tais-toi pour voir... Ah ouais c'est bien!
+Rondoudou="Rondoudou, attaque Berceuse !" 13RONDOUDOU se met soudainement à chanter : 4Rondoudou dou rondoudou dou rondoudou dou... 6$$1 s'est endormi... Mais... <nick> lui fait les poches?!
+Reine=QU'ON LUI COUPE LA TÊTE!!!!
+Countdown=La bombe est sur le point d'exploser... 3... 2... 1... BOOM!
+Qui=Qui-êtes vous?
+Gline=$$1 a quitté IRC (User banned from <net>)
+Badwords=Va te calmer.
+Bye=Va voir ailleurs si j'y suis, et si j'y suis pas bah... restes-y!
+Rascal=La fête est finie, rascal!
+Sacrifice=Après longue délibération, il a été décidé que ce serait toi qui serait le bouc émissaire. Nous sommes heureux de t'avoir connu, puisse-tu reposer en paix!
+Merci=Merci de ta visite ^^

@@ -1,0 +1,18 @@
+[hashtable]
+Series=To be continued...
+Script=15[7 Pokémon-France Script v4.0 15] - [12 Disponible sur : www.pokemon-france.com/script/ 15]
+Fuite=*s'enfuit*
+Matrix=Je retourne dans la matrice.
+Tchao=Tchao tout le monde.
+ERROR=Désolé, l'application a quitté inopinément le système suite à une erreur numéro 72. Veuillez redémarrer votre ordinateur.
+moujik=Je de le moujik de l'être.
+C-ya=C-ya!
+Candlejack=Oh mais c'est Candlejack!! Co
+couleurs=1,1AAAAAAAA2,2AAAAAAAA3,3AAAAAAAA 4,4AAAAAAAA5,5AAAAAAAA6,6AAAAAAAA 7,7AAAAAAAA8,8AAAAAAAA9,9AAAAAAAA 10,10AAAAAAAA11,11AAAA AAAA12,12AAAAAAAA 13,13AAAAAAAA14,14AAAAAA AA15,15AAAAAAAA
+Dodo=Je dodo ++
+Pokemon=Vous prenez la fuite.
+Goodbye=Goodbye Everybody!
+iTunes=Synchronisation effectuée!
+LA_FERME=TU BLUFFE MARTONI!!!
+Gline=User has been banned from Epiknet (Respectez la netiquette!)
+Save=Sauvegarde effectuée.

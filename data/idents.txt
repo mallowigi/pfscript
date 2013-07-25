@@ -1,0 +1,22 @@
+[hashtable]
+<pfver>=Version du script$pfversion
+<cbcontent>=Les trois premieres lignes copiées$cbcontent(1-3)
+<mircver>=Version de mIRC$version
+<knick>=Nick kické$knick
+<contime>=Temps de connexion au serveur$durationfr($uptime(server,3))
+<time>=Heure actuelle$asctimefr($ctime).time
+<topic>=Topic du canal actif$activetopic
+<down>=Bande Passante DCC Download$dccbw(get)
+<uptime>=Temps système$durationfr($uptime(system,3))
+<channels>=Le nombre de canaux rejoints$chan(0)
+<idle>=Temps d'idle$idle
+<rss>=Dernieres news recues$rss.latest
+<mails>=Nombre de mails non lus$mailnum
+<cb>=Nombre de lignes copiées$cb(0)
+<chan>=Le canal sur lequel est déclenché l'évènement$iif($chan,$chan,Aucun)
+<nick>=Nick en question ou pseudo actuel$iif($nick,$v1,$me)
+<ip>=Adresse IP$ip
+<up>=Bande Passante en DCC Upload$dccbw(send)
+<date>=Date actuelle$asctimefr($ctime).date
+<activechan>=Le canal Actif$iif($ischan($active),$active,Aucun)
+<net>=Le réseau sur lequel vous êtes connecté$iif($network,$v1,Aucun)

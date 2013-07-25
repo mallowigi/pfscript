@@ -1,0 +1,18 @@
+﻿[hashtable]
+Series=To be continued...
+Script=15[7 Pokémon-France Script v4.0 15] - [12 Disponible sur : www.pokemon-france.com/script/ 15]
+Matrix=Je retourne dans la matrice.
+Tchao=Tchao tout le monde.
+C-ya=C-ya!
+Dodo=Je dodo ++
+ERROR=Désolé, l'application a quitté inopinément le système suite à une erreur numéro 72. Veuillez redémarrer votre ordinateur.
+Pokemon=Un jour je serai le meilleur dresseur...
+Goodbye=Goodbye Everybody!
+LA_FERME=TU BLUFFE MARTONI!!!
+Gline=User has been banned from Epiknet (Respectez la netiquette!)
+Fuite=*s'enfuit*
+Pokemon=Vous prenez la fuite.
+Save=Sauvegarde effectuée.
+iTunes=Synchronisation effectuée!
+Candlejack=Oh mais c'est Candlejack!! Co
+Resetti=N'OUBLIEZ PAS DE SAUVEGARDER AVANT DE QUITTER!!!
